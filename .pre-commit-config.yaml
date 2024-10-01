@@ -21,6 +21,7 @@ repos:
           - --github-pages
           - --imports-on-top
           - --no-prettierrc
+          - --no-pypi
           - --repo-name=report
           - --repo-title=ComPWA Technical Reports
       - id: colab-toc-visible
