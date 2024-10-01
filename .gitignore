@@ -1,0 +1,57 @@
+# Output files
+*.gv
+*.json
+*.npy
+*.pdf
+*.pickle
+*.png
+*.svg
+*.v2
+*.xml
+*.yaml
+*.yml
+
+# Build files
+*.egg-info/
+*build/
+.eggs/
+.fuse_*
+dist/
+version.py
+
+# Temporary files
+*.pyc
+*condaenv.*
+.coverage
+.coverage.*
+.ipynb_checkpoints/
+.jupyter_ystore.db
+.mypy*/
+.pytest_cache/
+.virtual_documents/
+__pycache__/
+htmlcov/
+oryx-build-commands.txt
+prof/
+
+# Virtual environments
+*venv/
+.pixi/
+.tox/
+pyvenv*/
+
+# Settings
+.idea/
+**.code-workspace
+
+# Exceptions
+!.cspell.json
+!.github/*.yml
+!.github/*/*.yml
+!.pre-commit-config.yaml
+!.readthedocs.yml
+!.vscode/*.json
+!codecov.yml
+!environment.yml
+!pyrightconfig.json
+.jupyter_ystore.db

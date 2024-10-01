@@ -1,0 +1,12 @@
+name: compwa-report
+channels:
+  - conda-forge
+dependencies:
+  - graphviz
+  - juliaup
+  - pip
+  - python==3.12.*
+  - pip:
+      - -e .[dev]
+variables:
+  PYTHONHASHSEED: 0
