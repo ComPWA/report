@@ -1,9 +1,9 @@
 """Enforce adding a pip install statement in the notebook.
 
-In the `compwa.github.io repo <https://github.com/ComPWA/compwa.github.io>`_, notebooks
-should specify which package versions should be used to run the notebook. This hook
-checks whether a notebook has such install statements and whether they comply with the
-expected formatting.
+In `github.com/ComPWA/report <https://github.com/ComPWA/report>`_, notebooks should
+specify which package versions should be used to run the notebook. This hook checks
+whether a notebook has such install statements and whether they comply with the expected
+formatting.
 """
 # cspell:ignore oneline precommit
 
