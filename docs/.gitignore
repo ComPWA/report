@@ -3,9 +3,9 @@
 *.svg
 _inventory.md
 
-002-*-tree
-002-*-graph
-013-graph?
-018-graph
+002/*-tree
+002/*-graph
+013/graph?
+018/graph
 
 _static/exported_intensity_model.py
