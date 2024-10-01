@@ -144,7 +144,7 @@ repos:
             docs/020\.ipynb|
             docs/026\.ipynb|
             docs/027\.ipynb|
-            docs/028\.ipynb|
+            docs/028\.ipynb
           )$
 
   - repo: local
