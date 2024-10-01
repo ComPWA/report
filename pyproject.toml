@@ -26,6 +26,7 @@ classifiers = [
 dependencies = [
     "graphviz",
     "ipympl",
+    "matplotlib <3.9.0", # https://github.com/ComPWA/report/actions/runs/11126901008/job/30917935221?pr=1
     "numpy==1.*",
 ]
 description = "Source code for the ComPWA Organization pages"
