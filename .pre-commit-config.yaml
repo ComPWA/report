@@ -80,15 +80,10 @@ repos:
         exclude: >
           (?x)^(
             .*\.bib|
-            .*\.svg|
             \.cspell\.json
           )$
       - id: mixed-line-ending
       - id: trailing-whitespace
-        exclude: >
-          (?x)^(
-            .*\.svg
-          )$
 
   - repo: https://github.com/ComPWA/prettier-pre-commit
     rev: v3.3.3

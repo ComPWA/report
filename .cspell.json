@@ -26,7 +26,6 @@
     "**/Manifest.toml",
     "**/Project.toml",
     "*.ico",
-    "*.svg",
     ".editorconfig",
     ".envrc",
     ".gitattributes",
