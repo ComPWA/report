@@ -57,7 +57,7 @@ repos:
             metadata.vscode
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.6.4
+    rev: v0.6.8
     hooks:
       - id: ruff
         args: [--fix]
@@ -129,7 +129,7 @@ repos:
           )$
 
   - repo: https://github.com/nbQA-dev/nbQA
-    rev: 1.9.0
+    rev: 1.8.7
     hooks:
       - id: nbqa-isort
         args: [--float-to-top]
@@ -160,6 +160,6 @@ repos:
           - jupyter
 
   - repo: https://github.com/ComPWA/mirrors-pyright
-    rev: v1.1.379
+    rev: v1.1.382
     hooks:
       - id: pyright
