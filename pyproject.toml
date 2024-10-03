@@ -354,16 +354,24 @@ split-on-trailing-comma = false
     "T20",
     "TCH00",
 ]
-"**/003.ipynb" = ["B023", "PLC2701"]
-"**/009.ipynb" = ["FURB113"]
-"**/010.ipynb" = ["FURB113"]
-"**/011.ipynb" = ["PLC2701", "PLR6301"]
+"**/002.ipynb" = ["F821"]
+"**/003.ipynb" = ["B023", "F821", "PLC2701", "S404", "S603"]
+"**/004.ipynb" = ["S404", "S603"]
+"**/005.ipynb" = ["F821", "S404", "S603"]
+"**/006.ipynb" = ["S404", "S603"]
+"**/009.ipynb" = ["FURB113", "S404", "S603"]
+"**/010.ipynb" = ["FURB113", "S404", "S603"]
+"**/011.ipynb" = ["F821", "PLC2701", "PLR6301"]
 "**/014.ipynb" = ["PLC2701"]
 "**/016.ipynb" = ["PLC2701"]
-"**/021.ipynb" = ["I001"]
-"**/022.ipynb" = ["PLC2701"]
-"**/024.ipynb" = ["E731", "E741", "S307"]
-"**/025.ipynb" = ["E731"]
+"**/017.ipynb" = ["S404", "S603"]
+"**/020.ipynb" = ["F821"]
+"**/021.ipynb" = ["FIX004", "I001", "S404", "S603"]
+"**/022.ipynb" = ["F821", "PLC2701"]
+"**/024.ipynb" = ["E731", "E741", "F821", "S102", "S307"]
+"**/025.ipynb" = ["E731", "S404", "S603"]
+"**/027.ipynb" = ["PLW1510", "S404", "S603"]
+"**/028.ipynb" = ["PERF203"]
 "**/98*.ipynb" = ["E731", "PLR6301"]
 "docs/*" = [
     "D",
@@ -373,22 +381,6 @@ split-on-trailing-comma = false
     "S113",
     "T201",
 ]
-"docs/002.ipynb" = ["F821"]
-"docs/003.ipynb" = ["F821", "S404", "S603"]
-"docs/004.ipynb" = ["S404", "S603"]
-"docs/005.ipynb" = ["F821", "S404", "S603"]
-"docs/006.ipynb" = ["S404", "S603"]
-"docs/009.ipynb" = ["S404", "S603"]
-"docs/010.ipynb" = ["S404", "S603"]
-"docs/011.ipynb" = ["F821"]
-"docs/017.ipynb" = ["S404", "S603"]
-"docs/020.ipynb" = ["F821"]
-"docs/021.ipynb" = ["FIX004", "S404", "S603"]
-"docs/022.ipynb" = ["F821"]
-"docs/024.ipynb" = ["F821", "S102"]
-"docs/025.ipynb" = ["S404", "S603"]
-"docs/027.ipynb" = ["PLW1510", "S404", "S603"]
-"docs/028.ipynb" = ["PERF203"]
 "docs/conf.py" = [
     "A001",
     "D100",
