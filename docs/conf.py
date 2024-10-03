@@ -43,6 +43,7 @@ def get_nb_exclusion_patterns() -> list[str]:
         "028*",
         "030*",
         "031*",
+        "032*",
         "033*",
     }
     julia_notebooks = {
