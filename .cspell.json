@@ -206,6 +206,7 @@
     "maxsize",
     "meshgrid",
     "migrad",
+    "mkpath",
     "mmikhasenko",
     "mname",
     "msigma",
