@@ -240,8 +240,8 @@ addopts = [
     "--doctest-modules",
     "--durations=0",
     "--ignore-glob=*/.ipynb_checkpoints/*",
+    "--ignore=docs/_static",
     "--ignore=docs/conf.py",
-    "--nbmake",
     "--nbmake-timeout=1200",
     "-k not docs/019.ipynb",
 ]
