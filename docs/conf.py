@@ -139,9 +139,27 @@ html_theme = "sphinx_book_theme"
 html_theme_options = {
     "icon_links": [
         {
+            "name": "Common Partial Wave Analysis",
+            "url": "https://compwa.github.io",
+            "icon": "_static/favicon.ico",
+            "type": "local",
+        },
+        {
             "name": "GitHub",
-            "url": f"https://github.com/{ORGANIZATION}",
+            "url": f"https://github.com/{ORGANIZATION}/{REPO_NAME}",
             "icon": "fa-brands fa-github",
+        },
+        {
+            "name": "Launch on Binder",
+            "url": f"https://mybinder.org/v2/gh/{ORGANIZATION}/{REPO_NAME}/{BRANCH}?filepath=docs",
+            "icon": "https://mybinder.readthedocs.io/en/latest/_static/favicon.png",
+            "type": "url",
+        },
+        {
+            "name": "Launch on Colaboratory",
+            "url": f"https://colab.research.google.com/github/{ORGANIZATION}/{REPO_NAME}/blob/{BRANCH}",
+            "icon": "https://avatars.githubusercontent.com/u/33467679?s=100",
+            "type": "url",
         },
     ],
     "logo": {"text": "The ComPWA project"},
