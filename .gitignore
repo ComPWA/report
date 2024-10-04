@@ -35,9 +35,10 @@ oryx-build-commands.txt
 prof/
 
 # Virtual environments
-*venv/
 .pixi/
 .tox/
+*venv/
+pixi.lock
 pyvenv*/
 
 # Settings

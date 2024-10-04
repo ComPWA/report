@@ -168,13 +168,24 @@ def _format_pip_requirements(
     git_requirements = {r for r in requirements if r.startswith("git+")}
     pip_requirements = set(requirements) - git_requirements
     pip_requirements = {r.lower().replace("_", "-") for r in pip_requirements}
-    sorted_requirements = sorted(pip_requirements) + sorted(git_requirements)
+    pip_requirements = [__wrap_quotation_marks(r) for r in pip_requirements]
+    sorted_requirements = sorted(pip_requirements, key=__key) + sorted(git_requirements)
     expected = f"{__EXPECTED_PIP_INSTALL_LINE} {' '.join(sorted_requirements)}"
     if install_statement != expected:
         notebook["cells"][cell_id]["source"] = expected
         nbformat.write(notebook, filename)
         msg = f'Ordered and formatted pip install cell in "{filename}"'
         raise PrecommitError(msg)
+
+
+def __wrap_quotation_marks(requirement: str) -> str:
+    if "[" in requirement and not requirement.startswith("'"):
+        return f"'{requirement}'"
+    return requirement
+
+
+def __key(requirement: str) -> str:
+    return requirement.replace("'", "", 1).lower()
 
 
 def _update_metadata(filename: str, metadata: dict, notebook: NotebookNode) -> None:

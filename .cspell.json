@@ -109,6 +109,7 @@
   "ignoreWords": [
     "Kutschke",
     "Marangotto",
+    "PINF",
     "PYTHONHASHSEED",
     "Richman",
     "absl",
@@ -205,6 +206,7 @@
     "maxsize",
     "meshgrid",
     "migrad",
+    "mkpath",
     "mmikhasenko",
     "mname",
     "msigma",

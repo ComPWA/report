@@ -24,6 +24,7 @@ def get_nb_exclusion_patterns() -> list[str]:
         "000*",
         "001*",
         "002*",
+        "003*",
         "005*",
         "008*",
         "009*",
@@ -35,10 +36,14 @@ def get_nb_exclusion_patterns() -> list[str]:
         "015*",
         "017*",
         "018*",
+        "019*",
         "020*",
         "021*",
         "022*",
         "028*",
+        "030*",
+        "031*",
+        "032*",
         "033*",
     }
     julia_notebooks = {
@@ -139,9 +144,27 @@ html_theme = "sphinx_book_theme"
 html_theme_options = {
     "icon_links": [
         {
+            "name": "Common Partial Wave Analysis",
+            "url": "https://compwa.github.io",
+            "icon": "_static/favicon.ico",
+            "type": "local",
+        },
+        {
             "name": "GitHub",
-            "url": f"https://github.com/{ORGANIZATION}",
+            "url": f"https://github.com/{ORGANIZATION}/{REPO_NAME}",
             "icon": "fa-brands fa-github",
+        },
+        {
+            "name": "Launch on Binder",
+            "url": f"https://mybinder.org/v2/gh/{ORGANIZATION}/{REPO_NAME}/{BRANCH}?filepath=docs",
+            "icon": "https://mybinder.readthedocs.io/en/latest/_static/favicon.png",
+            "type": "url",
+        },
+        {
+            "name": "Launch on Colaboratory",
+            "url": f"https://colab.research.google.com/github/{ORGANIZATION}/{REPO_NAME}/blob/{BRANCH}",
+            "icon": "https://avatars.githubusercontent.com/u/33467679?s=100",
+            "type": "url",
         },
     ],
     "logo": {"text": "The ComPWA project"},
@@ -244,6 +267,7 @@ nb_execution_mode = get_execution_mode()
 nb_execution_show_tb = True
 nb_execution_timeout = -1
 nb_output_stderr = "remove"
+nb_render_markdown_format = "myst"
 nitpicky = True
 primary_domain = "py"
 project = REPO_TITLE
