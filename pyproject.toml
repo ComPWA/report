@@ -74,7 +74,7 @@ sty = [
     "attrs",
     "compwa-report[types]",
     "nbformat",
-    "pre-commit >=1.4.0",
+    "pre-commit-uv",
     "ruff",
 ]
 test = [
