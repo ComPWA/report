@@ -33,15 +33,15 @@ description = "Source code for the ComPWA Organization pages"
 dynamic = ["version"]
 license = {file = "LICENSE"}
 maintainers = [{email = "compwa-admin@ep1.rub.de"}]
-name = "compwa-org"
+name = "compwa-report"
 requires-python = ">=3.9"
 
 [project.optional-dependencies]
 dev = [
-    "compwa-org[doc]",
-    "compwa-org[jupyter]",
-    "compwa-org[sty]",
-    "compwa-org[test]",
+    "compwa-report[doc]",
+    "compwa-report[jupyter]",
+    "compwa-report[sty]",
+    "compwa-report[test]",
     "sphinx-autobuild",
     "tox >=1.9", # for skip_install, use_develop
 ]
@@ -72,7 +72,7 @@ jupyter = [
 ]
 sty = [
     "attrs",
-    "compwa-org[types]",
+    "compwa-report[types]",
     "nbformat",
     "pre-commit >=1.4.0",
     "ruff",
@@ -195,7 +195,7 @@ cmd = "pre-commit run  -a"
 env = {SKIP = "pyright"}
 
 [tool.pixi.pypi-dependencies]
-compwa-org = {path = ".", editable = true}
+compwa-report = {path = ".", editable = true}
 
 [tool.pyright]
 exclude = [
