@@ -59,8 +59,9 @@
   "ruff.importStrategy": "fromEnvironment",
   "ruff.organizeImports": true,
   "search.exclude": {
+    "**/pixi.lock": true,
     "**/tests/**/__init__.py": true,
-    ".constraints/*.txt": true
+    "**/uv.lock": true
   },
   "telemetry.telemetryLevel": "off"
 }

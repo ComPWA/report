@@ -40,6 +40,7 @@ def get_nb_exclusion_patterns() -> list[str]:
         "020*",
         "021*",
         "022*",
+        "028*",
         "030*",
         "031*",
         "032*",
@@ -73,9 +74,7 @@ ORGANIZATION = "ComPWA"
 REPO_NAME = "report"
 REPO_TITLE = "ComPWA Organization"
 
-BINDER_LINK = (
-    f"https://mybinder.org/v2/gh/ComPWA/{REPO_NAME}/{BRANCH}?filepath=docs/usage"
-)
+BINDER_LINK = f"https://mybinder.org/v2/gh/ComPWA/{REPO_NAME}/{BRANCH}?urlpath=lab"
 
 autosectionlabel_prefix_document = True
 bibtex_bibfiles = ["bibliography.bib"]
@@ -155,7 +154,7 @@ html_theme_options = {
         },
         {
             "name": "Launch on Binder",
-            "url": f"https://mybinder.org/v2/gh/{ORGANIZATION}/{REPO_NAME}/{BRANCH}?filepath=docs",
+            "url": f"https://mybinder.org/v2/gh/{ORGANIZATION}/{REPO_NAME}/{BRANCH}?urlpath=lab",
             "icon": "https://mybinder.readthedocs.io/en/latest/_static/favicon.png",
             "type": "url",
         },
