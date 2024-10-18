@@ -27,12 +27,12 @@ dev = [
     "compwa-report[sty]",
     "compwa-report[test]",
     "sphinx-autobuild",
-    "tox >=1.9", # for skip_install, use_develop
+    "tox",
 ]
 doc = [
-    "Sphinx >=3",
-    "myst-nb >=0.14", # nb_ configuration prefixes
-    "sphinx-api-relink >=0.0.4",
+    "myst-nb",
+    "sphinx",
+    "sphinx-api-relink",
     "sphinx-book-theme",
     "sphinx-codeautolink[ipython]",
     "sphinx-comments",
@@ -66,7 +66,7 @@ test = [
     "nbmake",
 ]
 types = [
-    "sphinx-api-relink >=0.0.4",
+    "sphinx-api-relink",
 ]
 
 [project.readme]
