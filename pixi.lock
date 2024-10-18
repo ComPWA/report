@@ -35,7 +35,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/linux-64/libgcc-14.2.0-h77fa898_1.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/libgcc-ng-14.2.0-h69a702a_1.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/libgd-2.3.3-hd3e95f3_10.conda
-      - conda: https://conda.anaconda.org/conda-forge/linux-64/libglib-2.82.1-h2ff4ddf_1.conda
+      - conda: https://conda.anaconda.org/conda-forge/linux-64/libglib-2.82.2-h2ff4ddf_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/libgomp-14.2.0-h77fa898_1.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/libiconv-1.17-hd590300_2.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/libjpeg-turbo-3.0.0-hd590300_1.conda
@@ -53,7 +53,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/linux-64/pcre2-10.44-hba22ea6_2.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/pixman-0.43.2-h59595ed_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/pthread-stubs-0.4-hb9d3cd8_1002.conda
-      - conda: https://conda.anaconda.org/conda-forge/linux-64/uv-0.4.22-h0f3a69f_0.conda
+      - conda: https://conda.anaconda.org/conda-forge/linux-64/uv-0.4.24-h0f3a69f_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/xorg-libice-1.1.1-hb9d3cd8_1.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/xorg-libsm-1.2.4-he73a12e_1.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/xorg-libx11-1.8.10-h4f16b4b_0.conda
@@ -595,13 +595,12 @@ packages:
   timestamp: 1722928278395
 - kind: conda
   name: libglib
-  version: 2.82.1
-  build: h2ff4ddf_1
-  build_number: 1
+  version: 2.82.2
+  build: h2ff4ddf_0
   subdir: linux-64
-  url: https://conda.anaconda.org/conda-forge/linux-64/libglib-2.82.1-h2ff4ddf_1.conda
-  sha256: 17eaf179e98847dd834aae75c74753e98026ee5ac818550185896b3b7bc6e76f
-  md5: 23b2601708f7fd71ceb52b4da41cdd66
+  url: https://conda.anaconda.org/conda-forge/linux-64/libglib-2.82.2-h2ff4ddf_0.conda
+  sha256: 49ee9401d483a76423461c50dcd37f91d070efaec7e4dc2828d8cdd2ce694231
+  md5: 13e8e54035ddd2b91875ba399f0f7c04
   depends:
   - __glibc >=2.17,<3.0.a0
   - libffi >=3.4,<4.0a0
@@ -610,10 +609,10 @@ packages:
   - libzlib >=1.3.1,<2.0a0
   - pcre2 >=10.44,<10.45.0a0
   constrains:
-  - glib 2.82.1 *_1
+  - glib 2.82.2 *_0
   license: LGPL-2.1-or-later
-  size: 3957261
-  timestamp: 1728938307811
+  size: 3931898
+  timestamp: 1729191404130
 - kind: conda
   name: libgomp
   version: 14.2.0
@@ -910,12 +909,12 @@ packages:
   timestamp: 1726802366959
 - kind: conda
   name: uv
-  version: 0.4.22
+  version: 0.4.24
   build: h0f3a69f_0
   subdir: linux-64
-  url: https://conda.anaconda.org/conda-forge/linux-64/uv-0.4.22-h0f3a69f_0.conda
-  sha256: 339327e0f5f0261010a9bee30c81b6d7d3c75055c1f6622e4bb236cc647c49a3
-  md5: 097cb08694453152fda7b72c2bb79d7f
+  url: https://conda.anaconda.org/conda-forge/linux-64/uv-0.4.24-h0f3a69f_0.conda
+  sha256: e4c6db92f3256969632545ba33916c187d6a2b70bb012983b2fb1a8cc3bdee12
+  md5: e9b42e09809df1d9070263b4db145447
   depends:
   - __glibc >=2.17,<3.0.a0
   - libgcc >=13
@@ -923,8 +922,8 @@ packages:
   constrains:
   - __glibc >=2.17
   license: Apache-2.0 OR MIT
-  size: 9387060
-  timestamp: 1729051218653
+  size: 9429107
+  timestamp: 1729234173407
 - kind: conda
   name: xorg-libice
   version: 1.1.1
