@@ -27,7 +27,6 @@ dev = [
     "compwa-report[sty]",
     "compwa-report[test]",
     "sphinx-autobuild",
-    "tox",
 ]
 doc = [
     "myst-nb",
@@ -58,7 +57,6 @@ sty = [
     "attrs",
     "compwa-report[types]",
     "nbformat",
-    "pre-commit-uv",
     "ruff",
 ]
 test = [
