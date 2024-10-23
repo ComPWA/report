@@ -7,12 +7,6 @@ requires = [
 
 [project]
 authors = [{name = "Common Partial Wave Analysis", email = "compwa-admin@ep1.rub.de"}]
-dependencies = [
-    "graphviz",
-    "ipympl",
-    "matplotlib <3.9.0", # https://github.com/ComPWA/report/actions/runs/11126901008/job/30917935221?pr=1
-    "numpy==1.*",
-]
 description = "Source code for the ComPWA Organization pages"
 dynamic = ["version"]
 license = {file = "LICENSE"}
@@ -29,6 +23,7 @@ dev = [
     "sphinx-autobuild",
 ]
 doc = [
+    "compwa-report[notebooks]",
     "myst-nb",
     "sphinx",
     "sphinx-api-relink",
@@ -45,6 +40,7 @@ doc = [
     "sphinxcontrib-bibtex >=2",
 ]
 jupyter = [
+    "compwa-report[notebooks]",
     "jupyterlab",
     "jupyterlab-code-formatter >=3.0.0",
     "jupyterlab-git",
@@ -53,6 +49,9 @@ jupyter = [
     "python-lsp-ruff",
     "python-lsp-server[rope]",
 ]
+notebooks = [
+    "pyproject-local-kernel",
+]
 sty = [
     "attrs",
     "compwa-report[types]",
@@ -60,7 +59,7 @@ sty = [
     "ruff",
 ]
 test = [
-    "jupyter",
+    "compwa-report[notebooks]",
     "nbmake",
 ]
 types = [
