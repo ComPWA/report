@@ -64,16 +64,16 @@ repos:
         args: [--float-to-top]
         exclude: >-
           (?x)^(
-            docs/001\.ipynb|
-            docs/002\.ipynb|
-            docs/003\.ipynb|
-            docs/008\.ipynb|
-            docs/013\.ipynb|
-            docs/018\.ipynb|
-            docs/020\.ipynb|
-            docs/026\.ipynb|
-            docs/027\.ipynb|
-            docs/028\.ipynb
+            docs/001/index\.ipynb|
+            docs/002/index\.ipynb|
+            docs/003/index\.ipynb|
+            docs/008/index\.ipynb|
+            docs/013/index\.ipynb|
+            docs/018/index\.ipynb|
+            docs/020/index\.ipynb|
+            docs/026/index\.ipynb|
+            docs/027/index\.ipynb|
+            docs/028/index\.ipynb
           )$
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
