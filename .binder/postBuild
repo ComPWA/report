@@ -8,7 +8,6 @@ if [[ -n "$pixi_packages" ]]; then
   pixi global install $pixi_packages
 fi
 export PYTHONHASHSEED="0"
-bash docs/install-julia.sh
 pixi clean cache --yes
 
 uv export \

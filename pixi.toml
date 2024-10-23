@@ -1,13 +1,19 @@
 [project]
-channels = ["conda-forge"]
+channels = [
+    "conda-forge",
+    "https://repo.prefix.dev/julia-forge",
+]
 name = "compwa-report"
-platforms = ["linux-64"]
+platforms = [
+    "linux-64",
+    "osx-64",
+    "osx-arm64",
+]
 
 [activation]
 env = {PYTHONHASHSEED = "0"}
-scripts = ["docs/install-julia.sh"]
 
 [dependencies]
 graphviz = "*"
-juliaup = "*"
+julia = {channel = "https://repo.prefix.dev/julia-forge", version = "*"}
 uv = "*"
