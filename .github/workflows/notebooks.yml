@@ -31,7 +31,7 @@ jobs:
       - run: |
           function run-nbmake() {
             set +e
-            pytest --nbmake ${{ github.event.inputs.notebook-selector }}
+            pytest ${{ github.event.inputs.notebook-selector }}
             error_code=$?
             set -e
             echo "Pytest returned error code $error_code"

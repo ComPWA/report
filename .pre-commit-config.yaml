@@ -2,7 +2,6 @@ ci:
   autoupdate_commit_msg: "MAINT: update lock files"
   autoupdate_schedule: quarterly
   skip:
-    - pin-nb-requirements
     - pyright
     - uv-lock
 
@@ -147,18 +146,6 @@ repos:
           (?x)^(
             docs/_static/favicon.ico
           )$
-
-  - repo: local
-    hooks:
-      - id: pin-nb-requirements
-        name: Check whether notebook contains a pip install line
-        description:
-          Specify which packages to install specifically in order to run
-          this notebook.
-        entry: python3 .pre-commit/pin_nb_requirements.py
-        language: system
-        types:
-          - jupyter
 
   - repo: https://github.com/ComPWA/pyright-pre-commit
     rev: v1.1.385
