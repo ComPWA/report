@@ -61,6 +61,7 @@ sty = [
 test = [
     "compwa-report[notebooks]",
     "nbmake",
+    "pytest-env",
 ]
 types = [
     "sphinx-api-relink",
@@ -153,6 +154,9 @@ norecursedirs = [
 testpaths = [
     "docs",
 ]
+
+[tool.pytest_env]
+EXECUTE_NB = "yes"
 
 [tool.ruff]
 extend-exclude = ["exported_intensity_model.py"]
