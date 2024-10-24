@@ -1,3 +1,18 @@
+[project]
+dependencies = [
+    "ampform",
+    "black",
+    "ipympl",
+    "ipywidgets",
+    "matplotlib",
+    "mpl-interactions",
+    "qrules",
+    "scipy",
+]
+name = "technical-report"
+requires-python = "~=3.12.0"
+version = "0.1.0"
+
 [tool.ruff]
 preview = true
 
@@ -11,6 +26,7 @@ ignore = [
     "COM812",
     "CPY001",
     "D",
+    "E731",
     "F821",
     "ISC001",
     "N806",
@@ -29,3 +45,5 @@ allow-dict-calls-with-keyword-arguments = true
 
 [tool.ruff.lint.flake8-self]
 ignore-names = ["_print"]
+
+[tool.uv.workspace]

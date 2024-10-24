@@ -243,6 +243,7 @@
     "pycode",
     "pyfunc",
     "pygments",
+    "pyproject",
     "pytest",
     "quadpy",
     "rankdir",

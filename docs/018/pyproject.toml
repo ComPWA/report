@@ -1,3 +1,14 @@
+[project]
+dependencies = [
+    "ampform[viz]",
+    "matplotlib",
+    "scipy",
+    "tensorwaves[jax,pwa]",
+]
+name = "technical-report"
+requires-python = "~=3.12.0"
+version = "0.1.0"
+
 [tool.ruff]
 preview = true
 
@@ -15,3 +26,5 @@ ignore = [
     "PLR0914",
 ]
 select = ["ALL"]
+
+[tool.uv.workspace]

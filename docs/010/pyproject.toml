@@ -1,3 +1,15 @@
+[project]
+dependencies = [
+    "ampform~=0.10.5",
+    "ipympl",
+    "ipywidgets",
+    "matplotlib",
+    "mpl-interactions",
+]
+name = "technical-report"
+requires-python = "~=3.9.0"
+version = "0.1.0"
+
 [tool.ruff]
 preview = true
 
@@ -27,3 +39,5 @@ select = ["ALL"]
 
 [tool.ruff.lint.flake8-builtins]
 builtins-ignorelist = ["display"]
+
+[tool.uv.workspace]

@@ -93,10 +93,10 @@ copybutton_prompt_text = r">>> |\.\.\. "  # doctest
 copyright = f"2020, {ORGANIZATION}"
 default_role = "py:obj"
 exclude_patterns = [
-    "**.ipynb_checkpoints",
-    "*build",
-    "*template.md",
-    "tests",
+    "_build",
+    "**/.ipynb_checkpoints/",
+    "**/.venv/*",
+    "**/.virtual_documents/",
 ]
 extensions = [
     "myst_nb",

@@ -1,3 +1,17 @@
+[project]
+dependencies = [
+    "ampform[viz]~=0.14.1",
+    "hepstats",
+    "matplotlib",
+    "numpy~=1.0",
+    "pandas",
+    "tensorwaves[jax,pwa]~=0.4.8",
+    "zfit~=0.10.0",
+]
+name = "technical-report"
+requires-python = "~=3.10.0"
+version = "0.1.0"
+
 [tool.ruff]
 preview = true
 
@@ -12,3 +26,5 @@ ignore = [
     "ISC001",
 ]
 select = ["ALL"]
+
+[tool.uv.workspace]

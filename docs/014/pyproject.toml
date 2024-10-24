@@ -1,3 +1,13 @@
+[project]
+dependencies = [
+    "ampform[viz] @ git+https://github.com/ComPWA/ampform@3ed3ed5",
+    "ipywidgets",
+    "sympy~=1.9.0",
+]
+name = "technical-report"
+requires-python = "~=3.12.0"
+version = "0.1.0"
+
 [tool.ruff]
 preview = true
 
@@ -28,3 +38,5 @@ builtins-ignorelist = ["display"]
 
 [tool.ruff.lint.flake8-self]
 ignore-names = ["_print"]
+
+[tool.uv.workspace]

@@ -1,3 +1,14 @@
+[project]
+dependencies = [
+    "ampform",
+    "graphviz",
+    "polarimetry-lc2pkpi",
+    "sympy",
+]
+name = "technical-report"
+requires-python = "~=3.12.0"
+version = "0.1.0"
+
 [tool.ruff]
 preview = true
 
@@ -23,3 +34,5 @@ select = ["ALL"]
 
 [tool.ruff.lint.flake8-self]
 ignore-names = ["_print"]
+
+[tool.uv.workspace]

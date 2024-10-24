@@ -1,3 +1,13 @@
+[project]
+dependencies = [
+    "ampform[viz]",
+    "matplotlib",
+    "tensorwaves[jax,pwa]",
+]
+name = "technical-report"
+requires-python = "~=3.12.0"
+version = "0.1.0"
+
 [tool.ruff]
 preview = true
 
@@ -24,3 +34,5 @@ select = ["ALL"]
 
 [tool.ruff.lint.flake8-builtins]
 builtins-ignorelist = ["display"]
+
+[tool.uv.workspace]
