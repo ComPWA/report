@@ -1,6 +1,7 @@
 name: Run all notebooks
 
 on:
+  pull_request:
   workflow_dispatch:
     inputs:
       notebook-selector:
