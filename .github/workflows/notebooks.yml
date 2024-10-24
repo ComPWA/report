@@ -23,22 +23,5 @@ jobs:
           enable-cache: true
       - name: Install graphviz
         run: sudo apt-get -y install graphviz
-      - if: github.event.inputs.notebook-selector == ''
-        name: Run all notebooks
-        run: uv run --extra test pytest
-      - if: github.event.inputs.notebook-selector
-        name: Run specific notebooks
-        run: |
-          function run-nbmake() {
-            set +e
-            uv run --extra test pytest ${{ github.event.inputs.notebook-selector }}
-            error_code=$?
-            set -e
-            echo "Pytest returned error code $error_code"
-            case $error_code in
-              0|5) return 0;;
-              *) return $error_code;;
-            esac
-          }
-          run-nbmake
-        # cspell:ignore esac
+      - name: Run all notebooks
+        run: uv run --extra test pytest ${{ github.event.inputs.notebook-selector }}
