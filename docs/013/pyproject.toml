@@ -1,0 +1,31 @@
+[project]
+dependencies = [
+    "ampform~=0.13.3",
+    "matplotlib",
+    "qrules[viz]~=0.9.7",
+    "tensorwaves[jax,pwa]~=0.4.8",
+]
+name = "technical-report"
+requires-python = "~=3.12.0"
+version = "0.1.0"
+
+[tool.ruff]
+preview = true
+
+[tool.ruff.lint]
+ignore = [
+    "ANN001",
+    "COM812",
+    "CPY001",
+    "D",
+    "E501",
+    "ISC001",
+    "PLR2004",
+    "PLW2901",
+]
+select = ["ALL"]
+
+[tool.ruff.lint.flake8-builtins]
+builtins-ignorelist = ["display"]
+
+[tool.uv.workspace]

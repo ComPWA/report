@@ -1,0 +1,35 @@
+[project]
+dependencies = [
+    "jax",
+    "matplotlib",
+    "polarimetry-lc2pkpi~=0.0.10",
+]
+name = "technical-report"
+requires-python = "~=3.12.0"
+version = "0.1.0"
+
+[tool.ruff]
+preview = true
+
+[tool.ruff.lint]
+ignore = [
+    "ANN001",
+    "ANN201",
+    "COM812",
+    "CPY001",
+    "D",
+    "F404",
+    "F821",
+    "ISC001",
+    "PLC2401",
+    "PLC2701",
+    "PLR0913",
+    "PLR0917",
+    "PLR2004",
+]
+select = ["ALL"]
+
+[tool.ruff.lint.flake8-builtins]
+builtins-ignorelist = ["display"]
+
+[tool.uv.workspace]

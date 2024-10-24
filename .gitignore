@@ -21,7 +21,6 @@ version.py
 
 # Temporary files
 *.pyc
-*condaenv.*
 .coverage
 .coverage.*
 .ipynb_checkpoints/
@@ -38,7 +37,6 @@ prof/
 .pixi/
 .tox/
 *venv/
-pixi.lock
 pyvenv*/
 
 # Settings
@@ -53,6 +51,5 @@ pyvenv*/
 !.readthedocs.yml
 !.vscode/*.json
 !codecov.yml
-!environment.yml
 !pyrightconfig.json
 .jupyter_ystore.db

@@ -55,7 +55,7 @@ table.on('click', 'td.details-control', function (e) {
 :glob:
 :hidden:
 references
-0*
+???/index
 ```
 
 ````{dropdown} Execution times

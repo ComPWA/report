@@ -7,7 +7,6 @@ documentation: https://www.sphinx-doc.org/en/master/usage/configuration.html
 from __future__ import annotations
 
 import os
-import re
 import shutil
 import subprocess  # noqa: S404
 import sys
@@ -21,41 +20,41 @@ import _list_technical_reports
 
 def get_nb_exclusion_patterns() -> list[str]:
     exclusions = {
-        "000*",
-        "001*",
-        "002*",
-        "003*",
-        "005*",
-        "008*",
-        "009*",
-        "010*",
-        "011*",
-        "012*",
-        "013*",
-        "014*",
-        "015*",
-        "017*",
-        "018*",
-        "019*",
-        "020*",
-        "021*",
-        "022*",
-        "030*",
-        "031*",
-        "032*",
-        "033*",
+        "000/*",
+        "002/*",
+        "011/*",
     }
-    julia_notebooks = {
-        "019*",
-    }
-    if shutil.which("julia") is None or "READTHEDOCS" in os.environ:
+    if shutil.which("julia") is None:
+        julia_notebooks = {
+            "019*",
+        }
         exclusions.update(julia_notebooks)
+    if "ALL_NOTEBOOKS" not in os.environ:
+        frozen_notebooks = {
+            "001/*",
+            "003/*",
+            "005/*",
+            "008/*",
+            "009/*",
+            "010/*",
+            "012/*",
+            "013/*",
+            "014/*",
+            "015/*",
+            "017/*",
+            "018/*",
+            "019/*",
+            "020/*",
+            "021/*",
+            "022/*",
+            "028/*",
+            "030/*",
+            "031/*",
+            "032/*",
+            "033/*",
+        }
+        exclusions.update(frozen_notebooks)
     return sorted(exclusions)
-
-
-def get_remove_from_toctrees() -> list[str]:
-    regex = re.compile(r"\d{3}.*\.ipynb")
-    return sorted(p for p in os.listdir() if regex.match(p))
 
 
 def install_ijulia() -> None:
@@ -73,9 +72,7 @@ ORGANIZATION = "ComPWA"
 REPO_NAME = "report"
 REPO_TITLE = "ComPWA Organization"
 
-BINDER_LINK = (
-    f"https://mybinder.org/v2/gh/ComPWA/{REPO_NAME}/{BRANCH}?filepath=docs/usage"
-)
+BINDER_LINK = f"https://mybinder.org/v2/gh/ComPWA/{REPO_NAME}/{BRANCH}?urlpath=lab"
 
 autosectionlabel_prefix_document = True
 bibtex_bibfiles = ["bibliography.bib"]
@@ -100,10 +97,10 @@ copybutton_prompt_text = r">>> |\.\.\. "  # doctest
 copyright = f"2020, {ORGANIZATION}"
 default_role = "py:obj"
 exclude_patterns = [
-    "**.ipynb_checkpoints",
-    "*build",
-    "*template.md",
-    "tests",
+    "_build",
+    "**/.ipynb_checkpoints/",
+    "**/.venv/*",
+    "**/.virtual_documents/",
 ]
 extensions = [
     "myst_nb",
@@ -155,7 +152,7 @@ html_theme_options = {
         },
         {
             "name": "Launch on Binder",
-            "url": f"https://mybinder.org/v2/gh/{ORGANIZATION}/{REPO_NAME}/{BRANCH}?filepath=docs",
+            "url": f"https://mybinder.org/v2/gh/{ORGANIZATION}/{REPO_NAME}/{BRANCH}?urlpath=lab",
             "icon": "https://mybinder.readthedocs.io/en/latest/_static/favicon.png",
             "type": "url",
         },
@@ -247,8 +244,7 @@ myst_heading_anchors = 4
 myst_substitutions = {
     "branch": BRANCH,
     "remark_019": (
-        "Notice how a new file [`019/Project.toml`](./019/Project.toml) and "
-        " [`019/Manifest.toml`](./019/Manifest.toml) are automatically generated."
+        "Notice how a new file [`Project.toml`](./Project.toml) and [`Manifest.toml`](./Manifest.toml) are automatically generated."
         if get_execution_mode() != "off"
         else ""
     ),
@@ -270,7 +266,7 @@ nb_render_markdown_format = "myst"
 nitpicky = True
 primary_domain = "py"
 project = REPO_TITLE
-remove_from_toctrees = get_remove_from_toctrees()
+remove_from_toctrees = ["???/index.ipynb"]
 source_suffix = {
     ".ipynb": "myst-nb",
     ".md": "myst-nb",

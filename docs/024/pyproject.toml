@@ -1,0 +1,38 @@
+[project]
+dependencies = [
+    "ampform",
+    "graphviz",
+    "polarimetry-lc2pkpi",
+    "sympy",
+]
+name = "technical-report"
+requires-python = "~=3.12.0"
+version = "0.1.0"
+
+[tool.ruff]
+preview = true
+
+[tool.ruff.lint]
+ignore = [
+    "COM812",
+    "CPY001",
+    "D",
+    "E501",
+    "E731",
+    "E741",
+    "F821",
+    "FURB103",
+    "ISC001",
+    "PLC2401",
+    "PLW1514",
+    "PTH123",
+    "S101",
+    "S102",
+    "S307",
+]
+select = ["ALL"]
+
+[tool.ruff.lint.flake8-self]
+ignore-names = ["_print"]
+
+[tool.uv.workspace]

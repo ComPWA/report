@@ -1,0 +1,42 @@
+[project]
+dependencies = [
+    "ampform",
+    "ipympl",
+    "ipywidgets",
+    "matplotlib",
+    "nbformat",
+    "plotly",
+    "sympy",
+]
+name = "technical-report"
+requires-python = "~=3.12.0"
+version = "0.1.0"
+
+[tool.ruff]
+preview = true
+
+[tool.ruff.lint]
+ignore = [
+    "ANN001",
+    "ANN201",
+    "COM812",
+    "CPY001",
+    "D",
+    "E731",
+    "FBT003",
+    "ISC001",
+    "N806",
+    "PLC2401",
+    "PLW0603",
+    "S404",
+    "S603",
+]
+select = ["ALL"]
+
+[tool.ruff.lint.flake8-builtins]
+builtins-ignorelist = ["display"]
+
+[tool.ruff.lint.flake8-comprehensions]
+allow-dict-calls-with-keyword-arguments = true
+
+[tool.uv.workspace]

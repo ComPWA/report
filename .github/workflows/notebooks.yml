@@ -11,34 +11,16 @@ on:
 jobs:
   pytest:
     name: Test all notebooks
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/cache@v4
-        with:
-          key: |
-            ${{ github.workflow }}-${{ github.job }}-${{ runner.os }}-${{ hashFiles('.constraints/py3.*.txt', 'setup.cfg') }}
-          path: |
-            .pytest_cache
-            ~/.cache/pip/
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.9"
-      - name: Install dependencies
-        run: |
-          sudo apt-get -y install graphviz
-          pip install .[test]
-      - run: |
-          function run-nbmake() {
-            set +e
-            pytest --nbmake ${{ github.event.inputs.notebook-selector }}
-            error_code=$?
-            set -e
-            echo "Pytest returned error code $error_code"
-            case $error_code in
-              0|5) return 0;;
-              *) return $error_code;;
-            esac
-          }
-          run-nbmake
-        # cspell:ignore esac
+          python-version: "3.12"
+      - uses: astral-sh/setup-uv@v3
+        with:
+          enable-cache: true
+      - name: Install graphviz
+        run: sudo apt-get -y install graphviz
+      - name: Run all notebooks
+        run: uv run --extra test pytest ${{ github.event.inputs.notebook-selector }}

@@ -35,8 +35,7 @@
     ".readthedocs.yml",
     ".vscode/*",
     "docs/conf.py",
-    "pyproject.toml",
-    "tox.ini"
+    "pyproject.toml"
   ],
   "language": "en-US",
   "overrides": [
@@ -89,6 +88,7 @@
     "Mikhasenko",
     "NumPy",
     "parametrizations",
+    "Pixi",
     "plotly",
     "pyplot",
     "QRules",
@@ -172,6 +172,7 @@
     "iframe",
     "imag",
     "infty",
+    "installkernel",
     "ioff",
     "iplt",
     "ipykernel",
@@ -242,6 +243,7 @@
     "pycode",
     "pyfunc",
     "pygments",
+    "pyproject",
     "pytest",
     "quadpy",
     "rankdir",
@@ -283,6 +285,7 @@
     "unbinned",
     "unnormalized",
     "unsrt",
+    "venv",
     "viridis",
     "vmax",
     "vmin",

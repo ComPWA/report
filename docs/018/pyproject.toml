@@ -1,0 +1,30 @@
+[project]
+dependencies = [
+    "ampform[viz]",
+    "matplotlib",
+    "scipy",
+    "tensorwaves[jax,pwa]",
+]
+name = "technical-report"
+requires-python = "~=3.12.0"
+version = "0.1.0"
+
+[tool.ruff]
+preview = true
+
+[tool.ruff.lint]
+ignore = [
+    "ANN001",
+    "ANN201",
+    "COM812",
+    "CPY001",
+    "D",
+    "E501",
+    "F404",
+    "ISC001",
+    "N806",
+    "PLR0914",
+]
+select = ["ALL"]
+
+[tool.uv.workspace]

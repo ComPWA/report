@@ -1,0 +1,28 @@
+[project]
+dependencies = [
+    "ampform[viz]~=0.13.3",
+    "numpy~=1.0",
+]
+name = "technical-report"
+requires-python = "~=3.12.0"
+version = "0.1.0"
+
+[tool.ruff]
+preview = true
+
+[tool.ruff.lint]
+ignore = [
+    "ANN00",
+    "ANN201",
+    "COM812",
+    "CPY001",
+    "D",
+    "FBT001",
+    "ISC001",
+]
+select = ["ALL"]
+
+[tool.ruff.lint.flake8-builtins]
+builtins-ignorelist = ["display"]
+
+[tool.uv.workspace]

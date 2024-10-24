@@ -1,0 +1,39 @@
+[project]
+dependencies = [
+    "ipympl",
+    "ipywidgets",
+    "matplotlib",
+    "nbformat>=4.2.0",
+    "plotly",
+    "sympy",
+]
+name = "technical-report"
+requires-python = "~=3.12.0"
+version = "0.1.0"
+
+[tool.ruff]
+preview = true
+
+[tool.ruff.lint]
+ignore = [
+    "ANN001",
+    "ANN201",
+    "ARG001",
+    "C408",
+    "COM812",
+    "CPY001",
+    "D",
+    "ISC001",
+    "N806",
+    "S404",
+    "S603",
+]
+select = ["ALL"]
+
+[tool.ruff.lint.flake8-builtins]
+builtins-ignorelist = ["display"]
+
+[tool.ruff.lint.isort]
+split-on-trailing-comma = false
+
+[tool.uv.workspace]

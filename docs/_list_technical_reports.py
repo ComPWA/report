@@ -1,8 +1,7 @@
 from __future__ import annotations
 
-import os
 import re
-from os.path import dirname
+from pathlib import Path
 from textwrap import dedent
 from typing import TYPE_CHECKING
 
@@ -14,8 +13,8 @@ if TYPE_CHECKING:
 
 def main() -> int:
     table = _create_tr_table()
-    this_dir = dirname(__file__)
-    output_path = f"{this_dir}/_inventory.md"
+    this_dir = Path(__file__).parent
+    output_path = this_dir / "_inventory.md"
     with open(output_path, "w") as f:
         f.write(table)
     return 0
@@ -34,8 +33,8 @@ def _create_tr_table() -> str:
         tr = card_info["tr"]
         title = card_info["title"]
         details = re.sub(
-            r"\[([^\]]+)\]\((\./)?(\d\d\d)\.ipynb\)",
-            r"[\1](\3.ipynb)",
+            r"\[([^\]]+)\]\((\.|\.\./)?(\d\d\d)/index\.ipynb\)",
+            r"[\1](\3/index.ipynb)",
             card_info.get("details", ""),
         )
         details = re.sub(r"<!---* (.*?) -*-->(<br>)?", "", details)
@@ -46,7 +45,7 @@ def _create_tr_table() -> str:
             card_info.get("footer", "\n").splitlines()[0],
         )
         src += (
-            f"\n| | [TR&#8209;{tr}]({tr}.ipynb) | {title} | {details} | {tags} |"
+            f"\n| | **[TR&#8209;{tr}]({tr}/index.ipynb)** | {title} | {details} | {tags} |"
             f" {status} |"
         )
     return src
@@ -56,16 +55,12 @@ def _to_badge(tag: str) -> str:
     return f"{{bdg-info-line}}`{tag}`"
 
 
-def _get_technical_report_paths() -> list[str]:
-    report_dir = dirname(__file__)
-    return [
-        f"{report_dir}/{file}"
-        for file in sorted(os.listdir(report_dir))
-        if file.endswith(".ipynb")
-    ]
+def _get_technical_report_paths() -> list[Path]:
+    report_dir = Path(__file__).parent
+    return sorted(report_dir.glob("???/index.ipynb"))
 
 
-def _get_card_info(path: str) -> dict[str, str]:
+def _get_card_info(path: Path) -> dict[str, str]:
     notebook = _open_notebook(path)
     for cell in notebook["cells"]:
         if cell["cell_type"] != "markdown":
@@ -82,14 +77,15 @@ def _get_card_info(path: str) -> dict[str, str]:
         if not line3.startswith("TR-"):
             continue
         return _extract_card_info(cell)
+    repo_dir = Path(__file__).parent.parent
     msg = (
-        f"Technical report {path} does not contain an info card. See one of the other"
-        " report notebooks for what the card should look like."
+        f"Technical report {path.relative_to(repo_dir)} does not contain an info card."
+        " See one of the other report notebooks for what the card should look like."
     )
     raise RuntimeError(msg)
 
 
-def _open_notebook(path: str) -> NotebookNode:
+def _open_notebook(path: Path) -> NotebookNode:
     return nbformat.read(path, as_version=nbformat.NO_CONVERT)
 
 

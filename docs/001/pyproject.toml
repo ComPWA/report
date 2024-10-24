@@ -1,0 +1,34 @@
+[project]
+dependencies = [
+    "black",
+    "jax",
+    "matplotlib",
+    "sympy",
+]
+name = "technical-report"
+requires-python = "~=3.12.0"
+version = "0.1.0"
+
+[tool.ruff]
+preview = true
+
+[tool.ruff.lint]
+ignore = [
+    "ANN00",
+    "ANN20",
+    "ARG002",
+    "COM812",
+    "CPY001",
+    "D",
+    "ISC001",
+    "T201",
+]
+select = ["ALL"]
+
+[tool.ruff.lint.flake8-self]
+ignore-names = ["_print"]
+
+[tool.ruff.lint.pep8-naming]
+ignore-names = ["_print_*"]
+
+[tool.uv.workspace]
