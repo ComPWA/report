@@ -25,6 +25,7 @@ dev = [
 doc = [
     "compwa-report[notebooks]",
     "myst-nb",
+    "nbformat",
     "sphinx",
     "sphinx-api-relink",
     "sphinx-book-theme",
@@ -53,9 +54,7 @@ notebooks = [
     "pyproject-local-kernel",
 ]
 sty = [
-    "attrs",
     "compwa-report[types]",
-    "nbformat",
     "ruff",
 ]
 test = [
@@ -64,6 +63,7 @@ test = [
     "pytest-env",
 ]
 types = [
+    "nbformat",
     "sphinx-api-relink",
 ]
 
