@@ -1,0 +1,40 @@
+[tool.ruff]
+preview = true
+
+[tool.ruff.lint]
+ignore = [
+    "ANN00",
+    "ANN20",
+    "ARG00",
+    "COM812",
+    "CPY001",
+    "D",
+    "DOC201",
+    "E501",
+    "F404",
+    "FBT001",
+    "FBT002",
+    "FIX004",
+    "ISC001",
+    "N80",
+    "N81",
+    "PLC2401",
+    "PLR0913",
+    "PLR0917",
+    "PLR2004",
+    "PLW0603",
+    "PLW2901",
+    "S101",
+    "S404",
+    "S603",
+]
+select = ["ALL"]
+
+[tool.ruff.lint.flake8-builtins]
+builtins-ignorelist = ["display"]
+
+[tool.ruff.lint.flake8-self]
+ignore-names = [
+    "_latex",
+    "_print",
+]

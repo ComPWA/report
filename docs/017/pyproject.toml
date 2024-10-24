@@ -1,0 +1,27 @@
+[tool.ruff]
+preview = true
+
+[tool.ruff.lint]
+ignore = [
+    "ANN00",
+    "ANN20",
+    "ARG002",
+    "COM812",
+    "CPY001",
+    "D",
+    "F404",
+    "FBT00",
+    "ISC001",
+    "N806",
+    "PLC2401",
+    "PLR0913",
+    "PLR0917",
+    "PLW0603",
+    "PYI034",
+    "S404",
+    "S603",
+]
+select = ["ALL"]
+
+[tool.ruff.lint.flake8-self]
+ignore-names = ["_print"]

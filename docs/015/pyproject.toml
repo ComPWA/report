@@ -1,0 +1,17 @@
+[tool.ruff]
+preview = true
+
+[tool.ruff.lint]
+ignore = [
+    "ANN00",
+    "ANN201",
+    "COM812",
+    "CPY001",
+    "D",
+    "FBT001",
+    "ISC001",
+]
+select = ["ALL"]
+
+[tool.ruff.lint.flake8-builtins]
+builtins-ignorelist = ["display"]

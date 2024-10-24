@@ -1,0 +1,24 @@
+[tool.ruff]
+preview = true
+
+[tool.ruff.lint]
+ignore = [
+    "ANN001",
+    "ANN201",
+    "ARG001",
+    "C408",
+    "COM812",
+    "CPY001",
+    "D",
+    "ISC001",
+    "N806",
+    "S404",
+    "S603",
+]
+select = ["ALL"]
+
+[tool.ruff.lint.flake8-builtins]
+builtins-ignorelist = ["display"]
+
+[tool.ruff.lint.isort]
+split-on-trailing-comma = false

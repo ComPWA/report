@@ -1,0 +1,25 @@
+[tool.ruff]
+preview = true
+
+[tool.ruff.lint]
+ignore = [
+    "ANN00",
+    "ANN201",
+    "ARG001",
+    "COM812",
+    "CPY001",
+    "D",
+    "E501",
+    "F404",
+    "ISC001",
+    "N80",
+    "N816",
+    "PLR0913",
+    "PLR0915",
+    "PLR0917",
+    "PLW0603",
+]
+select = ["ALL"]
+
+[tool.ruff.lint.flake8-comprehensions]
+allow-dict-calls-with-keyword-arguments = true

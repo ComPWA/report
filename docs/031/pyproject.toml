@@ -1,0 +1,23 @@
+[tool.ruff]
+preview = true
+
+[tool.ruff.lint]
+ignore = [
+    "ANN00",
+    "ANN201",
+    "COM812",
+    "CPY001",
+    "D",
+    "E501",
+    "F404",
+    "FBT00",
+    "ISC001",
+    "N806",
+    "PD901",
+    "PLC2401",
+    "PLR0913",
+    "PLR0917",
+    "S101",
+    "TCH002",
+]
+select = ["ALL"]

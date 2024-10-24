@@ -202,84 +202,37 @@ builtins-ignorelist = ["display"]
 [tool.ruff.lint.flake8-comprehensions]
 allow-dict-calls-with-keyword-arguments = true
 
-[tool.ruff.lint.flake8-self]
-ignore-names = [
-    "_latex",
-    "_print",
-]
-
 [tool.ruff.lint.isort]
 split-on-trailing-comma = false
 
 [tool.ruff.lint.per-file-ignores]
 "*.ipynb" = [
-    "A003",
     "ANN",
-    "B008",
     "B018",
-    "C408",
     "C90",
     "D",
     "E303",
-    "E402",
     "E703",
-    "E741",
-    "F404",
-    "N802",
-    "N803",
     "N806",
-    "N807",
-    "N815",
     "N816",
-    "PD901",
-    "PLC0415",
-    "PLC2401",
     "PLR09",
     "PLR2004",
     "PLW0602",
     "PLW0603",
-    "PLW2901",
-    "PYI034",
-    "RUF001",
-    "RUF027",
     "S101",
-    "S307",
     "T20",
     "TCH00",
 ]
-"**/002/index.ipynb" = ["F821"]
-"**/003/index.ipynb" = ["B023", "F821", "PLC2701", "S404", "S603"]
-"**/004/index.ipynb" = ["S404", "S603"]
-"**/005/index.ipynb" = ["F821", "S404", "S603"]
-"**/006/index.ipynb" = ["S404", "S603"]
-"**/009/index.ipynb" = ["FURB113", "S404", "S603"]
-"**/010/index.ipynb" = ["FURB113", "S404", "S603"]
-"**/011/index.ipynb" = ["F821", "PLC2701", "PLR6301"]
-"**/014/index.ipynb" = ["PLC2701"]
-"**/016/index.ipynb" = ["PLC2701"]
-"**/017/index.ipynb" = ["S404", "S603"]
-"**/020/index.ipynb" = ["F821"]
-"**/021/index.ipynb" = ["FIX004", "I001", "S404", "S603"]
-"**/022/index.ipynb" = ["F821", "PLC2701"]
-"**/024/index.ipynb" = ["E731", "E741", "F821", "S102", "S307"]
-"**/025/index.ipynb" = ["E731", "S404", "S603"]
-"**/027/index.ipynb" = ["PLW1510", "S404", "S603"]
-"**/028/index.ipynb" = ["PERF203"]
 "docs/*" = [
-    "D",
-    "E402",
     "INP001",
     "S101",
     "S113",
-    "T201",
 ]
 "docs/conf.py" = [
     "A001",
     "D100",
     "PLC2701",
-    "PLW2901",
 ]
-"setup.py" = ["D100"]
 
 [tool.ruff.lint.pydocstyle]
 convention = "google"
