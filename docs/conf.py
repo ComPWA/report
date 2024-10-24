@@ -21,35 +21,39 @@ import _list_technical_reports
 def get_nb_exclusion_patterns() -> list[str]:
     exclusions = {
         "000/*",
-        "001/*",
         "002/*",
-        "003/*",
-        "005/*",
-        "008/*",
-        "009/*",
-        "010/*",
         "011/*",
-        "012/*",
-        "013/*",
-        "014/*",
-        "015/*",
-        "017/*",
-        "018/*",
-        "019/*",
-        "020/*",
-        "021/*",
-        "022/*",
-        "028/*",
-        "030/*",
-        "031/*",
-        "032/*",
-        "033/*",
     }
-    julia_notebooks = {
-        "019*",
-    }
-    if shutil.which("julia") is None or "READTHEDOCS" in os.environ:
+    if shutil.which("julia") is None:
+        julia_notebooks = {
+            "019*",
+        }
         exclusions.update(julia_notebooks)
+    if "ALL_NOTEBOOKS" not in os.environ:
+        frozen_notebooks = {
+            "001/*",
+            "003/*",
+            "005/*",
+            "008/*",
+            "009/*",
+            "010/*",
+            "012/*",
+            "013/*",
+            "014/*",
+            "015/*",
+            "017/*",
+            "018/*",
+            "019/*",
+            "020/*",
+            "021/*",
+            "022/*",
+            "028/*",
+            "030/*",
+            "031/*",
+            "032/*",
+            "033/*",
+        }
+        exclusions.update(frozen_notebooks)
     return sorted(exclusions)
 
 
