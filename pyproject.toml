@@ -282,6 +282,7 @@ commands =
         --show-traceback \
         docs/ docs/_build/html
 description = Build documentation and API through Sphinx
+passenv = *
 setenv =
     PYTHONWARNINGS =
     TF_CPP_MIN_LOG_LEVEL = 3
