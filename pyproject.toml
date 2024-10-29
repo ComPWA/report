@@ -14,16 +14,25 @@ maintainers = [{email = "compwa-admin@ep1.rub.de"}]
 name = "compwa-report"
 requires-python = ">=3.9"
 
-[project.optional-dependencies]
+[project.readme]
+content-type = "text/markdown"
+file = "README.md"
+
+[project.urls]
+Documentation = "https://compwa.github.io/report"
+Source = "https://github.com/ComPWA/report"
+Tracker = "https://github.com/ComPWA/report/issues"
+
+[dependency-groups]
 dev = [
-    "compwa-report[doc]",
-    "compwa-report[jupyter]",
-    "compwa-report[sty]",
-    "compwa-report[test]",
+    "ruff",
     "sphinx-autobuild",
+    {include-group = "doc"},
+    {include-group = "jupyter"},
+    {include-group = "style"},
+    {include-group = "test"},
 ]
 doc = [
-    "compwa-report[notebooks]",
     "myst-nb",
     "nbformat",
     "sphinx",
@@ -39,42 +48,31 @@ doc = [
     "sphinx-thebe",
     "sphinx-togglebutton",
     "sphinxcontrib-bibtex >=2",
+    {include-group = "notebooks"},
 ]
 jupyter = [
-    "compwa-report[notebooks]",
     "jupyterlab",
-    "jupyterlab-code-formatter >=3.0.0",
+    "jupyterlab-code-formatter",
     "jupyterlab-git",
     "jupyterlab-lsp",
     "jupyterlab-myst",
     "python-lsp-ruff",
     "python-lsp-server[rope]",
+    {include-group = "notebooks"},
 ]
-notebooks = [
-    "pyproject-local-kernel",
-]
-sty = [
-    "compwa-report[types]",
-    "ruff",
+notebooks = ["pyproject-local-kernel"]
+style = [
+    {include-group = "types"},
 ]
 test = [
-    "compwa-report[notebooks]",
     "nbmake",
     "pytest-env",
+    {include-group = "notebooks"},
 ]
 types = [
     "nbformat",
     "sphinx-api-relink",
 ]
-
-[project.readme]
-content-type = "text/markdown"
-file = "README.md"
-
-[project.urls]
-Documentation = "https://compwa.github.io/report"
-Source = "https://github.com/ComPWA/report"
-Tracker = "https://github.com/ComPWA/report/issues"
 
 [tool.setuptools]
 include-package-data = false

@@ -11,8 +11,9 @@ build:
       export UV_LINK_MODE=copy
       pixi run \
         uv run \
-          --extra doc \
+          --group doc \
           --locked \
+          --no-dev \
           --with tox \
           tox -e doc
       mkdir -p $READTHEDOCS_OUTPUT
