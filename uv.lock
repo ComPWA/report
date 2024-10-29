@@ -1,5 +1,9 @@
 version = 1
 requires-python = ">=3.9"
+resolution-markers = [
+    "python_full_version < '3.12'",
+    "python_full_version >= '3.12'",
+]
 
 [[package]]
 name = "accessible-pygments"
@@ -373,7 +377,7 @@ name = "compwa-report"
 version = "0.0"
 source = { editable = "." }
 
-[package.dependency-groups]
+[package.dev-dependencies]
 dev = [
     { name = "jupyterlab" },
     { name = "jupyterlab-code-formatter" },
@@ -450,7 +454,7 @@ types = [
 
 [package.metadata]
 
-[package.metadata.dependency-groups]
+[package.metadata.requires-dev]
 dev = [
     { name = "jupyterlab" },
     { name = "jupyterlab-code-formatter" },
