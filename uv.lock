@@ -447,10 +447,6 @@ test = [
     { name = "pyproject-local-kernel" },
     { name = "pytest-env" },
 ]
-types = [
-    { name = "nbformat" },
-    { name = "sphinx-api-relink" },
-]
 
 [package.metadata]
 
@@ -521,10 +517,6 @@ test = [
     { name = "nbmake" },
     { name = "pyproject-local-kernel" },
     { name = "pytest-env" },
-]
-types = [
-    { name = "nbformat" },
-    { name = "sphinx-api-relink" },
 ]
 
 [[package]]

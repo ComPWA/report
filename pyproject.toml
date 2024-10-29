@@ -62,16 +62,13 @@ jupyter = [
 ]
 notebooks = ["pyproject-local-kernel"]
 style = [
-    {include-group = "types"},
+    "nbformat",
+    "sphinx-api-relink",
 ]
 test = [
     "nbmake",
     "pytest-env",
     {include-group = "notebooks"},
-]
-types = [
-    "nbformat",
-    "sphinx-api-relink",
 ]
 
 [tool.setuptools]
