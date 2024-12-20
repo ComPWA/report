@@ -16,6 +16,7 @@ repos:
     hooks:
       - id: check-dev-files
         args:
+          - --environment-variables=PYTHONHASHSEED=0
           - --github-pages
           - --imports-on-top
           - --no-cd
