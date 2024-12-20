@@ -310,5 +310,6 @@
     "zlim",
     "zorder",
     "zticks"
-  ]
+  ],
+  "useGitignore": true
 }
