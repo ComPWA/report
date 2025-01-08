@@ -321,7 +321,7 @@ set_env.PYTHONWARNINGS = ""
 set_env.ZFIT_DISABLE_TF_WARNINGS = "1"
 
 [tool.tox.env.docnb]
-base = ["tool.tox.env_run_base", "tool.tox.env.doc"]
+base = ["tool.tox.env.doc", "tool.tox.env_run_base"]
 description = "{[tool.tox.env.doc]description} with cached notebook execution"
 set_env = [
     {replace = "ref", of = ["tool.tox.env.doc.set_env"]},
@@ -329,7 +329,7 @@ set_env = [
 ]
 
 [tool.tox.env.docnb-force]
-base = ["tool.tox.env_run_base", "tool.tox.env.doc"]
+base = ["tool.tox.env.doc", "tool.tox.env_run_base"]
 description = "{[tool.tox.env.doc]description} with notebook execution (no cache)"
 set_env = [
     {replace = "ref", of = ["tool.tox.env.doc.set_env"]},
@@ -337,7 +337,7 @@ set_env = [
 ]
 
 [tool.tox.env.docnblive]
-base = ["tool.tox.env_run_base", "tool.tox.env.doclive"]
+base = ["tool.tox.env.doclive", "tool.tox.env_run_base"]
 description = "{[tool.tox.env.doclive]description} with cached notebook execution"
 set_env = [
     {replace = "ref", of = ["tool.tox.env.doclive.set_env"]},
