@@ -12,7 +12,7 @@ repos:
       - id: check-useless-excludes
 
   - repo: https://github.com/ComPWA/policy
-    rev: 0.5.5
+    rev: 0.5.15
     hooks:
       - id: check-dev-files
         args:
@@ -28,7 +28,7 @@ repos:
       - id: remove-empty-tags
 
   - repo: https://github.com/kynan/nbstripout
-    rev: 0.7.1
+    rev: 0.8.1
     hooks:
       - id: nbstripout
         args:
@@ -56,7 +56,7 @@ repos:
             metadata.vscode
 
   - repo: https://github.com/nbQA-dev/nbQA
-    rev: 1.8.7
+    rev: 1.9.1
     hooks:
       - id: nbqa-isort
         args: [--float-to-top]
@@ -75,7 +75,7 @@ repos:
           )$
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.7.1
+    rev: v0.9.1
     hooks:
       - id: ruff
         args: [--fix]
@@ -104,7 +104,7 @@ repos:
       - id: trailing-whitespace
 
   - repo: https://github.com/ComPWA/prettier-pre-commit
-    rev: v3.3.3
+    rev: v3.4.2
     hooks:
       - id: prettier
 
@@ -114,14 +114,14 @@ repos:
       - id: taplo-format
 
   - repo: https://github.com/pappasam/toml-sort
-    rev: v0.23.1
+    rev: v0.24.2
     hooks:
       - id: toml-sort
         args: [--in-place]
         exclude: (?x)^(.*/Manifest\.toml|.*/Project\.toml)$
 
   - repo: https://github.com/streetsidesoftware/cspell-cli
-    rev: v8.15.2
+    rev: v8.17.0
     hooks:
       - id: cspell
 
@@ -147,11 +147,11 @@ repos:
           )$
 
   - repo: https://github.com/ComPWA/pyright-pre-commit
-    rev: v1.1.386
+    rev: v1.1.391
     hooks:
       - id: pyright
 
   - repo: https://github.com/astral-sh/uv-pre-commit
-    rev: 0.4.28
+    rev: 0.5.18
     hooks:
       - id: uv-lock

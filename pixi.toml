@@ -10,10 +10,7 @@ platforms = [
     "osx-arm64",
 ]
 
-[activation]
-env = {PYTHONHASHSEED = "0"}
-
 [dependencies]
 graphviz = "*"
-julia = {channel = "https://repo.prefix.dev/julia-forge", version = "*"}
+julia = {version = "*", channel = "https://repo.prefix.dev/julia-forge"}
 uv = "*"
