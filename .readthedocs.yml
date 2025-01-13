@@ -12,9 +12,11 @@ build:
       pixi run \
         uv run \
           --group doc \
-          --locked \
           --no-dev \
           --with tox \
           tox -e doc
       mkdir -p $READTHEDOCS_OUTPUT
       mv docs/_build/html $READTHEDOCS_OUTPUT
+
+sphinx:
+  configuration: docs/conf.py
