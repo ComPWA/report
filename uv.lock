@@ -382,7 +382,6 @@ wheels = [
 
 [[package]]
 name = "compwa-report"
-version = "0.0"
 source = { editable = "." }
 
 [package.dev-dependencies]
