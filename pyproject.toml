@@ -81,17 +81,6 @@ write_to = "version.py"
 profile = "black"
 
 [tool.pyright]
-exclude = [
-    "**/.git",
-    "**/.ipynb_checkpoints",
-    "**/.mypy_cache",
-    "**/.pytest_cache",
-    "**/.tox",
-    "**/.venv/",
-    "**/__pycache__",
-    "**/_build",
-    "**/exported_intensity_model.py",
-]
 reportGeneralTypeIssues = false
 reportIncompatibleMethodOverride = false
 reportMissingParameterType = false
