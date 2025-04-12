@@ -62,7 +62,7 @@ def install_ijulia() -> None:
     if shutil.which("julia") is None:
         return
     if "EXECUTE_NB" in os.environ or "FORCE_EXECUTE_NB" in os.environ:
-        subprocess.check_call(["julia", "InstallIJulia.jl"])  # noqa: S603, S607
+        subprocess.check_call(["julia", "InstallIJulia.jl"])  # noqa: S607
 
 
 _list_technical_reports.main()

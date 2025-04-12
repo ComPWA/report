@@ -30,15 +30,3 @@ and [`pre-commit install`](https://pre-commit.com/#3-install-the-git-hook-script
 ```shell
 pre-commit install --install-hooks
 ```
-
-In addition, it may be handy to install `tox`:
-
-```shell
-uv tool install tox --with tox-uv
-```
-
-If the repository provides a Tox configuration under [`pyproject.toml`](./pyproject.toml), you can see which jobs it defines with:
-
-```shell
-tox list
-```

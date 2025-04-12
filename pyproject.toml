@@ -29,12 +29,10 @@ dev = [
     "sphinx-autobuild",
     {include-group = "doc"},
     {include-group = "jupyter"},
-    {include-group = "style"},
     {include-group = "test"},
 ]
 doc = [
     "myst-nb",
-    "nbformat",
     "sphinx",
     "sphinx-api-relink",
     "sphinx-book-theme",
@@ -58,17 +56,11 @@ jupyter = [
     "jupyterlab-myst",
     "python-lsp-ruff",
     "python-lsp-server[rope]",
-    {include-group = "notebooks"},
 ]
 notebooks = ["pyproject-local-kernel"]
-style = [
-    "nbformat",
-    "sphinx-api-relink",
-]
 test = [
     "nbmake",
     "pytest-env",
-    {include-group = "notebooks"},
 ]
 
 [tool.setuptools]
@@ -79,6 +71,120 @@ write_to = "version.py"
 
 [tool.isort]
 profile = "black"
+
+[tool.pixi.dependencies]
+graphviz = {version = "*", channel = "conda-forge"}
+julia = {version = "*", channel = "https://repo.prefix.dev/julia-forge"}
+python = {version = "3.12.*", channel = "conda-forge"}
+uv = {version = "*", channel = "conda-forge"}
+
+[tool.pixi.environments]
+default = {features = ["dev"], solve-group = "main"}
+main = {features = [], solve-group = "main"}
+
+[tool.pixi.tasks.ci]
+depends-on = [
+    "docnb-force",
+    "linkcheck",
+    "sty",
+]
+
+[tool.pixi.tasks.doc]
+cmd = [
+    "sphinx-build",
+    "--builder=html",
+    "--fail-on-warning",
+    "--keep-going",
+    "--show-traceback",
+    "docs/",
+    "docs/_build/html/",
+]
+env.PYTHONWARNINGS = ""
+env.TF_CPP_MIN_LOG_LEVEL = "3"
+env.ZFIT_DISABLE_TF_WARNINGS = "1"
+
+[tool.pixi.tasks.doclive]
+cmd = [
+    "sphinx-autobuild",
+    "--port=0",
+    "--re-ignore='/__pycache__(/.*)?$'",
+    "--re-ignore='/_build(/.*)?$'",
+    "--re-ignore='/_images(/.*)?$'",
+    "--re-ignore='/\\.cache(/.*)?$'",
+    "--re-ignore='/\\.egg-info(/.*)?$'",
+    "--re-ignore='/\\.ipynb_checkpoints(/.*)?$'",
+    "--re-ignore='/\\.pixi(/.*)?$'",
+    "--re-ignore='/\\.venv(/.*)?$'",
+    "--re-ignore='/\\.virtual_documents(/.*)?$'",
+    "--re-ignore='/api(/.*)?$'",
+    "--re-ignore='/docs$'",
+    "--re-ignore='/version\\.py$'",
+    "--re-ignore='\\.csv$'",
+    "--re-ignore='\\.egg-info(/.*)?$'",
+    "--re-ignore='\\.gif$'",
+    "--re-ignore='\\.gitignore$'",
+    "--re-ignore='\\.gv$'",
+    "--re-ignore='\\.inv$'",
+    "--re-ignore='\\.json$'",
+    "--re-ignore='\\.pickle$'",
+    "--re-ignore='\\.pkl$'",
+    "--re-ignore='\\.png$'",
+    "--re-ignore='\\.root$'",
+    "--re-ignore='\\.svg$'",
+    "--re-ignore='\\.tmp$'",
+    "--re-ignore='\\.ya?ml$'",
+    "docs/",
+    "docs/_build/html/",
+]
+env.PYTHONWARNINGS = ""
+env.ZFIT_DISABLE_TF_WARNINGS = "1"
+
+[tool.pixi.tasks.docnb]
+cmd = "pixi run doc"
+env.EXECUTE_NB = "YES"
+
+[tool.pixi.tasks.docnb-force]
+cmd = "pixi run doc"
+env.FORCE_EXECUTE_NB = "YES"
+
+[tool.pixi.tasks.docnblive]
+cmd = "pixi run doclive"
+env.EXECUTE_NB = "YES"
+
+[tool.pixi.tasks.lab]
+args = [{"arg" = "path", "default" = ""}]
+cmd = "jupyter lab {{ path }}"
+
+[tool.pixi.tasks.linkcheck]
+cmd = [
+    "sphinx-build",
+    "--builder=linkcheck",
+    "--show-traceback",
+    "docs/",
+    "docs/_build/linkcheck/",
+]
+env.PYTHONWARNINGS = ""
+
+[tool.pixi.tasks.nb]
+args = [{"arg" = "path", "default" = "docs"}]
+cmd = "pytest {{ path }}"
+
+[tool.pixi.tasks.sty]
+args = [{"arg" = "hook", "default" = ""}]
+cmd = "pre-commit run --all-files {{ hook }}"
+
+[tool.pixi.workspace]
+channels = [
+    "conda-forge",
+    "https://repo.prefix.dev/julia-forge",
+]
+name = "compwa-report"
+platforms = [
+    "linux-64",
+    "osx-64",
+    "osx-arm64",
+]
+requires-pixi = ">=0.38" # dependency groups
 
 [tool.pyright]
 reportGeneralTypeIssues = false
@@ -106,7 +212,7 @@ reportUnusedFunction = true
 reportUnusedImport = true
 reportUnusedVariable = true
 typeCheckingMode = "strict"
-venv = ".venv"
+venv = ".pixi/envs/default"
 venvPath = "."
 
 [tool.pytest.ini_options]
@@ -237,126 +343,6 @@ sort_first = [
     "project",
     "tool.setuptools",
     "tool.setuptools_scm",
-    "tool.tox.env_run_base",
 ]
 spaces_indent_inline_array = 4
 trailing_comma_inline_array = true
-
-[tool.tox]
-env_list = [
-    "docnb-force",
-    "linkcheck",
-    "sty",
-]
-no_package = true
-requires = ["tox>=4.21.0"]
-skip_install = true
-skip_missing_interpreters = true
-
-[tool.tox.env_run_base]
-pass_env = ["*"]
-
-[tool.tox.env.doc]
-allowlist_externals = ["sphinx-build"]
-commands = [
-    [
-        "sphinx-build",
-        "--builder=html",
-        "--fail-on-warning",
-        "--keep-going",
-        "--show-traceback",
-        "docs/",
-        "docs/_build/html/",
-    ],
-]
-description = "Build documentation and API through Sphinx"
-set_env.PYTHONWARNINGS = ""
-set_env.TF_CPP_MIN_LOG_LEVEL = "3"
-set_env.ZFIT_DISABLE_TF_WARNINGS = "1"
-
-[tool.tox.env.doclive]
-allowlist_externals = ["sphinx-autobuild"]
-commands = [
-    [
-        "sphinx-autobuild",
-        "--port=0",
-        "--re-ignore=/__pycache__(/.*)?$",
-        "--re-ignore=/_build(/.*)?$",
-        "--re-ignore=/_images(/.*)?$",
-        "--re-ignore=/\\.cache(/.*)?$",
-        "--re-ignore=/\\.egg-info(/.*)?$",
-        "--re-ignore=/\\.ipynb_checkpoints(/.*)?$",
-        "--re-ignore=/\\.venv(/.*)?$",
-        "--re-ignore=/\\.virtual_documents(/.*)?$",
-        "--re-ignore=/api(/.*)?$",
-        "--re-ignore=/docs$",
-        "--re-ignore=/version\\.py$",
-        "--re-ignore=\\.csv$",
-        "--re-ignore=\\.egg-info(/.*)?$",
-        "--re-ignore=\\.gif$",
-        "--re-ignore=\\.gitignore$",
-        "--re-ignore=\\.gv$",
-        "--re-ignore=\\.inv$",
-        "--re-ignore=\\.json$",
-        "--re-ignore=\\.pickle$",
-        "--re-ignore=\\.pkl$",
-        "--re-ignore=\\.png$",
-        "--re-ignore=\\.root$",
-        "--re-ignore=\\.svg$",
-        "--re-ignore=\\.tmp$",
-        "--re-ignore=\\.ya?ml$",
-        "docs/",
-        "docs/_build/html/",
-    ],
-]
-description = "Set up a server to directly preview changes to the HTML pages"
-set_env.PYTHONWARNINGS = ""
-set_env.ZFIT_DISABLE_TF_WARNINGS = "1"
-
-[tool.tox.env.docnb]
-base = ["tool.tox.env.doc", "tool.tox.env_run_base"]
-description = "{[tool.tox.env.doc]description} with cached notebook execution"
-set_env = [
-    {replace = "ref", of = ["tool.tox.env.doc.set_env"]},
-    {EXECUTE_NB = "yes"},
-]
-
-[tool.tox.env.docnb-force]
-base = ["tool.tox.env.doc", "tool.tox.env_run_base"]
-description = "{[tool.tox.env.doc]description} with notebook execution (no cache)"
-set_env = [
-    {replace = "ref", of = ["tool.tox.env.doc.set_env"]},
-    {FORCE_EXECUTE_NB = "yes"},
-]
-
-[tool.tox.env.docnblive]
-base = ["tool.tox.env.doclive", "tool.tox.env_run_base"]
-description = "{[tool.tox.env.doclive]description} with cached notebook execution"
-set_env = [
-    {replace = "ref", of = ["tool.tox.env.doclive.set_env"]},
-    {EXECUTE_NB = "yes"},
-]
-
-[tool.tox.env.linkcheck]
-allowlist_externals = ["sphinx-build"]
-commands = [
-    [
-        "sphinx-build",
-        "--builder=linkcheck",
-        "--show-traceback",
-        "docs/",
-        "docs/_build/linkcheck/",
-    ],
-]
-description = "Check external links in the documentation (requires internet connection)"
-set_env.PYTHONWARNINGS = ""
-
-[tool.tox.env.nb]
-allowlist_externals = ["pytest"]
-commands = [["pytest", "{posargs:docs}"]]
-description = "Run all notebooks with pytest"
-
-[tool.tox.env.sty]
-allowlist_externals = ["pre-commit"]
-commands = [["pre-commit", "run", "--all-files", {replace = "posargs", extend = true}]]
-description = "Perform all linting, formatting, and spelling checks"
