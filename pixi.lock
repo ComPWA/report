@@ -160,6 +160,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/c7/ab/706cb5b018c6a8f32cea5c0d7b55d77f42d78410c4dcbb25b11b210cc972/jupyterlab_lsp-5.1.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/ac/7c/98ad14b3cf7a7987d3c6ef5fc83609458739f28a1a34a91a9bb1b12c5f8a/jupyterlab_myst-2.4.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/b1/dd/ead9d8ea85bf202d90cc513b533f9c363121c7792674f78e0d8a854b63b4/jupyterlab_pygments-0.3.0-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/53/af/7106886bef754d4c88daf99e62792c6c94709aa61d624b7f43d953acfbc7/jupyterlab_quickopen-2.0.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/54/09/2032e7d15c544a0e3cd831c51d77a8ca57f7555b2e1b2922142eddb02a84/jupyterlab_server-2.27.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/b0/bf/ea8887e9f31a8f93ca306699d11909c6140151393a4216f0d9f85a004077/latexcodec-3.0.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/8d/37/2351e48cb3309673492d3a8c59d407b75fb6630e560eb27ecd4da03adc9a/lsprotocol-2023.0.1-py3-none-any.whl
@@ -382,6 +383,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/c7/ab/706cb5b018c6a8f32cea5c0d7b55d77f42d78410c4dcbb25b11b210cc972/jupyterlab_lsp-5.1.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/ac/7c/98ad14b3cf7a7987d3c6ef5fc83609458739f28a1a34a91a9bb1b12c5f8a/jupyterlab_myst-2.4.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/b1/dd/ead9d8ea85bf202d90cc513b533f9c363121c7792674f78e0d8a854b63b4/jupyterlab_pygments-0.3.0-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/53/af/7106886bef754d4c88daf99e62792c6c94709aa61d624b7f43d953acfbc7/jupyterlab_quickopen-2.0.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/54/09/2032e7d15c544a0e3cd831c51d77a8ca57f7555b2e1b2922142eddb02a84/jupyterlab_server-2.27.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/b0/bf/ea8887e9f31a8f93ca306699d11909c6140151393a4216f0d9f85a004077/latexcodec-3.0.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/8d/37/2351e48cb3309673492d3a8c59d407b75fb6630e560eb27ecd4da03adc9a/lsprotocol-2023.0.1-py3-none-any.whl
@@ -603,6 +605,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/c7/ab/706cb5b018c6a8f32cea5c0d7b55d77f42d78410c4dcbb25b11b210cc972/jupyterlab_lsp-5.1.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/ac/7c/98ad14b3cf7a7987d3c6ef5fc83609458739f28a1a34a91a9bb1b12c5f8a/jupyterlab_myst-2.4.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/b1/dd/ead9d8ea85bf202d90cc513b533f9c363121c7792674f78e0d8a854b63b4/jupyterlab_pygments-0.3.0-py3-none-any.whl
+      - pypi: https://files.pythonhosted.org/packages/53/af/7106886bef754d4c88daf99e62792c6c94709aa61d624b7f43d953acfbc7/jupyterlab_quickopen-2.0.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/54/09/2032e7d15c544a0e3cd831c51d77a8ca57f7555b2e1b2922142eddb02a84/jupyterlab_server-2.27.3-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/b0/bf/ea8887e9f31a8f93ca306699d11909c6140151393a4216f0d9f85a004077/latexcodec-3.0.0-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/8d/37/2351e48cb3309673492d3a8c59d407b75fb6630e560eb27ecd4da03adc9a/lsprotocol-2023.0.1-py3-none-any.whl
@@ -2799,6 +2802,13 @@ packages:
   name: jupyterlab-pygments
   version: 0.3.0
   sha256: 841a89020971da1d8693f1a99997aefc5dc424bb1b251fd6322462a1b8842780
+  requires_python: '>=3.8'
+- pypi: https://files.pythonhosted.org/packages/53/af/7106886bef754d4c88daf99e62792c6c94709aa61d624b7f43d953acfbc7/jupyterlab_quickopen-2.0.2-py3-none-any.whl
+  name: jupyterlab-quickopen
+  version: 2.0.2
+  sha256: 7a48d5638452229c0d93149d1225f4c7ee66432aac2c1378131cc2cf58d45855
+  requires_dist:
+  - jupyter-server>=2.4.2,<3
   requires_python: '>=3.8'
 - pypi: https://files.pythonhosted.org/packages/54/09/2032e7d15c544a0e3cd831c51d77a8ca57f7555b2e1b2922142eddb02a84/jupyterlab_server-2.27.3-py3-none-any.whl
   name: jupyterlab-server
