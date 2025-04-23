@@ -194,7 +194,7 @@ intersphinx_mapping = {
     "hepstats": ("https://scikit-hep.org/hepstats", None),
     "IPython": ("https://ipython.readthedocs.io/en/stable", None),
     "ipywidgets": ("https://ipywidgets.readthedocs.io/en/stable", None),
-    "jax": ("https://jax.readthedocs.io/en/latest", None),
+    "jax": ("https://docs.jax.dev/en/latest", None),
     "matplotlib": ("https://matplotlib.org/stable", None),
     "mpl_interactions": ("https://mpl-interactions.readthedocs.io/en/stable", None),
     "numba": ("https://numba.readthedocs.io/en/stable", None),
