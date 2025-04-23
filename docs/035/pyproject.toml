@@ -20,7 +20,7 @@ ignore = [
     "E303",
     "PLC2701",
     "S101",
-    "TC003",
+    "TC00",
 ]
 select = ["ALL"]
 
