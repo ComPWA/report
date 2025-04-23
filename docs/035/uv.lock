@@ -12,16 +12,17 @@ wheels = [
 
 [[package]]
 name = "ampform"
-version = "0.15.6"
+version = "0.15.8"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "attrs" },
+    { name = "frozendict" },
     { name = "qrules" },
     { name = "sympy" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/23/1c/3871ab0d982be05eb73b71a55628d3385ea09641e91399ffb6d7520f05b5/ampform-0.15.6.tar.gz", hash = "sha256:fffdfb997ead36dc146e72cce937227b2709bef75db9cdacdc61b9139e8b2417", size = 366368 }
+sdist = { url = "https://files.pythonhosted.org/packages/d4/7a/936b6111fd2855cf99c2f56c0e0d7098ea550a2f90de6b658c41f7b140ac/ampform-0.15.8.tar.gz", hash = "sha256:cf3afa23dad9249147456d2067da39bb33b8e7f5081f310e53166df6760f0410", size = 371646 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/da/48/3f09a743f4e5d3694e52ea3db17a71c85a4995abc358e4c44d6f4ecef529/ampform-0.15.6-py3-none-any.whl", hash = "sha256:80e74f17880cf0a8f8941912c314adeff8522fcec683b37ed194ed7679255fda", size = 86608 },
+    { url = "https://files.pythonhosted.org/packages/48/2a/91f45b108c77830aacc4bae109f57a69d1c894fae08e95aee3959b98b272/ampform-0.15.8-py3-none-any.whl", hash = "sha256:e9faf059217bbe15e765c13560480f7630897dd25deaa04e542c4aac67011dd6", size = 88574 },
 ]
 
 [package.optional-dependencies]
@@ -31,20 +32,21 @@ viz = [
 
 [[package]]
 name = "ampform-dpd"
-version = "0.2.2"
+version = "0.2.3"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "ampform" },
     { name = "attrs" },
     { name = "cloudpickle" },
+    { name = "frozendict" },
     { name = "numpy" },
     { name = "qrules" },
     { name = "sympy" },
     { name = "tensorwaves", extra = ["jax"] },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/8d/c4/f8fdf8e2013690ba8b76ee4eb822f0efc1d35220cbf878ffcf41f4b4d4a9/ampform_dpd-0.2.2.tar.gz", hash = "sha256:799d93207a27fdf7834341b6f8a2d88f28d72efc128fdd37253e356100346339", size = 319709 }
+sdist = { url = "https://files.pythonhosted.org/packages/71/90/8a753823010c6158adee2bc400432d6908dd6433648ba86ebf0f2bc45028/ampform_dpd-0.2.3.tar.gz", hash = "sha256:2cfcd67b98e342ad051b6e2c2ccc3c97f3c145792cc62c36373e230611c3edc7", size = 325714 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/db/8b/ffa1100834392c18c928fff99dc896717be015ba404efab8893ae2dd4a6b/ampform_dpd-0.2.2-py3-none-any.whl", hash = "sha256:17fbbdb98128e7db57d645e9b0b691d503e9fd1c29d46ea6767aa9fcaaba8fb8", size = 41204 },
+    { url = "https://files.pythonhosted.org/packages/c1/0b/46d89187179235cbcd4d22c36be0eb7b09f91037d96a3c8e3eabf01d962c/ampform_dpd-0.2.3-py3-none-any.whl", hash = "sha256:766f2a344165bdaa7bdee929f7c8a69a708b78f2d39a53241e08f0eb69acb4fd", size = 41776 },
 ]
 
 [[package]]
@@ -721,7 +723,7 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "ampform", extras = ["viz"] },
-    { name = "ampform-dpd" },
+    { name = "ampform-dpd", specifier = "~=0.2.3" },
     { name = "tensorwaves", extras = ["jax", "phsp"] },
 ]
 

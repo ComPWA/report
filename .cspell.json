@@ -110,6 +110,7 @@
     "ipynb",
     "ipyplot",
     "ipywidgets",
+    "iscomplex",
     "isdigit",
     "isinstance",
     "isospin",

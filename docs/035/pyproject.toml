@@ -1,6 +1,6 @@
 [project]
 dependencies = [
-    "ampform-dpd",
+    "ampform-dpd~=0.2.3",
     "ampform[viz]",
     "tensorwaves[jax,phsp]",
 ]
@@ -14,10 +14,13 @@ preview = true
 [tool.ruff.lint]
 ignore = [
     "B018",
+    "COM812",
     "CPY001",
     "D",
     "E303",
+    "PLC2701",
     "S101",
+    "TC003",
 ]
 select = ["ALL"]
 
