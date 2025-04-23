@@ -58,12 +58,6 @@ references
 ???/index
 ```
 
-```{toctree}
-:hidden:
-references
-035/index-redeboer
-```
-
 ````{dropdown} Execution times
 ```{nb-exec-table}
 ```
