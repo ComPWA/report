@@ -53,6 +53,7 @@ def get_nb_exclusion_patterns() -> list[str]:
             "032/*",
             "033/*",
             "034/*",
+            "035/*",
         }
         exclusions.update(frozen_notebooks)
     return sorted(exclusions)
@@ -75,6 +76,7 @@ REPO_TITLE = "ComPWA Organization"
 
 BINDER_LINK = f"https://mybinder.org/v2/gh/ComPWA/{REPO_NAME}/{BRANCH}?urlpath=lab"
 
+author = ""
 autosectionlabel_prefix_document = True
 bibtex_bibfiles = ["bibliography.bib"]
 bibtex_reference_style = "author_year"
@@ -99,9 +101,9 @@ copyright = f"2020, {ORGANIZATION}"
 default_role = "py:obj"
 exclude_patterns = [
     "_build",
-    "**/.ipynb_checkpoints/",
-    "**/.venv/*",
-    "**/.virtual_documents/",
+    "**/.ipynb_checkpoints",
+    "**/.venv",
+    "**/.virtual_documents",
 ]
 extensions = [
     "myst_nb",
@@ -193,7 +195,7 @@ intersphinx_mapping = {
     "hepstats": ("https://scikit-hep.org/hepstats", None),
     "IPython": ("https://ipython.readthedocs.io/en/stable", None),
     "ipywidgets": ("https://ipywidgets.readthedocs.io/en/stable", None),
-    "jax": ("https://jax.readthedocs.io/en/latest", None),
+    "jax": ("https://docs.jax.dev/en/latest", None),
     "matplotlib": ("https://matplotlib.org/stable", None),
     "mpl_interactions": ("https://mpl-interactions.readthedocs.io/en/stable", None),
     "numba": ("https://numba.readthedocs.io/en/stable", None),

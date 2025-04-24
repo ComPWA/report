@@ -290,6 +290,7 @@ commands = [
         "--re-ignore=/\\.virtual_documents(/.*)?$",
         "--re-ignore=/api(/.*)?$",
         "--re-ignore=/docs$",
+        "--re-ignore=/docs/_inventory.md$",
         "--re-ignore=/version\\.py$",
         "--re-ignore=\\.csv$",
         "--re-ignore=\\.egg-info(/.*)?$",
