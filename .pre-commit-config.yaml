@@ -14,6 +14,15 @@ repos:
   - repo: https://github.com/ComPWA/policy
     rev: 0.6.1
     hooks:
+      - id: check-dev-files
+        args:
+          - --github-pages
+          - --imports-on-top
+          - --no-cd
+          - --no-pypi
+          - --package-manager=pixi+uv
+          - --repo-name=report
+          - --repo-title=ComPWA Technical Reports
       - id: colab-toc-visible
       - id: fix-nbformat-version
       - id: remove-empty-tags
