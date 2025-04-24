@@ -100,10 +100,9 @@ copyright = f"2020, {ORGANIZATION}"
 default_role = "py:obj"
 exclude_patterns = [
     "_build",
-    "**/.ipynb_checkpoints/",
-    "**/.ruff_cache/",
-    "**/.venv/*",
-    "**/.virtual_documents/",
+    "**/.ipynb_checkpoints",
+    "**/.venv",
+    "**/.virtual_documents",
 ]
 extensions = [
     "myst_nb",
