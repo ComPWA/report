@@ -101,6 +101,7 @@ default_role = "py:obj"
 exclude_patterns = [
     "_build",
     "**/.ipynb_checkpoints/",
+    "**/.ruff_cache/",
     "**/.venv/*",
     "**/.virtual_documents/",
 ]
