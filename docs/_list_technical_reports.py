@@ -107,7 +107,7 @@ def _extract_card_info(cell: NotebookNode) -> dict[str, str]:
 
 
 def extract_body(rest: str) -> str | None:
-    body = rest.split(":::")[0].split("+++")[0].strip()
+    body = rest.split(":::", maxsplit=1)[0].split("+++")[0].strip()
     if "^^^" in body:
         body = body.split("^^^")[1].strip()
     return body.replace("\n", "<br>")
