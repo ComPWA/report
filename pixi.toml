@@ -14,3 +14,111 @@ platforms = [
 graphviz = "*"
 julia = {version = "*", channel = "https://repo.prefix.dev/julia-forge"}
 uv = "*"
+
+[tasks.all]
+depends-on = [
+    "style",
+    "linkcheck",
+    "docnb-force",
+]
+description = "Run all continuous integration (CI) tasks locally"
+
+[tasks.doc]
+cmd = """
+uv run \
+    --group doc \
+    --group notebooks \
+    --isolated \
+    --no-dev \
+    sphinx-build \
+        --builder=html \
+        --fail-on-warning \
+        --keep-going \
+        --show-traceback \
+        docs/ \
+        docs/_build/html/
+"""
+description = "Build documentation and API"
+
+[tasks.doc.env]
+PYTHONWARNINGS = ""
+TF_CPP_MIN_LOG_LEVEL = "3"
+ZFIT_DISABLE_TF_WARNINGS = "1"
+
+[tasks.doclive]
+cmd = """
+uv run \
+    sphinx-autobuild \
+        --builder=html \
+        --port=0 \
+        --re-ignore='/__pycache__(/.*)?$' \
+        --re-ignore='/_build(/.*)?$' \
+        --re-ignore='/_images(/.*)?$' \
+        --re-ignore='/\\.cache(/.*)?$' \
+        --re-ignore='/\\.egg-info(/.*)?$' \
+        --re-ignore='/\\.ipynb_checkpoints(/.*)?$' \
+        --re-ignore='/\\.virtual_documents(/.*)?$' \
+        --re-ignore='/api(/.*)?$' \
+        --re-ignore='/docs$' \
+        --re-ignore='/version\\.py$' \
+        --re-ignore='\\.csv$' \
+        --re-ignore='\\.egg-info(/.*)?$' \
+        --re-ignore='\\.gif$' \
+        --re-ignore='\\.gitignore$' \
+        --re-ignore='\\.gv$' \
+        --re-ignore='\\.inv$' \
+        --re-ignore='\\.json$' \
+        --re-ignore='\\.pickle$' \
+        --re-ignore='\\.pkl$' \
+        --re-ignore='\\.png$' \
+        --re-ignore='\\.root$' \
+        --re-ignore='\\.svg$' \
+        --re-ignore='\\.tmp$' \
+        --re-ignore='\\.ya?ml$' \
+        docs/ \
+        docs/_build/html/
+"""
+description = "Set up a server to directly preview changes to the HTML pages"
+
+[tasks.doclive.env]
+PYTHONWARNINGS = ""
+TF_CPP_MIN_LOG_LEVEL = "3"
+ZFIT_DISABLE_TF_WARNINGS = "1"
+
+[tasks.docnb]
+cmd = "pixi run doc"
+description = "Build documentation and API with cached notebook execution"
+env = {EXECUTE_NB = "yes"}
+
+[tasks.docnb-force]
+cmd = "pixi run doc"
+description = "Build documentation and API with notebook execution (no cache)"
+env = {FORCE_EXECUTE_NB = "yes"}
+
+[tasks.docnblive]
+cmd = "pixi run doclive"
+description = "Set up a server to directly preview changes to the HTML pages with cached notebook execution"
+env = {EXECUTE_NB = "yes"}
+
+[tasks.linkcheck]
+cmd = """
+uv run \
+    --group doc \
+    --isolated \
+    --no-dev \
+    sphinx-build \
+        --builder=linkcheck \
+        --show-traceback \
+        docs/ \
+        docs/_build/linkcheck/
+"""
+description = "Check external links in the documentation (requires internet connection)"
+env = {PYTHONWARNINGS = ""}
+
+[tasks.nb]
+cmd = "uv run --group test --isolated --no-dev pytest"
+description = "Run all notebooks"
+
+[tasks.style]
+cmd = "uv run --group style --isolated --no-dev pre-commit run --all-files"
+description = "Perform all linting, formatting, and spelling checks"

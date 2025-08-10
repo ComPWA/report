@@ -35,6 +35,7 @@
     ".taplo.toml",
     ".vscode/*",
     "docs/conf.py",
+    "pixi.toml",
     "pyproject.toml"
   ],
   "ignoreWords": [
