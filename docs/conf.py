@@ -63,7 +63,7 @@ def install_ijulia() -> None:
     if shutil.which("julia") is None:
         return
     if "EXECUTE_NB" in os.environ or "FORCE_EXECUTE_NB" in os.environ:
-        subprocess.check_call(["julia", "InstallIJulia.jl"])  # noqa: S603, S607
+        subprocess.check_call(["julia", "InstallIJulia.jl"])  # noqa: S607
 
 
 _list_technical_reports.main()
@@ -192,7 +192,6 @@ intersphinx_mapping = {
     "compwa": ("https://compwa.github.io", None),
     "expertsystem": ("https://expertsystem.readthedocs.io/stable", None),
     "graphviz": ("https://graphviz.readthedocs.io/en/stable", None),
-    "hepstats": ("https://scikit-hep.org/hepstats", None),
     "IPython": ("https://ipython.readthedocs.io/en/stable", None),
     "ipywidgets": ("https://ipywidgets.readthedocs.io/en/stable", None),
     "jax": ("https://docs.jax.dev/en/latest", None),
