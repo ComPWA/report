@@ -12,7 +12,7 @@ dynamic = ["version"]
 license = {file = "LICENSE"}
 maintainers = [{email = "compwa-admin@ep1.rub.de"}]
 name = "compwa-report"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 
 [project.readme]
 content-type = "text/markdown"
