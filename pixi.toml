@@ -100,6 +100,17 @@ cmd = "pixi run doclive"
 description = "Set up a server to directly preview changes to the HTML pages with cached notebook execution"
 env = {EXECUTE_NB = "yes"}
 
+[tasks.lab]
+args = [{"arg" = "paths", "default" = ""}]
+cmd = """
+uv run \
+    --group jupyter \
+    --isolated \
+    --no-dev \
+    jupyter lab {{ paths }}
+"""
+description = "Launch Jupyter Lab"
+
 [tasks.linkcheck]
 cmd = """
 uv run \
