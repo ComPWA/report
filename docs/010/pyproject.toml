@@ -7,7 +7,7 @@ dependencies = [
     "mpl-interactions",
 ]
 name = "technical-report"
-requires-python = "~=3.9.0"
+requires-python = "~=3.10.0"
 version = "0.1.0"
 
 [tool.ruff]
