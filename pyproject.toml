@@ -63,9 +63,12 @@ jupyter = [
 ]
 notebooks = [
     "ampform",
+    "ipympl",
+    "ipywidgets",
     "matplotlib",
     "plotly",
     "pyproject-local-kernel",
+    "sympy",
 ]
 style = [
     "nbformat",
