@@ -61,7 +61,12 @@ jupyter = [
     "python-lsp-server[rope]",
     {include-group = "notebooks"},
 ]
-notebooks = ["pyproject-local-kernel"]
+notebooks = [
+    "ampform",
+    "matplotlib",
+    "plotly",
+    "pyproject-local-kernel",
+]
 style = [
     "nbformat",
     "sphinx-api-relink",
