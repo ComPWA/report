@@ -22,7 +22,7 @@ source .venv/bin/activate
 Formatting and linting checks are automatically performed when committing changes. This is done with [pre-commit](https://pre-commit.com). To install the hooks in your local repository, run install `pre-commit` with `uv`:
 
 ```shell
-uv tool install pre-commit --with pre-commit-uv --force-reinstall
+uv tool install pre-commit --with pre-commit-uv --force-reinstall --python=3.13
 ```
 
 and [`pre-commit install`](https://pre-commit.com/#3-install-the-git-hook-scripts) **once**:

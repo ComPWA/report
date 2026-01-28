@@ -28,6 +28,7 @@
     ".editorconfig",
     ".envrc",
     ".gitattributes",
+    ".github/dependabot.yml",
     ".gitignore",
     ".pre-commit-config.yaml",
     ".prettierignore",
