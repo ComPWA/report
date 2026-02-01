@@ -201,7 +201,6 @@ intersphinx_mapping = {
     "numpy": ("https://numpy.org/doc/stable", None),
     "pdg": ("https://pdgapi.lbl.gov/doc", None),
     "plotly": ("https://plotly.com/python-api-reference", None),
-    "pwa": ("https://pwa.readthedocs.io", None),
     "python": ("https://docs.python.org/3", None),
     "qrules-0.9.x": ("https://qrules.readthedocs.io/0.9.x", None),
     "qrules": ("https://qrules.readthedocs.io/stable", None),
