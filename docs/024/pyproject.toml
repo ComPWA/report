@@ -2,7 +2,7 @@
 dependencies = [
     "ampform",
     "graphviz",
-    "polarimetry-lc2pkpi~=0.0.11",
+    "polarimetry-lc2pkpi==0.0.11",
     "sympy",
 ]
 name = "technical-report"
