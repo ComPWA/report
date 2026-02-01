@@ -274,6 +274,7 @@ source_suffix = {
     ".md": "myst-nb",
 }
 suppress_warnings = [
+    "myst.directive_unknown",
     "myst.domains",
     "mystnb.unknown_mime_type",
 ]
