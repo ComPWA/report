@@ -83,7 +83,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/linux-64/pcre2-10.47-haa7fec5_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/pixman-0.46.4-h54a6638_1.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/pthread-stubs-0.4-hb9d3cd8_1002.conda
-      - conda: https://conda.anaconda.org/conda-forge/linux-64/uv-0.9.28-h6dd6661_0.conda
+      - conda: https://conda.anaconda.org/conda-forge/linux-64/uv-0.9.29-h6dd6661_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/wayland-1.24.0-hd6090a7_1.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/xkeyboard-config-2.46-hb03c661_0.conda
       - conda: https://conda.anaconda.org/conda-forge/linux-64/xorg-libice-1.1.2-hb9d3cd8_0.conda
@@ -151,7 +151,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/osx-64/pango-1.56.4-h6ef8af8_0.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-64/pcre2-10.47-h13923f0_0.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-64/pixman-0.46.4-ha059160_1.conda
-      - conda: https://conda.anaconda.org/conda-forge/osx-64/uv-0.9.28-h83e63da_0.conda
+      - conda: https://conda.anaconda.org/conda-forge/osx-64/uv-0.9.29-h83e63da_0.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-64/zstd-1.5.7-h3eecb57_6.conda
       osx-arm64:
       - conda: https://conda.anaconda.org/conda-forge/noarch/adwaita-icon-theme-49.0-unix_0.conda
@@ -200,7 +200,7 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/pango-1.56.4-h875632e_0.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/pcre2-10.47-h30297fc_0.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/pixman-0.46.4-h81086ad_1.conda
-      - conda: https://conda.anaconda.org/conda-forge/osx-arm64/uv-0.9.28-h9b11cc2_0.conda
+      - conda: https://conda.anaconda.org/conda-forge/osx-arm64/uv-0.9.29-h9b11cc2_0.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/zstd-1.5.7-hbf9d68e_6.conda
 packages:
 - conda: https://conda.anaconda.org/conda-forge/linux-64/_libgcc_mutex-0.1-conda_forge.tar.bz2
@@ -2054,40 +2054,40 @@ packages:
   license_family: MIT
   size: 8252
   timestamp: 1726802366959
-- conda: https://conda.anaconda.org/conda-forge/linux-64/uv-0.9.28-h6dd6661_0.conda
-  sha256: c3f39a1610b8058bb2ffc62a5b3e33e7ce3b08a62d98802591bc3da70849f22e
-  md5: 450a2bd49ee87108fce1713c1916f752
+- conda: https://conda.anaconda.org/conda-forge/linux-64/uv-0.9.29-h6dd6661_0.conda
+  sha256: e4a4cee55c1f4a072f74b58556928a734cca5b4c329067d8f335ab4769be5ee9
+  md5: 4514f07a78c3dff76a7cc7ae1654a886
   depends:
+  - libgcc >=14
   - __glibc >=2.17,<3.0.a0
   - libstdcxx >=14
-  - libgcc >=14
   constrains:
   - __glibc >=2.17
   license: Apache-2.0 OR MIT
-  size: 18066821
-  timestamp: 1769721486215
-- conda: https://conda.anaconda.org/conda-forge/osx-64/uv-0.9.28-h83e63da_0.conda
-  sha256: 81ae6add4b4581e8cc8809c324b4acfec361face57810c9b2839698efda2cc82
-  md5: e480994b8a6a474fd2b3c316f7abb9a5
+  size: 18116613
+  timestamp: 1770158588755
+- conda: https://conda.anaconda.org/conda-forge/osx-64/uv-0.9.29-h83e63da_0.conda
+  sha256: d5d69d0a7de0e6bfb0dd53640d50b7a8da7f9574df6036d13a3616af6b5de0b5
+  md5: 9032750587cbace5abff2ca739408355
   depends:
-  - libcxx >=19
   - __osx >=10.13
+  - libcxx >=19
   constrains:
   - __osx >=10.13
   license: Apache-2.0 OR MIT
-  size: 17016678
-  timestamp: 1769721379736
-- conda: https://conda.anaconda.org/conda-forge/osx-arm64/uv-0.9.28-h9b11cc2_0.conda
-  sha256: a318724fbe294f9564f45a27121358d465e7c7300cda3841efac82d24895f1ee
-  md5: a888f6d3d5dadf7917c1a9c286ea3bc3
+  size: 16959384
+  timestamp: 1770158642417
+- conda: https://conda.anaconda.org/conda-forge/osx-arm64/uv-0.9.29-h9b11cc2_0.conda
+  sha256: 27b3ef164f6fa9837cf58943e19d1dd5077ea8ee649900f86c2f9af83d216887
+  md5: 4bc04d6b016e3e0567df0b762ed334f2
   depends:
   - __osx >=11.0
   - libcxx >=19
   constrains:
   - __osx >=11.0
   license: Apache-2.0 OR MIT
-  size: 15777800
-  timestamp: 1769721396484
+  size: 15730124
+  timestamp: 1770158572777
 - conda: https://conda.anaconda.org/conda-forge/linux-64/wayland-1.24.0-hd6090a7_1.conda
   sha256: 3aa04ae8e9521d9b56b562376d944c3e52b69f9d2a0667f77b8953464822e125
   md5: 035da2e4f5770f036ff704fa17aace24
