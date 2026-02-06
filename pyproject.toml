@@ -239,3 +239,6 @@ possibly-unresolved-reference = "warn"
 
 [tool.ty.src]
 exclude = ["docs/019/index.ipynb"]
+
+[tool.ty.terminal]
+error-on-warning = true

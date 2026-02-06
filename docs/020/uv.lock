@@ -61,11 +61,11 @@ wheels = [
 
 [[package]]
 name = "asdf-standard"
-version = "1.4.0"
+version = "1.5.0"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/34/09/95ba03c85b044c717543d4aeb0f50b5c96aaeda7390a527cbb155a7e0550/asdf_standard-1.4.0.tar.gz", hash = "sha256:0c5f121d0db87cb7780d61a087f392c5104ce208016cfb2a130c9cea912cfddc", size = 275426, upload-time = "2025-08-27T20:36:37.317Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/c2/2f/e0eac7d5fc26a24d91f904c261b8a8b7e0582c81ab0d012944870d4cfc72/asdf_standard-1.5.0.tar.gz", hash = "sha256:5942caf7d143f39f72f634484373c7f40ce48571d1db3c271e13858e33fe5966", size = 286692, upload-time = "2026-02-05T18:48:59.011Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/b3/b6/2bfee05505425931adaec51ad2aa676d30abcb7c4f306f8541e2528e5abc/asdf_standard-1.4.0-py3-none-any.whl", hash = "sha256:884e83e113a9e6802047d51db113bc6ffcdf60451f74ce17ea80579d35388cf7", size = 96781, upload-time = "2025-08-27T20:36:35.428Z" },
+    { url = "https://files.pythonhosted.org/packages/99/1e/b20400e946d2c31b72e649da8afde26bc4327907be6926f55d1b3f4673a9/asdf_standard-1.5.0-py3-none-any.whl", hash = "sha256:487d192c5eb1335a62c07a88d82503e1fe57911c0876ee183cf572d385f97213", size = 105769, upload-time = "2026-02-05T18:48:57.453Z" },
 ]
 
 [[package]]
@@ -529,7 +529,7 @@ wheels = [
 
 [[package]]
 name = "hist"
-version = "2.10.0"
+version = "2.10.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "boost-histogram" },
@@ -538,9 +538,9 @@ dependencies = [
     { name = "packaging" },
     { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/42/71/5dbca123ea800054b4a702b3647277dbe5ccf7505bc3419e21b4bc893c40/hist-2.10.0.tar.gz", hash = "sha256:b757f1e690877b52700b32bcd2998db53cf4e544637cc8de16c28d9d8a9f36bf", size = 1002254, upload-time = "2026-02-03T22:10:20.812Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/ea/19/675006ed34998073e851f837c129172fb93115e056b54382f4f8b1c6392e/hist-2.10.1.tar.gz", hash = "sha256:dec8e6ac79a6d64ec8873cf36b3ef0394c79aff3b0e8abed71fdc77fdc421b2e", size = 1002417, upload-time = "2026-02-05T16:44:05.406Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/13/45/05e2dde5eb52c734ab8c9f98861b22fa3a9a68daf7bdd0e98d9ac2e599f8/hist-2.10.0-py3-none-any.whl", hash = "sha256:00c17bad833f06b95a17711303979b67ff19855c75a0262ae018518cfcb60818", size = 43115, upload-time = "2026-02-03T22:10:18.824Z" },
+    { url = "https://files.pythonhosted.org/packages/9a/d5/406972d1ffcab016331a3198d8981b46d7685be19535998e35929080d921/hist-2.10.1-py3-none-any.whl", hash = "sha256:890c05ab3cf9b64c474a3c84f64bc768bd8d85b1728f449d7dc210248583657e", size = 43208, upload-time = "2026-02-05T16:44:03.411Z" },
 ]
 
 [[package]]
