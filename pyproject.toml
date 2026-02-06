@@ -20,8 +20,8 @@ file = "README.md"
 
 [project.urls]
 Documentation = "https://compwa.github.io/report"
+Issues = "https://github.com/ComPWA/report/issues"
 Source = "https://github.com/ComPWA/report"
-Tracker = "https://github.com/ComPWA/report/issues"
 
 [dependency-groups]
 dev = [
