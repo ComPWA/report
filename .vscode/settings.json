@@ -27,8 +27,8 @@
   "diffEditor.experimental.showMoves": true,
   "editor.formatOnSave": true,
   "editor.unicodeHighlight.allowedCharacters": {
-    "\u03bd": true,
-    "\u03c3": true
+    "ν": true,
+    "σ": true
   },
   "files.associations": {
     "**/pixi.lock": "yaml"
@@ -36,6 +36,8 @@
   "git.rebaseWhenSync": true,
   "github-actions.workflows.pinned.workflows": [".github/workflows/ci.yml"],
   "gitlens.telemetry.enabled": false,
+  "julia.environmentPath": "${workspaceFolder}/docs/019",
+  "julia.executablePath": "${workspaceFolder}/.pixi/envs/default/bin/julia",
   "livePreview.defaultPreviewPath": "docs/_build/html",
   "multiDiffEditor.experimental.enabled": true,
   "notebook.codeActionsOnSave": {
@@ -43,7 +45,6 @@
   },
   "notebook.formatOnSave.enabled": true,
   "notebook.gotoSymbols.showAllSymbols": true,
-  "python.analysis.autoImportCompletions": false,
   "python.defaultInterpreterPath": ".venv/bin/python",
   "python.terminal.activateEnvironment": false,
   "python.testing.pytestEnabled": true,
@@ -58,5 +59,8 @@
     "**/tests/**/__init__.py": true,
     "**/uv.lock": true
   },
-  "telemetry.telemetryLevel": "off"
+  "telemetry.telemetryLevel": "off",
+  "ty.completions.autoImport": false,
+  "ty.diagnosticMode": "workspace",
+  "ty.importStrategy": "fromEnvironment"
 }

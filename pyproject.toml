@@ -20,8 +20,8 @@ file = "README.md"
 
 [project.urls]
 Documentation = "https://compwa.github.io/report"
+Issues = "https://github.com/ComPWA/report/issues"
 Source = "https://github.com/ComPWA/report"
-Tracker = "https://github.com/ComPWA/report/issues"
 
 [dependency-groups]
 dev = [
@@ -51,20 +51,21 @@ doc = [
     {include-group = "notebooks"},
 ]
 jupyter = [
+    "jupyter-ruff",
     "jupyterlab",
-    "jupyterlab-code-formatter",
     "jupyterlab-git",
     "jupyterlab-lsp",
     "jupyterlab-myst",
     "jupyterlab-quickopen",
     "python-lsp-ruff",
-    "python-lsp-server[rope]",
+    "python-lsp-server",
     {include-group = "notebooks"},
 ]
 notebooks = ["pyproject-local-kernel"]
 style = [
     "nbformat",
     "sphinx-api-relink",
+    "ty",
 ]
 test = [
     "nbmake",
@@ -80,35 +81,6 @@ write_to = "version.py"
 
 [tool.isort]
 profile = "black"
-
-[tool.pyright]
-reportGeneralTypeIssues = false
-reportIncompatibleMethodOverride = false
-reportMissingParameterType = false
-reportMissingTypeArgument = false
-reportMissingTypeStubs = false
-reportOperatorIssue = false
-reportOverlappingOverload = false
-reportPrivateImportUsage = false
-reportPrivateUsage = false
-reportReturnType = false
-reportUnboundVariable = false
-reportUnknownArgumentType = false
-reportUnknownLambdaType = false
-reportUnknownMemberType = false
-reportUnknownParameterType = false
-reportUnknownVariableType = false
-reportUnnecessaryComparison = false
-reportUnnecessaryContains = false
-reportUnnecessaryIsInstance = false
-reportUntypedFunctionDecorator = false
-reportUnusedClass = true
-reportUnusedFunction = true
-reportUnusedImport = true
-reportUnusedVariable = true
-typeCheckingMode = "strict"
-venv = ".venv"
-venvPath = "."
 
 [tool.pytest.ini_options]
 addopts = [
@@ -182,6 +154,7 @@ ignore = [
     "PLW1514",
     "PT001",
     "PTH",
+    "RUF067",
     "SIM108",
     "SLF001",
 ]
@@ -211,6 +184,7 @@ split-on-trailing-comma = false
     "PLR2004",
     "PLW0602",
     "PLW0603",
+    "RUF069",
     "S101",
     "T20",
     "TC00",
@@ -241,3 +215,31 @@ sort_first = [
 ]
 spaces_indent_inline_array = 4
 trailing_comma_inline_array = true
+
+[[tool.ty.overrides]]
+include = ["**/*.ipynb"]
+rules.invalid-argument-type = "ignore"
+rules.invalid-assignment = "ignore"
+rules.not-iterable = "ignore"
+rules.not-subscriptable = "ignore"
+rules.possibly-missing-attribute = "ignore"
+rules.possibly-unresolved-reference = "ignore"
+rules.unresolved-attribute = "ignore"
+rules.unresolved-import = "ignore"
+rules.unresolved-reference = "ignore"
+
+[[tool.ty.overrides]]
+include = ["docs/_static/exported_intensity_model.py"]
+rules.unresolved-import = "ignore"
+rules.unresolved-reference = "ignore"
+
+[tool.ty.rules]
+division-by-zero = "warn"
+possibly-missing-import = "warn"
+possibly-unresolved-reference = "warn"
+
+[tool.ty.src]
+exclude = ["docs/019/index.ipynb"]
+
+[tool.ty.terminal]
+error-on-warning = true

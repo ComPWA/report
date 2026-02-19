@@ -80,6 +80,7 @@ author = ""
 autosectionlabel_prefix_document = True
 bibtex_bibfiles = ["bibliography.bib"]
 bibtex_reference_style = "author_year"
+bibtex_use_mathjax = True
 codeautolink_concat_default = True
 codeautolink_global_preface = """
 import matplotlib.pyplot as plt
@@ -201,14 +202,13 @@ intersphinx_mapping = {
     "numpy": ("https://numpy.org/doc/stable", None),
     "pdg": ("https://pdgapi.lbl.gov/doc", None),
     "plotly": ("https://plotly.com/python-api-reference", None),
-    "pwa": ("https://pwa.readthedocs.io", None),
     "python": ("https://docs.python.org/3", None),
     "qrules-0.9.x": ("https://qrules.readthedocs.io/0.9.x", None),
     "qrules": ("https://qrules.readthedocs.io/stable", None),
     "scipy": ("https://docs.scipy.org/doc/scipy-1.7.0", None),
     "sympy": ("https://docs.sympy.org/latest", None),
     "tensorwaves": ("https://tensorwaves.readthedocs.io/stable", None),
-    "torch": ("https://pytorch.org/docs/stable", None),
+    "torch": ("https://docs.pytorch.org/docs/stable", None),
     "zfit": ("https://zfit.readthedocs.io/en/latest", None),
 }
 linkcheck_anchors = False
@@ -274,6 +274,7 @@ source_suffix = {
     ".md": "myst-nb",
 }
 suppress_warnings = [
+    "myst.directive_unknown",
     "myst.domains",
     "mystnb.unknown_mime_type",
 ]
