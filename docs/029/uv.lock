@@ -4,7 +4,7 @@ requires-python = "==3.13.*"
 
 [[package]]
 name = "ampform"
-version = "0.15.11"
+version = "0.16.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "attrs" },
@@ -12,9 +12,9 @@ dependencies = [
     { name = "qrules" },
     { name = "sympy" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/c7/c3/6288de29431f46d730d0d2bc771a42bf68e1e947d636b8d931f5d4585c75/ampform-0.15.11.tar.gz", hash = "sha256:506ac63739e53ab0fe9c7306117852b53a2a2873cf673162c9ab694899ae4c2e", size = 401515, upload-time = "2025-10-29T12:51:58.829Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/3b/d2/08eecf35f3a299531ed70d3282597d4c440b5485f74b4b99ad6bb98474cb/ampform-0.16.0.tar.gz", hash = "sha256:c242aea47a53e46fe127f87f79a6038ae533ff3640b6128439b2286a3178c261", size = 413943, upload-time = "2026-02-16T15:42:42.772Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/8f/fc/380fad7f18e911596e60e80047355f5ed3b683db1f4233eed5b13ebfb6a0/ampform-0.15.11-py3-none-any.whl", hash = "sha256:41b6818dd9b92980816a247abf85fcbef5b935b734ad3261623ce03b713d2ab6", size = 89680, upload-time = "2025-10-29T12:51:56.23Z" },
+    { url = "https://files.pythonhosted.org/packages/62/3e/c5959630b8fbb520d6b82cd686e6bd775b7e6053c67b3ee4c71b22c95983/ampform-0.16.0-py3-none-any.whl", hash = "sha256:55f78106b872d1884f23a9f64c0ee6e08fddf12218c56f7635f1e20e88647f96", size = 89314, upload-time = "2026-02-16T15:42:41.489Z" },
 ]
 
 [[package]]
@@ -128,7 +128,7 @@ wheels = [
 
 [[package]]
 name = "qrules"
-version = "0.10.6"
+version = "0.10.7"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "attrs" },
@@ -139,9 +139,9 @@ dependencies = [
     { name = "pyyaml" },
     { name = "tqdm" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/5c/2a/b521d475bfb441c89539a557f8fa9fec6d800b5307a70805adb63be0e81a/qrules-0.10.6.tar.gz", hash = "sha256:863137bdfa73daf38f993c2d7d4afe56dd2ef5fa27d9c52d688e33a7403be720", size = 294509, upload-time = "2025-10-13T13:47:25.395Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/aa/20/9d279bdd140a18959472cd1cc3e689b73e9554bc987a173e35e85ce713c9/qrules-0.10.7.tar.gz", hash = "sha256:bb2ee2957aa3bd55d7eb38bb111823c26d9364d0d16c88730ddc97acf47c31c9", size = 294071, upload-time = "2026-02-06T14:50:50.924Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/fe/a8/24f7375451b2dfa19a97c8503223e8ad369776f50b65067b7f99823f23f1/qrules-0.10.6-py3-none-any.whl", hash = "sha256:ad53798bce95986b57b737fc711a6c9893f848d7f9b7823291b86b4c7a685f99", size = 80753, upload-time = "2025-10-13T13:47:23.843Z" },
+    { url = "https://files.pythonhosted.org/packages/2c/5d/c1371af6f81376bebffd055911e355ff5972d2646135d961757ffe0a858f/qrules-0.10.7-py3-none-any.whl", hash = "sha256:a7936995dba23868d8d37319a9250aa4e0d90da9845a89da1ac476ce48abf694", size = 80795, upload-time = "2026-02-06T14:50:49.063Z" },
 ]
 
 [[package]]
