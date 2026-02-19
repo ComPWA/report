@@ -13,7 +13,7 @@ repos:
       - id: check-useless-excludes
 
   - repo: https://github.com/ComPWA/policy
-    rev: 0.8.6
+    rev: 0.8.7
     hooks:
       - id: check-dev-files
         args:
@@ -156,6 +156,10 @@ repos:
         name: ty
         entry: ty check
         args: [--no-progress, --output-format=concise]
+        exclude: >-
+          (?x)^(
+            docs/019/index\.ipynb
+          )$
         require_serial: true
         language: system
         types_or: [python, pyi, jupyter]
