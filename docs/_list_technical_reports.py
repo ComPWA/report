@@ -107,7 +107,7 @@ def _extract_card_info(cell: NotebookNode) -> dict[str, str]:
 
 
 def extract_body(rest: str) -> str | None:
-    body = rest.split(":::", maxsplit=1)[0].split("+++")[0].strip()
+    body = rest.split(":::", maxsplit=1)[0].split("+++", maxsplit=1)[0].strip()
     if "^^^" in body:
         body = body.split("^^^")[1].strip()
     return body.replace("\n", "<br>")
@@ -116,7 +116,7 @@ def extract_body(rest: str) -> str | None:
 def _extract_footer(src: str) -> str | None:
     if "+++" not in src:
         return None
-    return src.split("+++")[1].split(":::")[0].strip()
+    return src.split("+++")[1].split(":::", maxsplit=1)[0].strip()
 
 
 if __name__ == "__main__":
