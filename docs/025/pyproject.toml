@@ -5,7 +5,7 @@ dependencies = [
     "ipywidgets",
     "matplotlib",
     "nbformat",
-    "plotly",
+    "plotly~=5.0",
     "sympy",
 ]
 name = "technical-report"
