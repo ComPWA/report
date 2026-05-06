@@ -46,11 +46,11 @@ wheels = [
 
 [[package]]
 name = "hepunits"
-version = "2.4.4"
+version = "2.4.5"
 source = {registry = "https://pypi.org/simple"}
-sdist = {url = "https://files.pythonhosted.org/packages/35/ee/8d099561dd6d7a98fc959806bdbe2e4b2ce3a7b159ab952964d02a8286f1/hepunits-2.4.4.tar.gz", hash = "sha256:1846e729fa3e4fb36bff599ed7b8bd2cdc4abdc02906830fb75c205fd54905eb", size = 16280, upload-time = "2026-01-09T11:27:08.646Z"}
+sdist = {url = "https://files.pythonhosted.org/packages/de/07/a45fd2b21bbf398746cf18066bbbe304926aa377263ca3cd2bb35df5e334/hepunits-2.4.5.tar.gz", hash = "sha256:88fa57c9f35459d6a6ee2618ba73c2154c489a32e21d525b67da8062a2242e5b", size = 16274, upload-time = "2026-04-14T21:22:17.055Z"}
 wheels = [
-    {url = "https://files.pythonhosted.org/packages/ff/bf/35d7f5a370d6f78210e479e36e7a199f7f3317825ec68ed7002fdd833bc0/hepunits-2.4.4-py3-none-any.whl", hash = "sha256:54c4458576daffa2a134b0344015a76d42b4441c353fe544967bef1907ea8143", size = 17072, upload-time = "2026-01-09T11:27:07.393Z"},
+    {url = "https://files.pythonhosted.org/packages/44/9b/5fc3458204ecbd9094ce6b3b7850515f7a2f44926093cdfaa6395f88ba10/hepunits-2.4.5-py3-none-any.whl", hash = "sha256:4813336fbc192a6b7bfcc4ec6dbac260669915bca7c945b67bd603b55297f239", size = 17096, upload-time = "2026-04-14T21:22:15.351Z"},
 ]
 
 [[package]]
@@ -91,15 +91,15 @@ wheels = [
 
 [[package]]
 name = "particle"
-version = "0.26.1"
+version = "0.26.2"
 source = {registry = "https://pypi.org/simple"}
 dependencies = [
     {name = "attrs"},
     {name = "hepunits"},
 ]
-sdist = {url = "https://files.pythonhosted.org/packages/b1/e0/240d92eef0fbf866398b48106dfa07e30cfea54a7b16b52c899f3dbbd927/particle-0.26.1.tar.gz", hash = "sha256:107698d0ad8d56d6568ef97367f424e5d672a14087a5de31539d6218257590c7", size = 328254, upload-time = "2026-01-09T11:50:23.133Z"}
+sdist = {url = "https://files.pythonhosted.org/packages/d8/17/83e4a4d9ec5a125a497ed14015f6548b5f8f25c8a4465c9e343fbb2587c3/particle-0.26.2.tar.gz", hash = "sha256:23cc4315f90d07d9faf59f813dba6d1200868a01595e37d7c956ebd0809d672d", size = 336359, upload-time = "2026-04-16T19:29:45.444Z"}
 wheels = [
-    {url = "https://files.pythonhosted.org/packages/87/fb/35b3f94531f6982962b5042aa614bb4e59781568cee25d588486fbad7b8a/particle-0.26.1-py3-none-any.whl", hash = "sha256:a1110b2488d87a1125547cac6db948dee4ffaa3f7ccc01cb735813e36a649427", size = 307975, upload-time = "2026-01-09T11:50:21.084Z"},
+    {url = "https://files.pythonhosted.org/packages/b3/91/7e3a06fac8ad91252c316442d8f40c69c8825a9c8726d54d8aca04037580/particle-0.26.2-py3-none-any.whl", hash = "sha256:dc99fbcb2b02c520dd1f3a369446c706466b033f29771255977a96071af41128", size = 315115, upload-time = "2026-04-16T19:29:43.676Z"},
 ]
 
 [[package]]
