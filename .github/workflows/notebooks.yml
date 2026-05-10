@@ -1,17 +1,17 @@
-name: Run all notebooks
+name: Run notebooks
 
 on:
   workflow_dispatch:
     inputs:
       notebook-selector:
-        description: Relative path to notebooks
+        description: Space-separated paths to notebooks (runs all if omitted)
         required: false
         type: string
   pull_request:
 
 jobs:
   pytest:
-    name: Test all notebooks
+    name: Test notebooks
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
@@ -23,16 +23,20 @@ jobs:
       - uses: astral-sh/setup-uv@v6
       - name: Install graphviz
         run: sudo apt-get -y install graphviz
-      - name: Determine notebooks to test
+      - name: Collect notebooks to test
         id: notebooks
         run: |
           if [ "${{ github.event_name }}" = "pull_request" ]; then
-            selector=$(git diff --name-only "origin/${{ github.base_ref }}...HEAD" | grep '\.ipynb$' || true)
-            selector=$(echo "$selector" | tr '\n' ' ' | xargs)
+            changed=$(git diff --name-only "origin/${{ github.base_ref }}...HEAD")
+            direct=$(echo "$changed" | grep '\.ipynb$' || true)
+            from_locks=$(echo "$changed" | grep 'uv\.lock$' | while read lock; do
+              find "$(dirname "$lock")" -name '*.ipynb'
+            done || true)
+            selector=$(printf '%s\n%s' "$direct" "$from_locks" | sort -u | tr '\n' ' ' | xargs)
           else
             selector="${{ github.event.inputs.notebook-selector }}"
           fi
-          echo "selector=$selector" | tee -a $GITHUB_OUTPUT
+          echo "selector=$selector" >> $GITHUB_OUTPUT
       - name: Run notebooks
         if: github.event_name != 'pull_request' || steps.notebooks.outputs.selector != ''
         run: uv run --group test --no-dev pytest ${{ steps.notebooks.outputs.selector }}
