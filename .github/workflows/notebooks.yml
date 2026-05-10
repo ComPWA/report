@@ -51,6 +51,8 @@ jobs:
         run: |
           for notebook in ${{ steps.notebooks.outputs.selector }}; do
             project=$(dirname "$notebook")
+            echo
+            echo "--== Initializing project $project ==--"
             uv run --project="$project" true
           done
       - name: Run notebooks
