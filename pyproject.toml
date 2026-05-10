@@ -82,7 +82,7 @@ write_to = "version.py"
 [tool.isort]
 profile = "black"
 
-[tool.pytest.ini_options]
+[tool.pytest]
 addopts = [
     "--color=yes",
     "--doctest-continue-on-failure",
