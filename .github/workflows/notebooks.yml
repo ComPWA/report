@@ -38,15 +38,17 @@ jobs:
               find "$(dirname "$lock")" -name '*.ipynb'
             done || true)
             ignored=$(grep '"--ignore=' pyproject.toml | sed 's/.*"--ignore=\([^"]*\)".*/\1/')
-            selector=$(printf '%s\n%s' "$direct" "$from_locks" \
-              | sort -u | grep -v '^$' \
-              | while IFS= read -r nb; do
-                  while IFS= read -r ig; do
-                    case "$nb" in "$ig"|"$ig/"*) continue 2;; esac
-                  done <<< "$ignored"
-                  echo "$nb"
-                done \
-              | tr '\n' ' ' | xargs)
+            candidates=$(printf '%s\n%s' "$direct" "$from_locks" | sort -u | grep -v '^$')
+            selector=
+            while IFS= read -r nb; do
+              [ -z "$nb" ] && continue
+              skip=false
+              while IFS= read -r ig; do
+                case "$nb" in "$ig"|"$ig/"*) skip=true; break;; esac
+              done <<< "$ignored"
+              [ "$skip" = false ] && selector="$selector $nb"
+            done <<< "$candidates"
+            selector=$(echo "$selector" | xargs)
           else
             selector="${{ github.event.inputs.notebook-selector }}"
           fi
