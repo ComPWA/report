@@ -7,7 +7,7 @@ dependencies = [
     "mpl-interactions",
 ]
 name = "technical-report"
-requires-python = "~=3.10.0"
+requires-python = "~=3.9.0"
 version = "0.1.0"
 
 [tool.ruff]
@@ -23,6 +23,7 @@ ignore = [
     "CPY001",
     "D",
     "F404",
+    "FA100",
     "FURB113",
     "ISC001",
     "N80",

@@ -13,7 +13,7 @@ wheels = [
 
 [[package]]
 name = "ampform"
-version = "0.16.0"
+version = "0.15.11"
 source = {registry = "https://pypi.org/simple"}
 dependencies = [
     {name = "attrs"},
@@ -21,9 +21,9 @@ dependencies = [
     {name = "qrules"},
     {name = "sympy"},
 ]
-sdist = {url = "https://files.pythonhosted.org/packages/3b/d2/08eecf35f3a299531ed70d3282597d4c440b5485f74b4b99ad6bb98474cb/ampform-0.16.0.tar.gz", hash = "sha256:c242aea47a53e46fe127f87f79a6038ae533ff3640b6128439b2286a3178c261", size = 413943, upload-time = "2026-02-16T15:42:42.772Z"}
+sdist = {url = "https://files.pythonhosted.org/packages/c7/c3/6288de29431f46d730d0d2bc771a42bf68e1e947d636b8d931f5d4585c75/ampform-0.15.11.tar.gz", hash = "sha256:506ac63739e53ab0fe9c7306117852b53a2a2873cf673162c9ab694899ae4c2e", size = 401515, upload-time = "2025-10-29T12:51:58.829Z"}
 wheels = [
-    {url = "https://files.pythonhosted.org/packages/62/3e/c5959630b8fbb520d6b82cd686e6bd775b7e6053c67b3ee4c71b22c95983/ampform-0.16.0-py3-none-any.whl", hash = "sha256:55f78106b872d1884f23a9f64c0ee6e08fddf12218c56f7635f1e20e88647f96", size = 89314, upload-time = "2026-02-16T15:42:41.489Z"},
+    {url = "https://files.pythonhosted.org/packages/8f/fc/380fad7f18e911596e60e80047355f5ed3b683db1f4233eed5b13ebfb6a0/ampform-0.15.11-py3-none-any.whl", hash = "sha256:41b6818dd9b92980816a247abf85fcbef5b935b734ad3261623ce03b713d2ab6", size = 89680, upload-time = "2025-10-29T12:51:56.23Z"},
 ]
 
 [package.optional-dependencies]
@@ -939,7 +939,7 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
-    {name = "ampform", extras = ["viz"]},
+    {name = "ampform", extras = ["viz"], specifier = "~=0.15.0"},
     {name = "matplotlib"},
     {name = "tensorwaves", extras = ["jax", "pwa"]},
 ]

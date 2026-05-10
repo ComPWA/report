@@ -1,6 +1,6 @@
 [project]
 dependencies = [
-    "ampform[viz]",
+    "ampform[viz]~=0.15.0",
     "matplotlib",
     "tensorwaves[jax,pwa]",
 ]
