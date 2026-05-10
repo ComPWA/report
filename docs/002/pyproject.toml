@@ -1,3 +1,19 @@
+[project]
+dependencies = [
+    "ampform[viz]~=0.9.0",
+    "jax",
+    "jaxlib",
+    "matplotlib",
+    "numpy~=1.0",
+    "pandas~=1.0",
+    "setuptools<82",
+    "sympy~=1.8.0",
+    "tensorwaves~=0.2.0",
+]
+name = "technical-report"
+requires-python = "~=3.10.0"
+version = "0.1.0"
+
 [tool.ruff]
 preview = true
 
@@ -12,6 +28,7 @@ ignore = [
     "DOC201",
     "E501",
     "F404",
+    "FA100",
     "G004",
     "ISC001",
     "LOG015",
@@ -21,3 +38,8 @@ ignore = [
     "TC003",
 ]
 select = ["ALL"]
+
+[tool.uv]
+exclude-newer = "2023-10-07"
+
+[tool.uv.workspace]

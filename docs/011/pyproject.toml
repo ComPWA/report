@@ -22,9 +22,11 @@ ignore = [
     "CPY001",
     "D",
     "E501",
+    "E712",
     "F404",
     "F821",
     "FA100",
+    "FURB140",
     "ISC001",
     "N802",
     "N806",
@@ -40,5 +42,8 @@ select = ["ALL"]
 
 [tool.ruff.lint.flake8-builtins]
 builtins-ignorelist = ["display"]
+
+[tool.uv]
+exclude-newer = "2023-10-07"
 
 [tool.uv.workspace]
