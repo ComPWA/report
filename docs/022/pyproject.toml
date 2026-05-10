@@ -15,6 +15,7 @@ preview = true
 ignore = [
     "ANN001",
     "ANN201",
+    "C408",
     "COM812",
     "CPY001",
     "D",
