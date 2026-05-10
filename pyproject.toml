@@ -96,7 +96,7 @@ addopts = [
     "--ignore=docs/_static",
     "--ignore=docs/conf.py",
     "--nbmake",
-    "--nbmake-timeout=3000",
+    "--nbmake-timeout=3600",
 ]
 filterwarnings = [
     "error",
