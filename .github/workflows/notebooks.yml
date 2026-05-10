@@ -7,6 +7,7 @@ on:
         description: Relative path to notebooks
         required: false
         type: string
+  pull_request:
 
 jobs:
   pytest:
@@ -14,11 +15,24 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: "3.13"
       - uses: astral-sh/setup-uv@v6
       - name: Install graphviz
         run: sudo apt-get -y install graphviz
-      - name: Run all notebooks
-        run: uv run --group test --no-dev pytest ${{ github.event.inputs.notebook-selector }}
+      - name: Determine notebooks to test
+        id: notebooks
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            selector=$(git diff --name-only "origin/${{ github.base_ref }}...HEAD" | grep '\.ipynb$' || true)
+            selector=$(echo "$selector" | tr '\n' ' ' | xargs)
+          else
+            selector="${{ github.event.inputs.notebook-selector }}"
+          fi
+          echo "selector=$selector" | tee -a $GITHUB_OUTPUT
+      - name: Run notebooks
+        if: github.event_name != 'pull_request' || steps.notebooks.outputs.selector != ''
+        run: uv run --group test --no-dev pytest ${{ steps.notebooks.outputs.selector }}
