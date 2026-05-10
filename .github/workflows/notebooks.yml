@@ -37,6 +37,13 @@ jobs:
             selector="${{ github.event.inputs.notebook-selector }}"
           fi
           echo "selector=$selector" >> $GITHUB_OUTPUT
+      - name: Initialize environments
+        if: github.event_name != 'pull_request' || steps.notebooks.outputs.selector != ''
+        run: |
+          for notebook in ${{ steps.notebooks.outputs.selector }}; do
+            project=$(dirname "$notebook")
+            uv run --project="$project" true
+          done
       - name: Run notebooks
         if: github.event_name != 'pull_request' || steps.notebooks.outputs.selector != ''
         run: uv run --group test --no-dev pytest ${{ steps.notebooks.outputs.selector }}
