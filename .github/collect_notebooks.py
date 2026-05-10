@@ -28,7 +28,7 @@ def main() -> None:
             notebooks.update(path.parent.glob("*.ipynb"))
 
     with open("pyproject.toml", "rb") as f:
-        addopts = tomllib.load(f)["tool"]["pytest"]["ini_options"]["addopts"]
+        addopts = tomllib.load(f)["tool"]["pytest"]["addopts"]
     ignored = [
         Path(o[len("--ignore=") :]) for o in addopts if o.startswith("--ignore=")
     ]
