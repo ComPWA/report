@@ -32,23 +32,7 @@ jobs:
         id: notebooks
         run: |
           if [ "${{ github.event_name }}" = "pull_request" ]; then
-            changed=$(git diff --name-only "origin/${{ github.base_ref }}...HEAD")
-            direct=$(echo "$changed" | grep '\.ipynb$' || true)
-            from_locks=$(echo "$changed" | grep 'uv\.lock$' | while read lock; do
-              find "$(dirname "$lock")" -name '*.ipynb'
-            done || true)
-            ignored=$(grep '"--ignore=' pyproject.toml | sed 's/.*"--ignore=\([^"]*\)".*/\1/')
-            candidates=$(printf '%s\n%s' "$direct" "$from_locks" | sort -u | grep -v '^$')
-            selector=
-            while IFS= read -r nb; do
-              [ -z "$nb" ] && continue
-              skip=false
-              while IFS= read -r ig; do
-                case "$nb" in "$ig"|"$ig/"*) skip=true; break;; esac
-              done <<< "$ignored"
-              [ "$skip" = false ] && selector="$selector $nb"
-            done <<< "$candidates"
-            selector=$(echo "$selector" | xargs)
+            selector=$(uv run .github/collect_notebooks.py "${{ github.base_ref }}")
           else
             selector="${{ github.event.inputs.notebook-selector }}"
           fi
