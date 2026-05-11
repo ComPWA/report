@@ -617,11 +617,11 @@ wheels = [
 
 [[package]]
 name = "idna"
-version = "3.13"
+version = "3.14"
 source = {registry = "https://pypi.org/simple"}
-sdist = {url = "https://files.pythonhosted.org/packages/ce/cc/762dfb036166873f0059f3b7de4565e1b5bc3d6f28a414c13da27e442f99/idna-3.13.tar.gz", hash = "sha256:585ea8fe5d69b9181ec1afba340451fba6ba764af97026f92a91d4eef164a242", size = 194210, upload-time = "2026-04-22T16:42:42.314Z"}
+sdist = {url = "https://files.pythonhosted.org/packages/05/b1/efac073e0c297ecf2fb33c346989a529d4e19164f1759102dee5953ee17e/idna-3.14.tar.gz", hash = "sha256:466d810d7a2cc1022bea9b037c39728d51ae7dad40d480fc9b7d7ecf98ba8ee3", size = 198272, upload-time = "2026-05-10T20:32:15.935Z"}
 wheels = [
-    {url = "https://files.pythonhosted.org/packages/5d/13/ad7d7ca3808a898b4612b6fe93cde56b53f3034dcde235acb1f0e1df24c6/idna-3.13-py3-none-any.whl", hash = "sha256:892ea0cde124a99ce773decba204c5552b69c3c67ffd5f232eb7696135bc8bb3", size = 68629, upload-time = "2026-04-22T16:42:40.909Z"},
+    {url = "https://files.pythonhosted.org/packages/6c/3c/3f62dee257eb3d6b2c1ef2a09d36d9793c7111156a73b5654d2c2305e5ce/idna-3.14-py3-none-any.whl", hash = "sha256:e677eaf072e290f7b725f9acf0b3a2bd55f9fd6f7c70abe5f0e34823d0accf69", size = 72184, upload-time = "2026-05-10T20:32:14.295Z"},
 ]
 
 [[package]]
@@ -797,6 +797,18 @@ wheels = [
 ]
 
 [[package]]
+name = "markdown-it-py"
+version = "4.2.0"
+source = {registry = "https://pypi.org/simple"}
+dependencies = [
+    {name = "mdurl"},
+]
+sdist = {url = "https://files.pythonhosted.org/packages/06/ff/7841249c247aa650a76b9ee4bbaeae59370dc8bfd2f6c01f3630c35eb134/markdown_it_py-4.2.0.tar.gz", hash = "sha256:04a21681d6fbb623de53f6f364d352309d4094dd4194040a10fd51833e418d49", size = 82454, upload-time = "2026-05-07T12:08:28.36Z"}
+wheels = [
+    {url = "https://files.pythonhosted.org/packages/b3/81/4da04ced5a082363ecfa159c010d200ecbd959ae410c10c0264a38cac0f5/markdown_it_py-4.2.0-py3-none-any.whl", hash = "sha256:9f7ebbcd14fe59494226453aed97c1070d83f8d24b6fc3a3bcf9a38092641c4a", size = 91687, upload-time = "2026-05-07T12:08:27.182Z"},
+]
+
+[[package]]
 name = "markupsafe"
 version = "3.0.3"
 source = {registry = "https://pypi.org/simple"}
@@ -841,6 +853,15 @@ wheels = [
     {url = "https://files.pythonhosted.org/packages/2c/2b/0e92ad0ac446633f928a1563db4aa8add407e1924faf0ded5b95b35afb27/matplotlib-3.10.9-pp310-pypy310_pp73-macosx_10_15_x86_64.whl", hash = "sha256:1872fb212a05b729e649754a72d5da61d03e0554d76e80303b6f83d1d2c0552b", size = 8293058, upload-time = "2026-04-24T00:13:56.339Z"},
     {url = "https://files.pythonhosted.org/packages/4b/23/74682fd369f5299ceda438fea2a0662e6383b85c9383fb9cdfcf04713e07/matplotlib-3.10.9-pp310-pypy310_pp73-macosx_11_0_arm64.whl", hash = "sha256:985f2238880e2e69093f588f5fe2e46771747febf0649f3cf7f7b7480875317f", size = 8186627, upload-time = "2026-04-24T00:13:58.623Z"},
     {url = "https://files.pythonhosted.org/packages/ca/e8/368aab88f3c4cd8992800f31abfe0670c3e47540ba20a97e9fdbcde594b3/matplotlib-3.10.9-pp310-pypy310_pp73-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:6640f75af2c6148293caa0a2b39dd806a492dd66c8a8b04035813e33d0fd2585", size = 8764117, upload-time = "2026-04-24T00:14:01.684Z"},
+]
+
+[[package]]
+name = "mdurl"
+version = "0.1.2"
+source = {registry = "https://pypi.org/simple"}
+sdist = {url = "https://files.pythonhosted.org/packages/d6/54/cfe61301667036ec958cb99bd3efefba235e65cdeb9c84d24a8293ba1d90/mdurl-0.1.2.tar.gz", hash = "sha256:bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba", size = 8729, upload-time = "2022-08-14T12:40:10.846Z"}
+wheels = [
+    {url = "https://files.pythonhosted.org/packages/b3/38/89ba8ad64ae25be8de66a6d463314cf1eb366222074cfda9ee839c56a4b4/mdurl-0.1.2-py3-none-any.whl", hash = "sha256:84008a41e51615a49fc9966191ff91509e3c40b939176e643fd50a5c2196b8f8", size = 9979, upload-time = "2022-08-14T12:40:09.779Z"},
 ]
 
 [[package]]
@@ -1065,6 +1086,15 @@ wheels = [
 ]
 
 [[package]]
+name = "pygments"
+version = "2.20.0"
+source = {registry = "https://pypi.org/simple"}
+sdist = {url = "https://files.pythonhosted.org/packages/c3/b2/bc9c9196916376152d655522fdcebac55e66de6603a76a02bca1b6414f6c/pygments-2.20.0.tar.gz", hash = "sha256:6757cd03768053ff99f3039c1a36d6c0aa0b263438fcab17520b30a303a82b5f", size = 4955991, upload-time = "2026-03-29T13:29:33.898Z"}
+wheels = [
+    {url = "https://files.pythonhosted.org/packages/f4/7e/a72dd26f3b0f4f2bf1dd8923c85f7ceb43172af56d63c7383eb62b332364/pygments-2.20.0-py3-none-any.whl", hash = "sha256:81a9e26dd42fd28a23a2d169d86d7ac03b46e2f8b59ed4698fb4785f946d0176", size = 1231151, upload-time = "2026-03-29T13:29:30.038Z"},
+]
+
+[[package]]
 name = "pyparsing"
 version = "3.3.2"
 source = {registry = "https://pypi.org/simple"}
@@ -1174,6 +1204,19 @@ dependencies = [
 sdist = {url = "https://files.pythonhosted.org/packages/42/f2/05f29bc3913aea15eb670be136045bf5c5bbf4b99ecb839da9b422bb2c85/requests-oauthlib-2.0.0.tar.gz", hash = "sha256:b3dffaebd884d8cd778494369603a9e7b58d29111bf6b41bdc2dcd87203af4e9", size = 55650, upload-time = "2024-03-22T20:32:29.939Z"}
 wheels = [
     {url = "https://files.pythonhosted.org/packages/3b/5d/63d4ae3b9daea098d5d6f5da83984853c1bbacd5dc826764b249fe119d24/requests_oauthlib-2.0.0-py2.py3-none-any.whl", hash = "sha256:7dd8a5c40426b779b0868c404bdef9768deccf22749cde15852df527e6269b36", size = 24179, upload-time = "2024-03-22T20:32:28.055Z"},
+]
+
+[[package]]
+name = "rich"
+version = "15.0.0"
+source = {registry = "https://pypi.org/simple"}
+dependencies = [
+    {name = "markdown-it-py"},
+    {name = "pygments"},
+]
+sdist = {url = "https://files.pythonhosted.org/packages/c0/8f/0722ca900cc807c13a6a0c696dacf35430f72e0ec571c4275d2371fca3e9/rich-15.0.0.tar.gz", hash = "sha256:edd07a4824c6b40189fb7ac9bc4c52536e9780fbbfbddf6f1e2502c31b068c36", size = 230680, upload-time = "2026-04-12T08:24:00.75Z"}
+wheels = [
+    {url = "https://files.pythonhosted.org/packages/82/3b/64d4899d73f91ba49a8c18a8ff3f0ea8f1c1d75481760df8c68ef5235bf5/rich-15.0.0-py3-none-any.whl", hash = "sha256:33bd4ef74232fb73fe9279a257718407f169c09b78a87ad3d296f548e27de0bb", size = 310654, upload-time = "2026-04-12T08:24:02.83Z"},
 ]
 
 [[package]]
@@ -1430,19 +1473,20 @@ wheels = [
 
 [[package]]
 name = "tensorwaves"
-version = "0.4.15"
+version = "0.4.16"
 source = {registry = "https://pypi.org/simple"}
 dependencies = [
     {name = "attrs"},
     {name = "iminuit"},
     {name = "numpy"},
     {name = "pyyaml"},
+    {name = "rich"},
     {name = "sympy"},
     {name = "tqdm"},
 ]
-sdist = {url = "https://files.pythonhosted.org/packages/04/9c/67c86f76dd71348f7d02b7df2657a4e4467a7f0ec7430d8d9cf3c90d0f60/tensorwaves-0.4.15.tar.gz", hash = "sha256:69b5d50b333790642ee93cc8aeccadce6bc523d0e62499b6a81f7004d2fd3c36", size = 390790, upload-time = "2026-02-16T16:36:08.158Z"}
+sdist = {url = "https://files.pythonhosted.org/packages/30/be/1dfdbbc339453067fafb0239166ba527c7395bc66198a8be74d2df99ddec/tensorwaves-0.4.16.tar.gz", hash = "sha256:374d984c704df6671f03ee5827e3c3379e5f82fd3427c87aa86ef08775fdb20a", size = 397159, upload-time = "2026-05-11T10:03:33.891Z"}
 wheels = [
-    {url = "https://files.pythonhosted.org/packages/04/5e/37bc24179e5421314a7386dc434b1861e59a126dc6c2991f51657e82b703/tensorwaves-0.4.15-py3-none-any.whl", hash = "sha256:032675d709d130cd5485aab8900819f4748cea600b74b65ace6be684f863553d", size = 43255, upload-time = "2026-02-16T16:36:05.899Z"},
+    {url = "https://files.pythonhosted.org/packages/52/e8/cc1b280960e646c6d44cc9eb4d3f0a2eb2886d3183f48fe062f5d4f70c6e/tensorwaves-0.4.16-py3-none-any.whl", hash = "sha256:2354752354523de421e3704417f78de2c41663c95daaa7611051650a9467d52e", size = 43747, upload-time = "2026-05-11T10:03:31.85Z"},
 ]
 
 [package.optional-dependencies]
@@ -1453,6 +1497,7 @@ jax = [
 pwa = [
     {name = "ampform", extra = ["viz"]},
     {name = "phasespace", extra = ["tf"]},
+    {name = "tensorboard"},
     {name = "tensorflow"},
 ]
 
