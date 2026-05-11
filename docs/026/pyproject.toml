@@ -3,7 +3,7 @@ dependencies = [
     "ampform",
     "matplotlib",
     "nbformat>=4.2.0",
-    "plotly",
+    "plotly~=5.0",
     "sympy",
 ]
 name = "technical-report"

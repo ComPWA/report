@@ -2,7 +2,7 @@
 dependencies = [
     "jax",
     "matplotlib",
-    "polarimetry-lc2pkpi~=0.0.10",
+    "polarimetry-lc2pkpi==0.0.11",
 ]
 name = "technical-report"
 requires-python = "~=3.13.0"
@@ -15,6 +15,7 @@ preview = true
 ignore = [
     "ANN001",
     "ANN201",
+    "C408",
     "COM812",
     "CPY001",
     "D",

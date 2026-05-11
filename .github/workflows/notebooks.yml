@@ -1,24 +1,60 @@
-name: Run all notebooks
+name: Run notebooks
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: |-
+    ${{ github.ref != format('refs/heads/{0}', github.event.repository.default_branch) }}
+
+env:
+  FORCE_COLOR: true
 
 on:
   workflow_dispatch:
     inputs:
       notebook-selector:
-        description: Relative path to notebooks
+        description: Space-separated paths to notebooks (runs all if omitted)
         required: false
         type: string
+  pull_request:
+    branches:
+      - main
+      - epic/*
+      - "[0-9]+.[0-9]+.x"
+    paths:
+      - docs/**
 
 jobs:
   pytest:
-    name: Test all notebooks
+    name: Test notebooks
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: "3.13"
       - uses: astral-sh/setup-uv@v6
       - name: Install graphviz
         run: sudo apt-get -y install graphviz
-      - name: Run all notebooks
-        run: uv run --extra test pytest ${{ github.event.inputs.notebook-selector }}
+      - name: Collect notebooks to test
+        id: notebooks
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            selector=$(uv run .github/collect_notebooks.py "${{ github.base_ref }}")
+          else
+            selector="${{ github.event.inputs.notebook-selector }}"
+          fi
+          echo "selector=$selector" >> $GITHUB_OUTPUT
+      - name: Initialize environments
+        if: github.event_name != 'pull_request' || steps.notebooks.outputs.selector != ''
+        run: |
+          for notebook in ${{ steps.notebooks.outputs.selector }}; do
+            project=$(dirname "$notebook")
+            echo
+            echo "--== Initializing project $project ==--"
+            uv run --project="$project" true
+          done
+      - name: Run notebooks
+        if: github.event_name != 'pull_request' || steps.notebooks.outputs.selector != ''
+        run: uv run --group test --no-dev pytest ${{ steps.notebooks.outputs.selector }}

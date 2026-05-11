@@ -1,6 +1,6 @@
 [project]
 dependencies = [
-    "ampform",
+    "ampform~=0.15.0",
     "ipympl",
     "ipywidgets",
     "matplotlib",

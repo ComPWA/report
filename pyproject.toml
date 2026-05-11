@@ -82,7 +82,7 @@ write_to = "version.py"
 [tool.isort]
 profile = "black"
 
-[tool.pytest.ini_options]
+[tool.pytest]
 addopts = [
     "--color=yes",
     "--doctest-continue-on-failure",
@@ -90,14 +90,12 @@ addopts = [
     "--durations=0",
     "--ignore-glob=*/.ipynb_checkpoints/*",
     "--ignore-glob=*/.virtual_documents/*",
-    "--ignore=docs/000",
-    "--ignore=docs/002",
     "--ignore=docs/011",
     "--ignore=docs/019/index.ipynb",
     "--ignore=docs/_static",
     "--ignore=docs/conf.py",
     "--nbmake",
-    "--nbmake-timeout=1200",
+    "--nbmake-timeout=7200",
 ]
 filterwarnings = [
     "error",

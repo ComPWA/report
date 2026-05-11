@@ -5,7 +5,7 @@ dependencies = [
     "matplotlib",
     "pandas",
     "phasespace",
-    "scipy",
+    "scipy~=1.15.0",
     "tqdm",
     "vector",
 ]
