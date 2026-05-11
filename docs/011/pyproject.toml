@@ -1,14 +1,3 @@
-[project]
-dependencies = [
-    "ampform[viz]~=0.11.0",
-    "black",
-    "matplotlib~=3.1.0",
-    "sympy~=1.12.0",
-]
-name = "technical-report"
-requires-python = "~=3.9.0"
-version = "0.1.0"
-
 [tool.ruff]
 preview = true
 
@@ -22,11 +11,8 @@ ignore = [
     "CPY001",
     "D",
     "E501",
-    "E712",
     "F404",
     "F821",
-    "FA100",
-    "FURB140",
     "ISC001",
     "N802",
     "N806",
@@ -42,8 +28,3 @@ select = ["ALL"]
 
 [tool.ruff.lint.flake8-builtins]
 builtins-ignorelist = ["display"]
-
-[tool.uv]
-exclude-newer = "2023-10-07"
-
-[tool.uv.workspace]
