@@ -20,8 +20,6 @@ import _list_technical_reports
 
 def get_nb_exclusion_patterns() -> list[str]:
     exclusions = {
-        "000/*",
-        "002/*",
         "011/*",
     }
     if shutil.which("julia") is None:
@@ -31,7 +29,9 @@ def get_nb_exclusion_patterns() -> list[str]:
         exclusions.update(julia_notebooks)
     if "ALL_NOTEBOOKS" not in os.environ:
         frozen_notebooks = {
+            "000/*",
             "001/*",
+            "002/*",
             "003/*",
             "005/*",
             "008/*",

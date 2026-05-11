@@ -1,8 +1,8 @@
 [project]
 dependencies = [
     "ampform[viz]~=0.9.0",
-    "jax",
-    "jaxlib",
+    "jax==0.4.18",
+    "jaxlib==0.4.18",
     "matplotlib",
     "numpy~=1.0",
     "pandas~=1.0",
@@ -38,8 +38,5 @@ ignore = [
     "TC003",
 ]
 select = ["ALL"]
-
-[tool.uv]
-exclude-newer = "2023-10-07"
 
 [tool.uv.workspace]

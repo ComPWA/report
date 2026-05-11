@@ -90,7 +90,6 @@ addopts = [
     "--durations=0",
     "--ignore-glob=*/.ipynb_checkpoints/*",
     "--ignore-glob=*/.virtual_documents/*",
-    "--ignore=docs/002",
     "--ignore=docs/011",
     "--ignore=docs/019/index.ipynb",
     "--ignore=docs/_static",
