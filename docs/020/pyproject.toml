@@ -1,4 +1,7 @@
 [project]
+name = "technical-report"
+version = "0.1.0"
+requires-python = "~=3.10.0"
 dependencies = [
     "ampform[viz]~=0.14.1",
     "hepstats",
@@ -9,9 +12,6 @@ dependencies = [
     "tensorwaves[jax,pwa]~=0.4.8",
     "zfit~=0.14.0",
 ]
-name = "technical-report"
-requires-python = "~=3.10.0"
-version = "0.1.0"
 
 [tool.ruff]
 preview = true

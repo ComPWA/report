@@ -1,10 +1,8 @@
 [project]
-dependencies = [
-    "sympy",
-]
 name = "technical-report"
-requires-python = "~=3.13.0"
 version = "0.1.0"
+requires-python = "~=3.13.0"
+dependencies = ["sympy"]
 
 [tool.ruff]
 preview = true
@@ -19,6 +17,6 @@ ignore = [
 select = ["ALL"]
 
 [tool.ruff.lint.flake8-builtins]
-builtins-ignorelist = ["display"]
+ignorelist = ["display"]
 
 [tool.uv.workspace]

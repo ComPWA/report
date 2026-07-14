@@ -27,4 +27,4 @@ ignore = [
 select = ["ALL"]
 
 [tool.ruff.lint.flake8-builtins]
-builtins-ignorelist = ["display"]
+ignorelist = ["display"]

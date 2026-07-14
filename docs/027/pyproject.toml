@@ -1,4 +1,7 @@
 [project]
+name = "technical-report"
+version = "0.1.0"
+requires-python = "~=3.13.0"
 dependencies = [
     "ampform",
     "ipympl",
@@ -8,9 +11,6 @@ dependencies = [
     "plotly~=5.0",
     "sympy",
 ]
-name = "technical-report"
-requires-python = "~=3.13.0"
-version = "0.1.0"
 
 [tool.ruff]
 preview = true
@@ -37,7 +37,7 @@ ignore = [
 select = ["ALL"]
 
 [tool.ruff.lint.flake8-builtins]
-builtins-ignorelist = ["display"]
+ignorelist = ["display"]
 
 [tool.ruff.lint.flake8-comprehensions]
 allow-dict-calls-with-keyword-arguments = true

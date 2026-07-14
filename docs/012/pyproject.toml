@@ -1,11 +1,11 @@
 [project]
+name = "technical-report"
+version = "0.1.0"
+requires-python = "~=3.13.0"
 dependencies = [
     "ampform~=0.12.6",
     "tensorwaves[jax,pwa]~=0.4.8",
 ]
-name = "technical-report"
-requires-python = "~=3.13.0"
-version = "0.1.0"
 
 [tool.ruff]
 preview = true

@@ -1,22 +1,16 @@
-[build-system]
-build-backend = "setuptools.build_meta"
-requires = [
-    "setuptools>=61.2",
-    "setuptools_scm",
-]
-
 [project]
-authors = [{name = "Common Partial Wave Analysis", email = "compwa-admin@ep1.rub.de"}]
-description = "Source code for the ComPWA Organization pages"
-dynamic = ["version"]
-license = {file = "LICENSE"}
-maintainers = [{email = "compwa-admin@ep1.rub.de"}]
 name = "compwa-report"
+description = "Source code for the ComPWA Organization pages"
 requires-python = ">=3.10"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+authors = [{ name = "Common Partial Wave Analysis", email = "compwa-admin@ep1.rub.de" }]
+maintainers = [{ email = "compwa-admin@ep1.rub.de" }]
+dynamic = ["version"]
 
 [project.readme]
-content-type = "text/markdown"
 file = "README.md"
+content-type = "text/markdown"
 
 [project.urls]
 Documentation = "https://compwa.github.io/report"
@@ -27,10 +21,10 @@ Source = "https://github.com/ComPWA/report"
 dev = [
     "ruff",
     "sphinx-autobuild",
-    {include-group = "doc"},
-    {include-group = "jupyter"},
-    {include-group = "style"},
-    {include-group = "test"},
+    { include-group = "doc" },
+    { include-group = "jupyter" },
+    { include-group = "style" },
+    { include-group = "test" }
 ]
 doc = [
     "myst-nb",
@@ -48,7 +42,7 @@ doc = [
     "sphinx-thebe",
     "sphinx-togglebutton",
     "sphinxcontrib-bibtex >=2",
-    {include-group = "notebooks"},
+    { include-group = "notebooks" }
 ]
 jupyter = [
     "jupyter-ruff",
@@ -59,7 +53,7 @@ jupyter = [
     "jupyterlab-quickopen",
     "python-lsp-ruff",
     "python-lsp-server",
-    {include-group = "notebooks"},
+    { include-group = "notebooks" }
 ]
 notebooks = ["pyproject-local-kernel"]
 style = [
@@ -70,14 +64,15 @@ style = [
 test = [
     "nbmake",
     "pytest-env",
-    {include-group = "notebooks"},
+    { include-group = "notebooks" },
 ]
 
-[tool.setuptools]
-include-package-data = false
-
-[tool.setuptools_scm]
-write_to = "version.py"
+[build-system]
+requires = [
+    "setuptools>=61.2",
+    "setuptools_scm",
+]
+build-backend = "setuptools.build_meta"
 
 [tool.compwa.policy]
 package-manager = "pixi+uv"
@@ -109,23 +104,21 @@ addopts = [
     "--ignore=docs/_static",
     "--ignore=docs/conf.py",
     "--nbmake",
-    "--nbmake-timeout=7200",
+    "--nbmake-timeout=7200"
 ]
 filterwarnings = [
     "error",
     "ignore:Passing a schema to Validator.iter_errors is deprecated.*:DeprecationWarning",
     "ignore:open_text is deprecated.*:DeprecationWarning",
     "ignore:read_text is deprecated.*:DeprecationWarning",
-    "ignore:unclosed .*:ResourceWarning",
+    "ignore:unclosed .*:ResourceWarning"
 ]
 norecursedirs = [
     ".ipynb_checkpoints",
     ".virtual_documents",
     "_build",
 ]
-testpaths = [
-    "docs",
-]
+testpaths = ["docs"]
 
 [tool.pytest_env]
 EXECUTE_NB = "yes"
@@ -174,7 +167,7 @@ select = ["ALL"]
 task-tags = ["cspell"]
 
 [tool.ruff.lint.flake8-builtins]
-builtins-ignorelist = ["display"]
+ignorelist = ["display"]
 
 [tool.ruff.lint.flake8-comprehensions]
 allow-dict-calls-with-keyword-arguments = true
@@ -201,32 +194,36 @@ split-on-trailing-comma = false
     "T20",
     "TC00",
 ]
-"docs/*" = [
-    "INP001",
-    "S101",
-    "S113",
-]
-"docs/conf.py" = [
-    "A001",
-    "D100",
-    "PLC2701",
-]
+"docs/*" = ["INP001", "S101", "S113"]
+"docs/conf.py" = ["A001", "D100", "PLC2701"]
 
 [tool.ruff.lint.pydocstyle]
 convention = "google"
 
-[tool.tomlsort]
-all = false
-ignore_case = true
-in_place = true
-sort_first = [
-    "build-system",
-    "project",
-    "tool.setuptools",
-    "tool.setuptools_scm",
+[tool.setuptools]
+include-package-data = false
+
+[tool.setuptools_scm]
+version_file = "version.py"
+
+[tool.tombi.files]
+exclude = [
+    "**/Manifest.toml",
+    "**/Project.toml",
+    "**/uv.lock",
 ]
-spaces_indent_inline_array = 4
-trailing_comma_inline_array = true
+
+[tool.tombi.format.rules]
+indent-width = 4
+line-width = 88
+
+[tool.tombi.lint.rules]
+key-empty = "off"
+
+[[tool.tombi.schemas]]
+root = "tool.compwa.policy"
+path = "https://raw.githubusercontent.com/ComPWA/policy/b1a4216872b0e6539e0b70a051a6d3aaed874356/compwa-policy.schema.json"
+include = ["pyproject.toml"]
 
 [[tool.ty.overrides]]
 include = ["**/*.ipynb"]

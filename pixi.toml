@@ -1,6 +1,6 @@
 [dependencies]
 graphviz = "*"
-julia = {version = "*", channel = "https://repo.prefix.dev/julia-forge"}
+julia = { version = "*", channel = "https://repo.prefix.dev/julia-forge" }
 uv = "*"
 
 [tasks.all]
@@ -29,7 +29,7 @@ uv run \
 description = "Build documentation and API"
 
 [tasks.doc.env]
-PYTHONWARNINGS = ""
+PYTHONWARNINGS = " "
 TF_CPP_MIN_LOG_LEVEL = "3"
 ZFIT_DISABLE_TF_WARNINGS = "1"
 
@@ -70,27 +70,27 @@ uv run \
 description = "Set up a server to directly preview changes to the HTML pages"
 
 [tasks.doclive.env]
-PYTHONWARNINGS = ""
+PYTHONWARNINGS = " "
 TF_CPP_MIN_LOG_LEVEL = "3"
 ZFIT_DISABLE_TF_WARNINGS = "1"
 
 [tasks.docnb]
 cmd = "pixi run doc"
 description = "Build documentation and API with cached notebook execution"
-env = {EXECUTE_NB = "yes"}
+env = { EXECUTE_NB = "yes" }
 
 [tasks.docnb-force]
 cmd = "pixi run doc"
 description = "Build documentation and API with notebook execution (no cache)"
-env = {FORCE_EXECUTE_NB = "yes"}
+env = { FORCE_EXECUTE_NB = "yes" }
 
 [tasks.docnblive]
 cmd = "pixi run doclive"
 description = "Set up a server to directly preview changes to the HTML pages with cached notebook execution"
-env = {EXECUTE_NB = "yes"}
+env = { EXECUTE_NB = "yes" }
 
 [tasks.lab]
-args = [{"arg" = "paths", "default" = ""}]
+args = [{ "arg" = "paths", "default" = "" }]
 cmd = """
 uv run \
     --group jupyter \
@@ -113,7 +113,7 @@ uv run \
         docs/_build/linkcheck/
 """
 description = "Check external links in the documentation (requires internet connection)"
-env = {PYTHONWARNINGS = ""}
+env = { PYTHONWARNINGS = " " }
 
 [tasks.nb]
 cmd = "uv run --group test --isolated --no-dev pytest"
