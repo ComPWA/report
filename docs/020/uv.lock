@@ -971,15 +971,16 @@ wheels = [
 
 [[package]]
 name = "particle"
-version = "1.0.0"
+version = "0.26.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "attrs" },
     { name = "hepunits" },
+    { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/c3/66/09911bbb658fdffe960903c12edecab95f6cced40fef4909d1cc04bd288b/particle-1.0.0.tar.gz", hash = "sha256:49145dec1cb5044b07f3e8e902280fa050950fa845b058003e69de519bb50492", size = 285766, upload-time = "2026-06-25T14:48:26.893Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/d8/17/83e4a4d9ec5a125a497ed14015f6548b5f8f25c8a4465c9e343fbb2587c3/particle-0.26.2.tar.gz", hash = "sha256:23cc4315f90d07d9faf59f813dba6d1200868a01595e37d7c956ebd0809d672d", size = 336359, upload-time = "2026-04-16T19:29:45.444Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/a8/92/05078b696cddbdd60963577c895d5b77e5bf829197b08677351b11761c2b/particle-1.0.0-py3-none-any.whl", hash = "sha256:fc2656f53e729be76e45430f56aa65dc20dea069565a393032016544425b64bf", size = 245760, upload-time = "2026-06-25T14:48:25.238Z" },
+    { url = "https://files.pythonhosted.org/packages/b3/91/7e3a06fac8ad91252c316442d8f40c69c8825a9c8726d54d8aca04037580/particle-0.26.2-py3-none-any.whl", hash = "sha256:dc99fbcb2b02c520dd1f3a369446c706466b033f29771255977a96071af41128", size = 315115, upload-time = "2026-04-16T19:29:43.676Z" },
 ]
 
 [[package]]
@@ -1313,6 +1314,7 @@ dependencies = [
     { name = "matplotlib" },
     { name = "numpy" },
     { name = "pandas" },
+    { name = "particle" },
     { name = "qrules" },
     { name = "tensorwaves", extra = ["jax", "pwa"] },
     { name = "zfit" },
@@ -1325,6 +1327,7 @@ requires-dist = [
     { name = "matplotlib" },
     { name = "numpy", specifier = "~=1.0" },
     { name = "pandas" },
+    { name = "particle", specifier = "<1" },
     { name = "qrules", specifier = "==0.10.3" },
     { name = "tensorwaves", extras = ["jax", "pwa"], specifier = "~=0.4.8" },
     { name = "zfit", specifier = "~=0.14.0" },
