@@ -104,14 +104,14 @@ addopts = [
     "--ignore=docs/_static",
     "--ignore=docs/conf.py",
     "--nbmake",
-    "--nbmake-timeout=7200"
+    "--nbmake-timeout=7200",
 ]
 filterwarnings = [
     "error",
     "ignore:Passing a schema to Validator.iter_errors is deprecated.*:DeprecationWarning",
     "ignore:open_text is deprecated.*:DeprecationWarning",
     "ignore:read_text is deprecated.*:DeprecationWarning",
-    "ignore:unclosed .*:ResourceWarning"
+    "ignore:unclosed .*:ResourceWarning",
 ]
 norecursedirs = [
     ".ipynb_checkpoints",
@@ -194,8 +194,16 @@ split-on-trailing-comma = false
     "T20",
     "TC00",
 ]
-"docs/*" = ["INP001", "S101", "S113"]
-"docs/conf.py" = ["A001", "D100", "PLC2701"]
+"docs/*" = [
+    "INP001",
+    "S101",
+    "S113",
+]
+"docs/conf.py" = [
+    "A001",
+    "D100",
+    "PLC2701",
+]
 
 [tool.ruff.lint.pydocstyle]
 convention = "google"
@@ -222,7 +230,7 @@ key-empty = "off"
 
 [[tool.tombi.schemas]]
 root = "tool.compwa.policy"
-path = "https://raw.githubusercontent.com/ComPWA/policy/b1a4216872b0e6539e0b70a051a6d3aaed874356/compwa-policy.schema.json"
+path = "https://raw.githubusercontent.com/ComPWA/policy/0.9.0/compwa-policy.schema.json"
 include = ["pyproject.toml"]
 
 [[tool.ty.overrides]]
