@@ -123,6 +123,46 @@ description = "Run all notebooks"
 cmd = "uv run --group style --isolated --no-dev pre-commit run --all-files"
 description = "Perform all linting, formatting, and spelling checks"
 
+[tasks.upgrade]
+depends-on = [
+    "_upgrade-pixi",
+    "_upgrade-precommit",
+    "_upgrade-uv",
+    "_upgrade-julia",
+]
+description = "Upgrade all lock files"
+
+[tasks._upgrade-julia]
+cmd = "julia --eval='using Pkg; Pkg.update()' --project=docs/019"
+
+[tasks._upgrade-pixi]
+cmd = "pixi update"
+
+[tasks._upgrade-uv]
+cmd = """
+uv run --no-project python -c '
+import pathlib
+import subprocess
+
+raise SystemExit(not all(
+    subprocess.run(
+        ["uv", "lock", "--upgrade", "--directory", str(pathlib.Path(file).parent)],
+        check=False,
+    ).returncode == 0
+    for file in subprocess.run(
+        ["git", "ls-files"],
+        check=True,
+        capture_output=True,
+        text=True,
+    ).stdout.splitlines()
+    if pathlib.Path(file).name == "pyproject.toml"
+))
+'
+"""
+
+[tasks._upgrade-precommit]
+cmd = "pre-commit autoupdate -j8"
+
 [workspace]
 channels = [
     "conda-forge",
