@@ -41,6 +41,13 @@ pyvenv*/
 .idea/
 **.code-workspace
 
+# Agent tooling
+.agents/
+.claude/
+.codex/
+AGENTS.md
+CLAUDE.md
+
 # Exceptions
 !.cspell.json
 !.github/*.yml
