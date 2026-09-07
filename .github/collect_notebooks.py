@@ -5,7 +5,7 @@
 
 from __future__ import annotations
 
-import subprocess  # noqa: S404
+import subprocess  # ruff: ignore[suspicious-subprocess-import]
 import sys
 from pathlib import Path
 
@@ -14,8 +14,8 @@ import tomllib  # ty:ignore[unresolved-import]
 
 def main() -> None:
     base_ref = sys.argv[1] if len(sys.argv) > 1 else "main"
-    changed = subprocess.check_output(  # noqa: S603
-        ["git", "diff", "--name-only", f"origin/{base_ref}...HEAD"],  # noqa: S607
+    changed = subprocess.check_output(  # ruff: ignore[subprocess-without-shell-equals-true]
+        ["git", "diff", "--name-only", f"origin/{base_ref}...HEAD"],  # ruff: ignore[start-process-with-partial-path]
         text=True,
     ).splitlines()
 
@@ -37,7 +37,7 @@ def main() -> None:
         return any(nb == ig or ig in nb.parents for ig in ignored)
 
     result = sorted(nb for nb in notebooks if not is_ignored(nb))
-    print(" ".join(str(nb) for nb in result))  # noqa: T201
+    print(" ".join(str(nb) for nb in result))  # ruff: ignore[print]
 
 
 if __name__ == "__main__":
