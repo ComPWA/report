@@ -15,15 +15,15 @@ preview = true
 
 [tool.ruff.lint]
 ignore = [
-    "COM812",
-    "CPY001",
+    "missing-trailing-comma",
+    "missing-copyright-notice",
     "D",
-    "E741",
-    "F404",
-    "ISC001",
-    "N816",
-    "RUF027",
-    "S307",
+    "ambiguous-variable-name",
+    "late-future-import",
+    "single-line-implicit-string-concatenation",
+    "mixed-case-variable-in-global-scope",
+    "missing-f-string-syntax",
+    "suspicious-eval-usage",
 ]
 select = ["ALL"]
 

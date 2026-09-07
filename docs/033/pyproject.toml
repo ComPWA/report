@@ -19,20 +19,20 @@ preview = true
 [tool.ruff.lint]
 ignore = [
     "ANN00",
-    "ANN201",
-    "ARG001",
-    "COM812",
-    "CPY001",
+    "missing-return-type-undocumented-public-function",
+    "unused-function-argument",
+    "missing-trailing-comma",
+    "missing-copyright-notice",
     "D",
-    "E501",
-    "F404",
-    "ISC001",
+    "line-too-long",
+    "late-future-import",
+    "single-line-implicit-string-concatenation",
     "N80",
-    "N816",
-    "PLR0913",
-    "PLR0915",
-    "PLR0917",
-    "PLW0603",
+    "mixed-case-variable-in-global-scope",
+    "too-many-arguments",
+    "too-many-statements",
+    "too-many-positional-arguments",
+    "global-statement",
 ]
 select = ["ALL"]
 

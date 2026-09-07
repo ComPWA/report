@@ -20,23 +20,23 @@ preview = true
 
 [tool.ruff.lint]
 ignore = [
-    "ANN002",
+    "missing-type-args",
     "ANN20",
-    "ARG001",
-    "COM812",
-    "CPY001",
+    "unused-function-argument",
+    "missing-trailing-comma",
+    "missing-copyright-notice",
     "D",
-    "DOC201",
-    "E501",
-    "F404",
-    "FA100",
-    "G004",
-    "ISC001",
-    "LOG015",
-    "PLR2004",
-    "S101",
-    "T201",
-    "TC003",
+    "docstring-missing-returns",
+    "line-too-long",
+    "late-future-import",
+    "future-rewritable-type-annotation",
+    "logging-f-string",
+    "single-line-implicit-string-concatenation",
+    "root-logger-call",
+    "magic-value-comparison",
+    "assert",
+    "print",
+    "typing-only-standard-library-import",
 ]
 select = ["ALL"]
 
