@@ -105,7 +105,7 @@ repos:
       - id: trailing-whitespace
 
   - repo: https://github.com/tombi-toml/tombi-pre-commit
-    rev: v1.5.1
+    rev: v1.5.2
     hooks:
       - id: tombi-format
       - id: tombi-lint
@@ -117,7 +117,7 @@ repos:
       - id: prettier
 
   - repo: https://github.com/streetsidesoftware/cspell-cli
-    rev: v10.1.0
+    rev: v10.2.0
     hooks:
       - id: cspell
         language_version: 25.9.0
@@ -154,6 +154,6 @@ repos:
         args: [--group=style, --no-default-groups]
 
   - repo: https://github.com/astral-sh/uv-pre-commit
-    rev: 0.12.9
+    rev: 0.12.10
     hooks:
       - id: uv-lock
