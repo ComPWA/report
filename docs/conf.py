@@ -105,6 +105,10 @@ exclude_patterns = [
     "**/.ipynb_checkpoints",
     "**/.venv",
     "**/.virtual_documents",
+    "**/AGENTS.md",
+    "**/CLAUDE.md",
+    "AGENTS.md",
+    "CLAUDE.md",
 ]
 extensions = [
     "myst_nb",
