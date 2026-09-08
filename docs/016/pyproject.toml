@@ -17,13 +17,13 @@ preview = true
 ignore = [
     "ANN00",
     "ANN20",
-    "ARG002",
-    "C408",
-    "COM812",
-    "CPY001",
+    "unused-method-argument",
+    "unnecessary-collection-call",
+    "missing-trailing-comma",
+    "missing-copyright-notice",
     "D",
-    "ISC001",
-    "PLC2701",
+    "single-line-implicit-string-concatenation",
+    "import-private-name",
 ]
 select = ["ALL"]
 

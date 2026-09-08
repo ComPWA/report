@@ -14,21 +14,21 @@ preview = true
 
 [tool.ruff.lint]
 ignore = [
-    "COM812",
-    "CPY001",
+    "missing-trailing-comma",
+    "missing-copyright-notice",
     "D",
-    "E501",
-    "E731",
-    "E741",
-    "F821",
-    "FURB103",
-    "ISC001",
-    "PLC2401",
-    "PLW1514",
-    "PTH123",
-    "S101",
-    "S102",
-    "S307",
+    "line-too-long",
+    "lambda-assignment",
+    "ambiguous-variable-name",
+    "undefined-name",
+    "write-whole-file",
+    "single-line-implicit-string-concatenation",
+    "non-ascii-name",
+    "unspecified-encoding",
+    "builtin-open",
+    "assert",
+    "exec-builtin",
+    "suspicious-eval-usage",
 ]
 select = ["ALL"]
 

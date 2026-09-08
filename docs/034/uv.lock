@@ -103,10 +103,22 @@ wheels = [
 ]
 
 [[package]]
-name = "python-constraint"
-version = "1.4.0"
+name = "python-constraint2"
+version = "2.7.3"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/37/8b/5f1bc2734ca611943e1d6733ee244238679f6410a10cd45ede55a61a8402/python-constraint-1.4.0.tar.bz2", hash = "sha256:501d6f17afe0032dfc6ea6c0f8acc12e44f992733f00e8538961031ef27ccb8e", size = 18416, upload-time = "2018-11-05T09:02:44.334Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/cb/a7/110e7519d38c6fd37ea60fdb821eb47db82abaaf4b9698bcb1bd281ba36d/python_constraint2-2.7.3.tar.gz", hash = "sha256:9e0dbf061a7be7f2837239cbc51e3d0c5f9521724fb07a987c64f0bf3bce6438", size = 851059, upload-time = "2026-08-18T14:27:31.914Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/7a/23/6e66c8cd32639dfaaf981f36ff5831abd452f91ab8c1f136ae3295102d29/python_constraint2-2.7.3-cp313-cp313-macosx_13_0_arm64.whl", hash = "sha256:07a62b3f6e634869d78feb88e1aab961a153ebd99b60e96457bee4ef8f3d1eb9", size = 1771409, upload-time = "2026-08-18T14:26:54.008Z" },
+    { url = "https://files.pythonhosted.org/packages/1b/44/3312405204b1ab0d5c6675afb32f1e9bb6036e44eabc1afc1c7949bf7d43/python_constraint2-2.7.3-cp313-cp313-macosx_26_0_arm64.whl", hash = "sha256:5eaa369aafa55462327f8d3251bdffc957eb440e843f8b3e052e17a1aa91b826", size = 1839338, upload-time = "2026-08-18T14:26:55.585Z" },
+    { url = "https://files.pythonhosted.org/packages/d7/47/34b25a17886627ffcda08ae92e766cb335bab25cf9ddc2df42dbc5861f72/python_constraint2-2.7.3-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl", hash = "sha256:856efc362a40e362589968804a3df2d216a2294aeb8167373bd22bc615ffc7f1", size = 15028693, upload-time = "2026-08-18T14:26:57.443Z" },
+    { url = "https://files.pythonhosted.org/packages/32/47/d072cb8ca6f78ec80bbc5ab55a0478cd28316293221ebdd8399368e5bdef/python_constraint2-2.7.3-cp313-cp313-manylinux_2_35_aarch64.whl", hash = "sha256:ea1bc9a4a2f44af902687cd306e9bfca3749598cc7552099babb43e0c1a86b98", size = 4033679, upload-time = "2026-08-18T14:26:59.955Z" },
+    { url = "https://files.pythonhosted.org/packages/1c/15/aafbe5a62af42c803e63f9239ee46c61409ae7d119a333b452a8e6685eaf/python_constraint2-2.7.3-cp313-cp313-manylinux_2_35_x86_64.whl", hash = "sha256:7bbf0c3091233535245bd77712431b06cb8fda013af7befdd972efb51d1a6978", size = 4144799, upload-time = "2026-08-18T14:27:01.565Z" },
+    { url = "https://files.pythonhosted.org/packages/74/07/3c30b1967ffd1ba391aba86c2af48bd6ecbe180d2364074ce03125624402/python_constraint2-2.7.3-cp313-cp313-manylinux_2_39_aarch64.whl", hash = "sha256:53285d0b18c93513f5e4dddad0765bb3035c481074d8cf07a03e681b04e8f559", size = 4125954, upload-time = "2026-08-18T14:27:03.317Z" },
+    { url = "https://files.pythonhosted.org/packages/8e/ba/045cb1fd049a504e318980eadbcc0af779f4bf9bc5bc2ce689b160b7ef0d/python_constraint2-2.7.3-cp313-cp313-manylinux_2_39_x86_64.whl", hash = "sha256:52b09510347272afa50535a50bc600b24ba221090377fad8a7267df9a5446eb9", size = 4283188, upload-time = "2026-08-18T14:27:05.256Z" },
+    { url = "https://files.pythonhosted.org/packages/c2/f9/a4c7ee0b9e56ccf02864109fe13b5b1d51e8a0bbb30fb610396ed2543aab/python_constraint2-2.7.3-cp313-cp313-musllinux_1_2_x86_64.whl", hash = "sha256:2574f5551f3d9ff4c9000b84ff3c997d2e82cadaf1a676628bae0b21ddc4c429", size = 14875680, upload-time = "2026-08-18T14:27:07.217Z" },
+    { url = "https://files.pythonhosted.org/packages/be/e6/743024f2de428fcca0cb2ebfb2fbe772ce34e30e073389903986d812dc18/python_constraint2-2.7.3-cp313-cp313-win_amd64.whl", hash = "sha256:8ddfb08d2b1bd319f429cd0465874e81c1e4cbef253e0cff3878e8036de556f8", size = 848041, upload-time = "2026-08-18T14:27:09.945Z" },
+    { url = "https://files.pythonhosted.org/packages/15/8b/5141a3173970c6cc03e2def47072f7c48a34f07356a764f74cbae9a5044e/python_constraint2-2.7.3-cp313-cp313-win_arm64.whl", hash = "sha256:e75e022dab016eceb6bdd2b14efb3b325f77aa9c03dd970473c5ba51fb8445f6", size = 848040, upload-time = "2026-08-18T14:27:11.48Z" },
+]
 
 [[package]]
 name = "pyyaml"
@@ -128,20 +140,20 @@ wheels = [
 
 [[package]]
 name = "qrules"
-version = "0.10.9"
+version = "0.10.12"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "attrs" },
     { name = "frozendict" },
     { name = "jsonschema" },
     { name = "particle" },
-    { name = "python-constraint" },
+    { name = "python-constraint2" },
     { name = "pyyaml" },
     { name = "tqdm" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/9b/c0/83f770f8dfbdb02fcf17858f41f332addeebcca11b95bea634e2f7bc0b17/qrules-0.10.9.tar.gz", hash = "sha256:fbd1e4e0d86c6eea371c95a2e62732dc73cba45afb4e4d657e123a8017f1bc9c", size = 317893, upload-time = "2026-07-09T19:43:22.153Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/5e/b2/66d1d0c8a0551d6ff7cdb555e03582d271b0c4a3d07c2b413e36024a85b3/qrules-0.10.12.tar.gz", hash = "sha256:72b0fd0c3042f1b82b6d27f03f2636156f8e3070a8d915f3f2b31b535bd1d347", size = 334897, upload-time = "2026-09-04T12:32:04.51Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/06/53/be20af6713c2d498cfa5be89aa004933bd199ed63694417fac9d6f57523f/qrules-0.10.9-py3-none-any.whl", hash = "sha256:3fd00341a1711592be414b31293b72106911462d403f41ca848b586394353443", size = 82321, upload-time = "2026-07-09T19:43:20.619Z" },
+    { url = "https://files.pythonhosted.org/packages/ff/31/a10f094959a0cc33e790511d4ae91ca3f1a10c54029c9b4c7e078198df22/qrules-0.10.12-py3-none-any.whl", hash = "sha256:8b3f0d7b412eb4d19ca8a4006a2bab7a9dd2c0e744fb85eae61e7d590a999705", size = 85931, upload-time = "2026-09-04T12:32:02.879Z" },
 ]
 
 [[package]]
@@ -209,12 +221,12 @@ requires-dist = [
 
 [[package]]
 name = "tqdm"
-version = "4.68.4"
+version = "4.70.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "colorama", marker = "sys_platform == 'win32'" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/ae/5f/57ff8b434839e70dab45601284ea413e947a63799891b7553e5960a793a8/tqdm-4.68.4.tar.gz", hash = "sha256:19829c9673638f2a0b8617da4cdcb927e831cd88bcfcb6e78d42a4d1af131520", size = 792418, upload-time = "2026-07-07T09:58:18.369Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/21/3b/6c24bec5be5e743ffd99576daa5cc077722fc7d5bbc00bd133fa0c698dc6/tqdm-4.70.0.tar.gz", hash = "sha256:55b0b0dbd97462d06ebee91e4dac24ed4d4702be82b24f07e6c1d27e08cea220", size = 795438, upload-time = "2026-07-27T11:33:15.271Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/22/2a/5e5e750890ada51017d18d0d4c30da696e5b5bd3180947729927628fc3cb/tqdm-4.68.4-py3-none-any.whl", hash = "sha256:5168118b2368f48c561afda8020fd79195b1bdb0bdf8086b88442c267a315dc2", size = 676612, upload-time = "2026-07-07T09:58:16.256Z" },
+    { url = "https://files.pythonhosted.org/packages/f9/1c/01bfd571a64e7f270e6bab5e33777debe0edc56759233ce84f27dec92d14/tqdm-4.70.0-py3-none-any.whl", hash = "sha256:7f585706bfddbdebf89daac705b2dfcc16890130727d3197ca62c732b4310953", size = 80184, upload-time = "2026-07-27T11:33:13.167Z" },
 ]

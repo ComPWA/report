@@ -14,14 +14,14 @@ preview = true
 
 [tool.ruff.lint]
 ignore = [
-    "ANN001",
-    "COM812",
-    "CPY001",
+    "missing-type-function-argument",
+    "missing-trailing-comma",
+    "missing-copyright-notice",
     "D",
-    "E501",
-    "ISC001",
-    "PLR2004",
-    "PLW2901",
+    "line-too-long",
+    "single-line-implicit-string-concatenation",
+    "magic-value-comparison",
+    "redefined-loop-name",
 ]
 select = ["ALL"]
 

@@ -13,15 +13,15 @@ preview = true
 
 [tool.ruff.lint]
 ignore = [
-    "B018",
-    "COM812",
-    "CPY001",
+    "useless-expression",
+    "missing-trailing-comma",
+    "missing-copyright-notice",
     "D",
-    "E303",
-    "E501",
-    "PLC2701",
-    "S101",
-    "T201",
+    "too-many-blank-lines",
+    "line-too-long",
+    "import-private-name",
+    "assert",
+    "print",
     "TC00",
 ]
 select = ["ALL"]
