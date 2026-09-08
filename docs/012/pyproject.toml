@@ -12,11 +12,11 @@ preview = true
 
 [tool.ruff.lint]
 ignore = [
-    "COM812",
-    "CPY001",
+    "missing-trailing-comma",
+    "missing-copyright-notice",
     "D",
-    "ISC001",
-    "S101",
+    "single-line-implicit-string-concatenation",
+    "assert",
 ]
 select = ["ALL"]
 

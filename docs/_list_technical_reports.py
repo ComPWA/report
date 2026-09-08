@@ -67,7 +67,7 @@ def _get_card_info(path: Path) -> dict[str, str]:
             continue
         src: list[str] = cell["source"].splitlines()
         src = [s for s in src if s.strip() if not s.strip().startswith("<!--")]
-        if len(src) < 5:  # noqa: PLR2004
+        if len(src) < 5:  # ruff: ignore[magic-value-comparison]
             continue
         line1, line2, line3, *_ = src
         if line1 != "::::{margin}":

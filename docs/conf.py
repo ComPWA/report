@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import os
 import shutil
-import subprocess  # noqa: S404
+import subprocess  # ruff: ignore[suspicious-subprocess-import]
 import sys
 
 from sphinx_api_relink.helpers import get_execution_mode
@@ -63,7 +63,7 @@ def install_ijulia() -> None:
     if shutil.which("julia") is None:
         return
     if "EXECUTE_NB" in os.environ or "FORCE_EXECUTE_NB" in os.environ:
-        subprocess.check_call(["julia", "InstallIJulia.jl"])  # noqa: S607
+        subprocess.check_call(["julia", "InstallIJulia.jl"])  # ruff: ignore[start-process-with-partial-path]
 
 
 _list_technical_reports.main()
@@ -105,6 +105,10 @@ exclude_patterns = [
     "**/.ipynb_checkpoints",
     "**/.venv",
     "**/.virtual_documents",
+    "**/AGENTS.md",
+    "**/CLAUDE.md",
+    "AGENTS.md",
+    "CLAUDE.md",
 ]
 extensions = [
     "myst_nb",

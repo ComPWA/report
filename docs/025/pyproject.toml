@@ -17,19 +17,19 @@ preview = true
 
 [tool.ruff.lint]
 ignore = [
-    "ANN001",
-    "ANN201",
-    "COM812",
-    "CPY001",
+    "missing-type-function-argument",
+    "missing-return-type-undocumented-public-function",
+    "missing-trailing-comma",
+    "missing-copyright-notice",
     "D",
-    "E731",
-    "FBT003",
-    "ISC001",
-    "N806",
-    "PLC2401",
-    "PLW0603",
-    "S404",
-    "S603",
+    "lambda-assignment",
+    "boolean-positional-value-in-call",
+    "single-line-implicit-string-concatenation",
+    "non-lowercase-variable-in-function",
+    "non-ascii-name",
+    "global-statement",
+    "suspicious-subprocess-import",
+    "subprocess-without-shell-equals-true",
 ]
 select = ["ALL"]
 

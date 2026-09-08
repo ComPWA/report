@@ -13,12 +13,12 @@ preview = true
 [tool.ruff.lint]
 ignore = [
     "ANN00",
-    "ANN201",
-    "COM812",
-    "CPY001",
+    "missing-return-type-undocumented-public-function",
+    "missing-trailing-comma",
+    "missing-copyright-notice",
     "D",
-    "FBT001",
-    "ISC001",
+    "boolean-type-hint-positional-argument",
+    "single-line-implicit-string-concatenation",
 ]
 select = ["ALL"]
 
