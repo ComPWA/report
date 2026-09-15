@@ -3,7 +3,8 @@ name = "technical-report"
 version = "0.1.0"
 requires-python = "~=3.13.0"
 dependencies = [
-    "ampform-dpd~=0.4.3",
+    "ampform",
+    "ampform-dpd",
     "ipykernel",
     "matplotlib",
     "numpy",
@@ -12,3 +13,7 @@ dependencies = [
 ]
 
 [tool.uv.workspace]
+
+[tool.uv.sources]
+ampform = { git = "https://github.com/ComPWA/ampform", rev = "4fe79a57503abd70a5ab04fdc02cdd0d66dc99f3" }
+ampform-dpd = { git = "https://github.com/ComPWA/ampform-dpd", rev = "c54c84e7b66b0cbf26b4f883331603b67f46c90b" }
