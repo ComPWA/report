@@ -128,9 +128,11 @@ extensions = [
     "sphinx_thebe",
     "sphinx_togglebutton",
     "sphinxcontrib.bibtex",
+    "sphinxcontrib.mermaid",
 ]
 graphviz_output_format = "svg"
 html_css_files = [
+    "mermaid.css",
     "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css",
 ]
 html_favicon = "_static/favicon.ico"
@@ -177,6 +179,7 @@ html_theme_options = {
     "path_to_docs": "docs",
     "use_download_button": False,
     "use_edit_page_button": True,
+    "use_fullscreen_button": False,
     "use_issues_button": True,
     "use_repository_button": True,
     "use_source_button": True,
@@ -239,6 +242,16 @@ linkcheck_ignore = [
     r"https://github.com/ComPWA/RUB-EP1-AG/.*",  # private
     r"https://github.com/orgs/ComPWA/projects/\d+",  # private
 ]
+mermaid_height = "auto"
+mermaid_init_config = {
+    "flowchart": {
+        "nodeSpacing": 30,
+        "rankSpacing": 40,
+        "useMaxWidth": False,
+    },
+    "startOnLoad": False,
+    "themeVariables": {"fontSize": "12px"},
+}
 myst_enable_extensions = [
     "amsmath",
     "colon_fence",
@@ -246,6 +259,7 @@ myst_enable_extensions = [
     "smartquotes",
     "substitution",
 ]
+myst_fence_as_directive = ["mermaid"]
 myst_heading_anchors = 4
 myst_substitutions = {
     "branch": BRANCH,
