@@ -1,0 +1,15 @@
+[project]
+name = "technical-report"
+version = "0.1.0"
+requires-python = "~=3.13.0"
+dependencies = [
+    "ampform-dpd~=0.2.3",
+    "ampform[viz]",
+    "ipykernel",
+    "matplotlib",
+    "numpy",
+    "qrules",
+    "tensorwaves[jax,phsp]",
+]
+
+[tool.uv.workspace]
