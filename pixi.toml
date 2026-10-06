@@ -161,7 +161,7 @@ raise SystemExit(not all(
 """
 
 [tasks._upgrade-precommit]
-cmd = "pre-commit autoupdate -j8"
+cmd = "prek autoupdate"
 
 [workspace]
 channels = [
