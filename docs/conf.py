@@ -225,12 +225,12 @@ linkcheck_ignore = [
     "https://doi.org/10.7566/JPSCP.26.022002",  # 403 for journals.jps.jp
     "https://downloads.hindawi.com",  # 403
     "https://github.com/organizations/ComPWA/settings/repository-defaults",  # private
+    "https://github.dev",
     "https://ieeexplore.ieee.org/document/6312940",  # 401
     "https://indico.ific.uv.es/event/6803",  # SSL error
     "https://journals.aps.org",
     "https://leetcode.com",
     "https://mybinder.org",  # often instable
-    "https://open.vscode.dev",
     "https://rosettacode.org",
     "https://stackoverflow.com",
     "https://via.placeholder.com",  # irregular timeout
