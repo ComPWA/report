@@ -291,10 +291,10 @@ version = "0.6.4"
 
 [[deps.CpuId]]
 deps = ["Markdown", "PrecompileTools"]
-git-tree-sha1 = "3a9da6b470fcffe9c8da01fc7ddcb0575c4f8aff"
+git-tree-sha1 = "5dbd5150b96f29553fc3b553c6bfb0eadf7ac204"
 registries = "General"
 uuid = "adafc99b-e345-5852-983c-f28acb93d879"
-version = "0.3.2"
+version = "0.3.3"
 
 [[deps.CustomUnitRanges]]
 git-tree-sha1 = "1a3f97f907e6dd8983b744d2642651bb162a3f7a"
