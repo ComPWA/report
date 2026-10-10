@@ -19,16 +19,16 @@ uv sync --all-extras
 source .venv/bin/activate
 ```
 
-Formatting and linting checks are automatically performed when committing changes. This is done with [pre-commit](https://pre-commit.com). To install the hooks in your local repository, run install `pre-commit` with `uv`:
+Formatting and linting checks are automatically performed when committing changes. This is done with [prek](https://prek.j178.dev), a drop-in replacement for [pre-commit](https://pre-commit.com) that reads the same `.pre-commit-config.yaml` file. To install the hooks in your local repository, [install `prek`](https://prek.j178.dev/installation) with `uv`:
 
 ```shell
-uv tool install pre-commit --with pre-commit-uv --force-reinstall --python=3.13
+uv tool install prek --force-reinstall
 ```
 
-and [`pre-commit install`](https://pre-commit.com/#3-install-the-git-hook-scripts) **once**:
+and run [`prek install`](https://prek.j178.dev/reference/cli/) **once**:
 
 ```shell
-pre-commit install --install-hooks
+prek install --prepare-hooks
 ```
 
 Pixi is used as a [task runner](https://pixi.sh/latest/workspace/advanced_tasks). You can see which local CI checks it defines by running
