@@ -75,7 +75,6 @@ requires = [
 build-backend = "setuptools.build_meta"
 
 [tool.compwa.policy]
-dev-python-version = "3.13"  # the executed notebooks require Python 3.13
 package-manager = "pixi+uv"
 repo-name = "report"
 repo-title = "ComPWA Technical Reports"
