@@ -1,7 +1,7 @@
 [project]
 name = "technical-report"
 version = "0.1.0"
-requires-python = "~=3.13.0"
+requires-python = "~=3.14.0"
 dependencies = [
     "ampform",
     "ipympl",
@@ -32,6 +32,7 @@ ignore = [
     "non-self-return-type",
     "suspicious-subprocess-import",
     "subprocess-without-shell-equals-true",
+    "TC00",
 ]
 select = ["ALL"]
 
