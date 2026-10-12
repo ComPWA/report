@@ -13,6 +13,10 @@ dependencies = [
     "vector",
 ]
 
+[tool.pyproject-local-kernel]
+# Override UV_PYTHON, because TensorFlow provides no wheels for Python 3.14 yet
+python-cmd = ["uv", "run", "--python=3.13", "--with=ipykernel", "python"]
+
 [tool.ruff]
 preview = true
 
