@@ -42,6 +42,7 @@ doc = [
     "sphinx-thebe",
     "sphinx-togglebutton",
     "sphinxcontrib-bibtex >=2",
+    "sphinxcontrib-mermaid",
     { include-group = "notebooks" }
 ]
 jupyter = [

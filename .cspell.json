@@ -123,7 +123,6 @@
     "itertools",
     "joinpath",
     "jpsi",
-    "juliaup",
     "kernelspec",
     "kwargs",
     "lambdifygenerated",
