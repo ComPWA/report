@@ -20,7 +20,7 @@ on:
 
 jobs:
   doc:
-    uses: ComPWA/actions/.github/workflows/ci-docs.yml@313866498eb92c341d7e6b905e09f33a5979dffb # v4.1.4
+    uses: ComPWA/actions/.github/workflows/ci-docs.yml@f9873a74ec6f40f8b3d17327f3f0f8e517a5becd # v4.1.6
     permissions:
       pages: write
       id-token: write
@@ -29,4 +29,4 @@ jobs:
   style:
     secrets:
       token: ${{ secrets.PAT }}
-    uses: ComPWA/actions/.github/workflows/style.yml@f9873a74ec6f40f8b3d17327f3f0f8e517a5becd # main
+    uses: ComPWA/actions/.github/workflows/style.yml@f9873a74ec6f40f8b3d17327f3f0f8e517a5becd # v4.1.6
