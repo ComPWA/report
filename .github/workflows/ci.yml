@@ -29,4 +29,4 @@ jobs:
   style:
     secrets:
       token: ${{ secrets.PAT }}
-    uses: ComPWA/actions/.github/workflows/style.yml@8076f7e93ac391823b7bac31871e2ac8fa479ef7 # fix/update-jupyter-kernel-py39
+    uses: ComPWA/actions/.github/workflows/style.yml@f9873a74ec6f40f8b3d17327f3f0f8e517a5becd # main
