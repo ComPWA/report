@@ -34,6 +34,7 @@
     ".prettierignore",
     ".readthedocs.yml",
     ".vscode/*",
+    "docs/_templates/*",
     "docs/conf.py",
     "pixi.toml",
     "pyproject.toml"

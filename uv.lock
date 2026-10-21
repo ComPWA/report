@@ -552,7 +552,6 @@ dev = [
     { name = "sphinx-design" },
     { name = "sphinx-hep-pdgref" },
     { name = "sphinx-pybtex-etal-style" },
-    { name = "sphinx-remove-toctrees" },
     { name = "sphinx-thebe" },
     { name = "sphinx-togglebutton" },
     { name = "sphinxcontrib-bibtex" },
@@ -572,7 +571,6 @@ doc = [
     { name = "sphinx-design" },
     { name = "sphinx-hep-pdgref" },
     { name = "sphinx-pybtex-etal-style" },
-    { name = "sphinx-remove-toctrees" },
     { name = "sphinx-thebe" },
     { name = "sphinx-togglebutton" },
     { name = "sphinxcontrib-bibtex" },
@@ -630,7 +628,6 @@ dev = [
     { name = "sphinx-design" },
     { name = "sphinx-hep-pdgref" },
     { name = "sphinx-pybtex-etal-style" },
-    { name = "sphinx-remove-toctrees" },
     { name = "sphinx-thebe" },
     { name = "sphinx-togglebutton" },
     { name = "sphinxcontrib-bibtex", specifier = ">=2" },
@@ -649,7 +646,6 @@ doc = [
     { name = "sphinx-design" },
     { name = "sphinx-hep-pdgref" },
     { name = "sphinx-pybtex-etal-style" },
-    { name = "sphinx-remove-toctrees" },
     { name = "sphinx-thebe" },
     { name = "sphinx-togglebutton" },
     { name = "sphinxcontrib-bibtex", specifier = ">=2" },
@@ -2649,19 +2645,6 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/76/a0/86a558095a760241042b90357df11844339325a986e5d99c05479f48730f/sphinx_pybtex_etal_style-0.0.4.tar.gz", hash = "sha256:661dd788dd873c53a1171f1f78a017bea40c5b5ca3a1b7d7911ebe9df3e1b527", size = 13847, upload-time = "2026-02-06T10:51:07.988Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/cb/95/28633a01ae9c9ec55fcf477878ed6d3e154349a1c529fd4eeefb16663abf/sphinx_pybtex_etal_style-0.0.4-py3-none-any.whl", hash = "sha256:5a42fac509e03756af390aefb10d6195271b1d672d7d95fa2e816a8324955807", size = 7338, upload-time = "2026-02-06T10:51:06.59Z" },
-]
-
-[[package]]
-name = "sphinx-remove-toctrees"
-version = "1.0.0.post1"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "sphinx", version = "9.0.4", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.12'" },
-    { name = "sphinx", version = "9.1.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.12'" },
-]
-sdist = { url = "https://files.pythonhosted.org/packages/9a/50/e3153912d4382bb434b3679a42eb96966f8b741789004412d1ceecbeee30/sphinx_remove_toctrees-1.0.0.post1.tar.gz", hash = "sha256:4808d1edf151c06eff6d2c3922ec7ebc9fd3aa1762de1b2e1674a37f5ac9ce2d", size = 8473, upload-time = "2024-03-22T11:00:03.727Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/bc/19/59dadac9ee5e8fa32b0d735b5488a569de36892a54e0b9927bea2b22f605/sphinx_remove_toctrees-1.0.0.post1-py3-none-any.whl", hash = "sha256:22a96579d7899cc034de194195916717a54a122cc101f16ec79c996fe0baa2be", size = 5200, upload-time = "2024-03-22T11:00:01.507Z" },
 ]
 
 [[package]]

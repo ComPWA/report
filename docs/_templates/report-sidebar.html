@@ -1,0 +1,13 @@
+<nav class="bd-links bd-docs-nav" aria-label="Main">
+  <div class="bd-toc-item navbar-nav active">
+    <ul class="nav bd-sidenav bd-sidenav__home-link">
+      <li
+        class="toctree-l1{% if pagename == root_doc %} current active{% endif %}"
+      >
+        <a class="reference internal" href="{{ pathto(root_doc) }}">Overview</a>
+      </li>
+    </ul>
+    {{- generate_toctree_html( startdepth=0, kind="sidebar",
+    includehidden=False, titles_only=True) }}
+  </div>
+</nav>
