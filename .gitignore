@@ -20,6 +20,7 @@ dist/
 version.py
 
 # Temporary files
+*_nbqa_ipynb.py
 *.pyc
 .coverage
 .coverage.*
