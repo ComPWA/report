@@ -42,7 +42,6 @@
   "julia.environmentPath": "${workspaceFolder}/docs/019",
   "julia.executablePath": "${workspaceFolder}/.pixi/envs/default/bin/julia",
   "livePreview.defaultPreviewPath": "docs/_build/html",
-  "multiDiffEditor.experimental.enabled": true,
   "notebook.codeActionsOnSave": {
     "notebook.source.organizeImports": "explicit"
   },
