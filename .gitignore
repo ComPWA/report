@@ -58,3 +58,4 @@ CLAUDE.md
 !.vscode/*.json
 !codecov.yml
 .jupyter_ystore.db
+.lycheecache
