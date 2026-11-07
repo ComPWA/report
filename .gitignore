@@ -56,6 +56,5 @@ CLAUDE.md
 !.pre-commit-config.yaml
 !.readthedocs.yml
 !.vscode/*.json
-!codecov.yml
 .jupyter_ystore.db
 .lycheecache
