@@ -40,7 +40,7 @@ doc = [
     "sphinx-pybtex-etal-style",
     "sphinx-thebe",
     "sphinx-togglebutton",
-    "sphinxcontrib-bibtex >=2",
+    "sphinxcontrib-bibtex>=2",
     { include-group = "notebooks" }
 ]
 jupyter = [
