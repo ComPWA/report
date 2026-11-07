@@ -234,6 +234,7 @@ include = ["pyproject.toml"]
 
 [[tool.ty.overrides]]
 include = ["**/*.ipynb"]
+rules.import-not-found = "ignore"
 rules.invalid-argument-type = "ignore"
 rules.invalid-assignment = "ignore"
 rules.not-iterable = "ignore"
@@ -241,12 +242,11 @@ rules.not-subscriptable = "ignore"
 rules.possibly-missing-attribute = "ignore"
 rules.possibly-unresolved-reference = "ignore"
 rules.unresolved-attribute = "ignore"
-rules.unresolved-import = "ignore"
 rules.unresolved-reference = "ignore"
 
 [[tool.ty.overrides]]
 include = ["docs/_static/exported_intensity_model.py"]
-rules.unresolved-import = "ignore"
+rules.import-not-found = "ignore"
 rules.unresolved-reference = "ignore"
 
 [tool.ty.rules]
