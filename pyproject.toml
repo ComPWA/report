@@ -106,6 +106,7 @@ exclude = [
     '^https[:]//iopscience\.iop\.org/article/10\.1088/1674-1137/abf139$',  # Redirects Lychee requests to a browser challenge
     '^https[:]//journals\.aps\.org/prd/abstract/10\.1103/PhysRevD\.101\.034033$',  # Rejects automated requests with 403
     '^https[:]//link\.aps\.org/doi/10\.1103/PhysRevD\.5\.624$',  # Rejects automated requests with 403
+    '^https[:]//rosettacode\.org/wiki/Mandelbrot_set#Julia$',  # Intermittently rejects GitHub Actions requests with 403
     '^https[:]//stackoverflow\.com/a/(?:42866568|5966088)$',  # Redirect target rejects automated requests with 403
     '^https[:]//www\.hindawi\.com/journals/ahep/2020/6674595/$',  # Rejects automated requests with 403
     "%7B[^/]*%7D",  # URL templates are completed at build or runtime
@@ -120,8 +121,8 @@ max_retries = 3
 remap = [
     # `[:]` stops lychee from extracting these patterns as links from this file
     '^(https[:]//(?:docs\.astral\.sh|prek\.j178\.dev)/[^?#]*[^/?#])([?#].*)?$ $1/$2',
-    '^git\+(https[:]//[^@]+)(@.*)?$ $1',
     '^git\+https[:]//github\.com/ComPWA/sympy(?:@.*)?$ https://github.com/sympy/sympy',
+    '^git\+(https[:]//[^@]+)(@.*)?$ $1',
     '^http[:]//arxiv\.org/abs/1507\.02697$ https://arxiv.org/abs/1507.02697',
     '^https[:]//ampform\.readthedocs\.io/0\.14\.x$ https://ampform.readthedocs.io/0.14.x/',
     '^https[:]//ampform\.readthedocs\.io/0\.15\.x/api/ampform\.dynamics/#ampform\.dynamics\.BlattWeisskopfSquared$ https://ampform.readthedocs.io/0.15.x/api/ampform.dynamics.form_factor.html#ampform.dynamics.form_factor.BlattWeisskopfSquared',
