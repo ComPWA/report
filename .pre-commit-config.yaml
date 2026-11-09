@@ -3,6 +3,7 @@ ci:
   autoupdate_commit_msg: "MAINT: upgrade lock files"
   autoupdate_schedule: quarterly
   skip:
+    - format-docstrings
     - tombi-format
     - tombi-lint
     - ty
@@ -121,11 +122,6 @@ repos:
     hooks:
       - id: cspell
 
-  - repo: https://github.com/LilSpazJoekp/docstrfmt
-    rev: v2.2.1
-    hooks:
-      - id: docstrfmt
-
   - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
     rev: 3.11.1
     hooks:
@@ -146,6 +142,18 @@ repos:
           (?x)^(
             docs/_static/favicon.ico
           )$
+
+  - repo: local
+    hooks:
+      - id: format-docstrings
+        name: Format reStructuredText docstrings
+        # The formatter's process pool crashes on pre-commit.ci.
+        entry: python -X cpu_count=2 -m docstrfmt
+        args: [--no-docstring-trailing-line, --no-format-python-code-blocks]
+        language: python
+        additional_dependencies: [docstrfmt==2.2.1]
+        require_serial: true
+        types_or: [python, rst]
 
   - repo: https://github.com/astral-sh/ty-pre-commit
     rev: v0.0.99
