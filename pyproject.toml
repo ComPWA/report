@@ -92,6 +92,8 @@ profile = "black"
 
 [tool.lychee]
 cache = true
+cache_exclude_status = "400.."
+# [:] keeps Lychee from extracting regex patterns as URLs.
 exclude = [
     # `[:]` stops lychee from extracting these patterns as links from this file
     '^http[:]//doi\.wiley\.com/10\.1002/andp\.19955070504$',  # Rejects automated requests with 403
@@ -99,14 +101,9 @@ exclude = [
     '^https[:]//doi\.org/10\.1002/andp\.19955070504$',  # 403 for onlinelibrary.wiley.com
     '^https[:]//doi\.org/10\.1007/978-1-4612-9959-2$',  # Publisher redirects automated requests through a cookie challenge
     '^https[:]//doi\.org/10\.1007/JHEP07\(2023\)228$',  # Publisher redirects automated requests through a cookie challenge
-    '^https[:]//doi\.org/10\.7566/JPSCP\.26\.022002$',  # 403 for journals.jps.jp
     '^https[:]//downloads\.hindawi\.com/journals/ahep/2020/6674595\.pdf#page=\d+$',  # 403
-    '^https[:]//github\.com/(?:user-attachments/assets|[^/]+/[^/]+/assets)/',  # Asset links redirect to expiring signed downloads
     '^https[:]//github\.com/ComPWA/RUB-EP1-AG/issues/93$',  # private
     '^https[:]//iopscience\.iop\.org/article/10\.1088/1674-1137/abf139$',  # Redirects Lychee requests to a browser challenge
-    '^https[:]//journals\.aps\.org/prd/abstract/10\.1103/PhysRevD\.101\.034033$',  # Rejects automated requests with 403
-    '^https[:]//link\.aps\.org/doi/10\.1103/PhysRevD\.5\.624$',  # Rejects automated requests with 403
-    '^https[:]//rosettacode\.org/wiki/Mandelbrot_set#Julia$',  # Intermittently rejects GitHub Actions requests with 403
     '^https[:]//stackoverflow\.com/a/(?:42866568|5966088)$',  # Redirect target rejects automated requests with 403
     '^https[:]//www\.hindawi\.com/journals/ahep/2020/6674595/$',  # Rejects automated requests with 403
     "%7B[^/]*%7D",  # URL templates are completed at build or runtime
@@ -115,138 +112,19 @@ extensions = ["bib", "html", "ipynb", "json", "md", "py", "toml", "yaml", "yml"]
 hidden = true  # Include the workflows under .github/
 include_fragments = "anchor-only"
 include_verbatim = true
-max_cache_age = "2d"
-max_redirects = 0
-max_retries = 3
+max_cache_age = "7d"
 remap = [
-    # `[:]` stops lychee from extracting these patterns as links from this file
-    '^(https[:]//(?:docs\.astral\.sh|prek\.j178\.dev)/[^?#]*[^/?#])([?#].*)?$ $1/$2',
+    # Keep the original error messages in the frozen notebook and check the corresponding JAX release.
+    '^https[:]//jax\.readthedocs\.io/en/latest/errors\.html#jax\.errors\.ConcretizationTypeError$ https://github.com/jax-ml/jax/blob/jax-v0.4.30/jax/_src/errors.py#L47',
+    '^https[:]//jax\.readthedocs\.io/en/latest/errors\.html#jax\.errors\.TracerArrayConversionError$ https://github.com/jax-ml/jax/blob/jax-v0.4.30/jax/_src/errors.py#L230',
     '^git\+https[:]//github\.com/ComPWA/sympy(?:@.*)?$ https://github.com/sympy/sympy',
     '^git\+(https[:]//[^@]+)(@.*)?$ $1',
-    '^http[:]//arxiv\.org/abs/1507\.02697$ https://arxiv.org/abs/1507.02697',
-    '^https[:]//ampform\.readthedocs\.io/0\.14\.x$ https://ampform.readthedocs.io/0.14.x/',
-    '^https[:]//ampform\.readthedocs\.io/0\.15\.x/api/ampform\.dynamics/#ampform\.dynamics\.BlattWeisskopfSquared$ https://ampform.readthedocs.io/0.15.x/api/ampform.dynamics.form_factor.html#ampform.dynamics.form_factor.BlattWeisskopfSquared',
-    '^https[:]//ampform\.readthedocs\.io/0\.15\.x/api/ampform\.sympy/#ampform\.sympy\.unevaluated$ https://ampform.readthedocs.io/0.15.x/api/ampform.sympy.html#ampform.sympy.unevaluated',
-    '^https[:]//ampform\.readthedocs\.io/en/0\.10\.5/api/ampform\.dynamics\.html#ampform\.dynamics\.coupled_width$ https://ampform.readthedocs.io/0.10.5/api/ampform.dynamics.html#ampform.dynamics.coupled_width',
-    '^https[:]//ampform\.readthedocs\.io/en/0\.10\.5/api/ampform\.dynamics\.html#ampform\.dynamics\.phase_space_factor$ https://ampform.readthedocs.io/0.10.5/api/ampform.dynamics.html#ampform.dynamics.phase_space_factor',
-    '^https[:]//ampform\.readthedocs\.io/en/0\.11\.4/api/ampform\.kinematics\.html$ https://ampform.readthedocs.io/0.11.4/api/ampform.kinematics.html',
-    '^https[:]//ampform\.readthedocs\.io/en/0\.11\.4/api/ampform\.sympy\.html#ampform\.sympy\.UnevaluatedExpression$ https://ampform.readthedocs.io/0.11.4/api/ampform.sympy.html#ampform.sympy.UnevaluatedExpression',
-    '^https[:]//ampform\.readthedocs\.io/en/0\.11\.4/api/ampform\.sympy\.html$ https://ampform.readthedocs.io/0.11.4/api/ampform.sympy.html',
-    '^https[:]//ampform\.readthedocs\.io/en/0\.12\.1/api/ampform\.helicity\.html#ampform\.helicity\.HelicityModel\.expression$ https://ampform.readthedocs.io/0.12.1/api/ampform.helicity.html#ampform.helicity.HelicityModel.expression',
-    '^https[:]//ampform\.readthedocs\.io/en/0\.12\.1/api/ampform\.helicity\.html#ampform\.helicity\.HelicityModel$ https://ampform.readthedocs.io/0.12.1/api/ampform.helicity.html#ampform.helicity.HelicityModel',
-    '^https[:]//ampform\.readthedocs\.io/en/0\.12\.1/api/ampform\.kinematics\.html#ampform\.kinematics\.HelicityAdapter\.permutate_registered_topologies$ https://ampform.readthedocs.io/0.12.1/api/ampform.kinematics.html#ampform.kinematics.HelicityAdapter.permutate_registered_topologies',
-    '^https[:]//ampform\.readthedocs\.io/en/0\.12\.1/usage/amplitude\.html$ https://ampform.readthedocs.io/0.12.1/usage/amplitude.html',
-    '^https[:]//ampform\.readthedocs\.io/en/0\.12\.3/api/ampform\.dynamics\.builder\.html#ampform\.dynamics\.builder\.ResonanceDynamicsBuilder$ https://ampform.readthedocs.io/0.12.3/api/ampform.dynamics.builder.html#ampform.dynamics.builder.ResonanceDynamicsBuilder',
-    '^https[:]//ampform\.readthedocs\.io/en/0\.12\.3/api/ampform\.dynamics\.builder\.html#ampform\.dynamics\.builder\.TwoBodyKinematicVariableSet\.angular_momentum$ https://ampform.readthedocs.io/0.12.3/api/ampform.dynamics.builder.html#ampform.dynamics.builder.TwoBodyKinematicVariableSet.angular_momentum',
-    '^https[:]//ampform\.readthedocs\.io/en/0\.12\.3/api/ampform\.dynamics\.builder\.html#ampform\.dynamics\.builder\.TwoBodyKinematicVariableSet$ https://ampform.readthedocs.io/0.12.3/api/ampform.dynamics.builder.html#ampform.dynamics.builder.TwoBodyKinematicVariableSet',
-    '^https[:]//ampform\.readthedocs\.io/en/0\.12\.3/api/ampform\.helicity\.html#ampform\.helicity\.formulate_wigner_d$ https://ampform.readthedocs.io/0.12.3/api/ampform.helicity.html#ampform.helicity.formulate_wigner_d',
-    '^https[:]//ampform\.readthedocs\.io/en/0\.12\.3/api/ampform\.helicity\.html#ampform\.helicity\.HelicityAmplitudeBuilder$ https://ampform.readthedocs.io/0.12.3/api/ampform.helicity.html#ampform.helicity.HelicityAmplitudeBuilder',
-    '^https[:]//ampform\.readthedocs\.io/en/0\.12\.3/api/ampform\.helicity\.html#ampform\.helicity\.HelicityModel\.components$ https://ampform.readthedocs.io/0.12.3/api/ampform.helicity.html#ampform.helicity.HelicityModel.components',
-    '^https[:]//ampform\.readthedocs\.io/en/0\.12\.3/api/ampform\.helicity\.html#ampform\.helicity\.HelicityModel\.expression$ https://ampform.readthedocs.io/0.12.3/api/ampform.helicity.html#ampform.helicity.HelicityModel.expression',
-    '^https[:]//ampform\.readthedocs\.io/en/0\.12\.3/api/ampform\.helicity\.html#ampform\.helicity\.HelicityModel\.parameter_defaults$ https://ampform.readthedocs.io/0.12.3/api/ampform.helicity.html#ampform.helicity.HelicityModel.parameter_defaults',
-    '^https[:]//ampform\.readthedocs\.io/en/0\.12\.3/usage/dynamics/k-matrix\.html$ https://ampform.readthedocs.io/0.12.3/usage/dynamics/k-matrix.html',
-    '^https[:]//ampform\.readthedocs\.io/en/0\.12\.3/usage/formalism\.html$ https://ampform.readthedocs.io/0.12.3/usage/formalism.html',
-    '^https[:]//ampform\.readthedocs\.io/en/0\.12\.3/usage/symplot\.html#symplot\.substitute_indexed_symbols$ https://ampform.readthedocs.io/0.12.3/usage/symplot.html#symplot.substitute_indexed_symbols',
-    '^https[:]//ampform\.readthedocs\.io/en/0\.12\.x/api/ampform\.dynamics\.html#ampform\.dynamics\.EnergyDependentWidth$ https://ampform.readthedocs.io/0.12.x/api/ampform.dynamics.html#ampform.dynamics.EnergyDependentWidth',
-    '^https[:]//ampform\.readthedocs\.io/en/0\.12\.x/api/ampform\.dynamics\.html#ampform\.dynamics\.relativistic_breit_wigner_with_ff$ https://ampform.readthedocs.io/0.12.x/api/ampform.dynamics.html#ampform.dynamics.relativistic_breit_wigner_with_ff',
-    '^https[:]//ampform\.readthedocs\.io/en/0\.13\.3/usage/helicity/spin-alignment\.html$ https://ampform.readthedocs.io/0.13.3/usage/helicity/spin-alignment.html',
-    '^https[:]//ampform\.readthedocs\.io/en/stable/api/ampform\.dynamics\.builder\.html#ampform\.dynamics\.builder\.TwoBodyKinematicVariableSet$ https://ampform.readthedocs.io/stable/api/ampform.dynamics.builder.html#ampform.dynamics.builder.TwoBodyKinematicVariableSet',
-    '^https[:]//ampform\.readthedocs\.io/en/stable/api/ampform\.helicity\.html#ampform\.helicity\.HelicityModel\.expression$ https://ampform.readthedocs.io/stable/api/ampform.helicity.html#ampform.helicity.HelicityModel.expression',
-    '^https[:]//ampform\.readthedocs\.io/en/stable/api/ampform\.helicity\.html#ampform\.helicity\.HelicityModel\.parameter_defaults$ https://ampform.readthedocs.io/stable/api/ampform.helicity.html#ampform.helicity.HelicityModel.parameter_defaults',
-    '^https[:]//ampform\.readthedocs\.io/en/stable/api/ampform\.helicity\.html#ampform\.helicity\.HelicityModel$ https://ampform.readthedocs.io/stable/api/ampform.helicity.html#ampform.helicity.HelicityModel',
-    '^https[:]//ampform\.readthedocs\.io/stable$ https://ampform.readthedocs.io/stable/',
-    '^https[:]//ampform\.rtfd\.io/$ https://ampform.readthedocs.io/stable/',
-    '^https[:]//ampform\.rtfd\.io/0\.15\.x/usage/helicity/formalism\.html$ https://ampform.readthedocs.io/0.15.x/usage/helicity/formalism.html',
-    '^https[:]//compwa\.github\.io/gluex-nstar$ https://compwa.github.io/gluex-nstar/',
-    '^https[:]//compwa\.github\.io/report$ https://compwa.github.io/report/',
-    '^https[:]//docs\.jax\.dev/en/latest$ https://docs.jax.dev/en/latest/',
-    '^https[:]//docs\.python\.org/3/library/functions\.html#eval$ https://docs.python.org/3/builtins/functions.html#eval',
-    '^https[:]//docs\.python\.org/3/library/functions\.html#exec$ https://docs.python.org/3/builtins/functions.html#exec',
-    '^https[:]//docs\.python\.org/3$ https://docs.python.org/3/',
-    '^https[:]//docs\.pytorch\.org/docs/stable$ https://docs.pytorch.org/docs/stable/',
-    '^https[:]//docs\.scipy\.org/doc/scipy-1\.7\.0$ https://docs.scipy.org/doc/scipy-1.7.0/',
-    '^https[:]//docs\.scipy\.org/doc/scipy$ https://docs.scipy.org/doc/scipy/',
-    '^https[:]//docs\.sympy\.org/latest$ https://docs.sympy.org/latest/',
-    '^https[:]//expertsystem\.readthedocs\.io/stable$ https://expertsystem.readthedocs.io/stable/',
-    '^https[:]//github\.com/ComPWA/ampform/issues/111$ https://github.com/ComPWA/ampform/pull/111',
-    '^https[:]//github\.com/ComPWA/ampform/issues/120$ https://github.com/ComPWA/ampform/pull/120',
-    '^https[:]//github\.com/ComPWA/ampform/issues/131$ https://github.com/ComPWA/ampform/pull/131',
-    '^https[:]//github\.com/ComPWA/ampform/issues/177$ https://github.com/ComPWA/ampform/pull/177',
-    '^https[:]//github\.com/ComPWA/ampform/issues/198$ https://github.com/ComPWA/ampform/pull/198',
-    '^https[:]//github\.com/ComPWA/ampform/issues/245$ https://github.com/ComPWA/ampform/pull/245',
-    '^https[:]//github\.com/ComPWA/ampform/issues/265$ https://github.com/ComPWA/ampform/pull/265',
-    '^https[:]//github\.com/ComPWA/ampform/issues/72$ https://github.com/ComPWA/ampform/pull/72',
-    '^https[:]//github\.com/ComPWA/ampform/tree/0\.11\.4/src/ampform/data\.py#L207-L214$ https://github.com/ComPWA/ampform/blob/0.11.4/src/ampform/data.py#L207-L214',
-    '^https[:]//github\.com/ComPWA/ampform/tree/0\.11\.4/tests/conftest\.py#L53-L115$ https://github.com/ComPWA/ampform/blob/0.11.4/tests/conftest.py#L53-L115',
-    '^https[:]//github\.com/ComPWA/ampform/tree/0\.11\.4/tests/test_kinematics\.py#L15-L112$ https://github.com/ComPWA/ampform/blob/0.11.4/tests/test_kinematics.py#L15-L112',
-    '^https[:]//github\.com/ComPWA/compwa\.github\.io/issues/129$ https://github.com/ComPWA/compwa.github.io/pull/129',
-    '^https[:]//github\.com/ComPWA/compwa\.github\.io/issues/139$ https://github.com/ComPWA/compwa.github.io/pull/139',
-    '^https[:]//github\.com/ComPWA/compwa\.github\.io/issues/151$ https://github.com/ComPWA/compwa.github.io/pull/151',
-    '^https[:]//github\.com/ComPWA/compwa\.github\.io/issues/174$ https://github.com/ComPWA/compwa.github.io/pull/174',
-    '^https[:]//github\.com/ComPWA/compwa\.github\.io/issues/271$ https://github.com/ComPWA/compwa.github.io/pull/271',
     '^https[:]//github\.com/ComPWA/compwa\.github\.io/pull/129#issuecomment-1096599896\\n$ https://github.com/ComPWA/compwa.github.io/pull/129',  # GitHub renders comment anchors dynamically
-    '^https[:]//github\.com/ComPWA/compwa\.github\.io/pull/208/commits/d9240f1$ https://github.com/ComPWA/compwa.github.io/pull/208/commits/d9240f10c6eb1665a83e7a9e6bea7495d12b40f0',
-    '^https[:]//github\.com/ComPWA/sympy$ https://github.com/sympy/sympy',  # The historical fork is unavailable; check upstream
-    '^https[:]//github\.com/ComPWA/tensorwaves/issues/16$ https://github.com/ComPWA/.github/issues/39',
-    '^https[:]//github\.com/ComPWA/tensorwaves/issues/281$ https://github.com/ComPWA/tensorwaves/pull/281',
-    '^https[:]//github\.com/ComPWA/tensorwaves/issues/284$ https://github.com/ComPWA/tensorwaves/pull/284',
-    '^https[:]//github\.com/ComPWA/tensorwaves/issues/345$ https://github.com/ComPWA/tensorwaves/pull/345',
-    '^https[:]//github\.com/ComPWA/tensorwaves/issues/427$ https://github.com/ComPWA/tensorwaves/pull/427',
-    '^https[:]//github\.com/sympy/sympy/issues/22265$ https://github.com/sympy/sympy/pull/22265',
-    '^https[:]//github\.dev/(.+)$ https://vscode.dev/github/$1',
-    '^https[:]//graphviz\.readthedocs\.io/en/stable$ https://graphviz.readthedocs.io/en/stable/',
-    '^https[:]//indico\.ific\.uv\.es/event/6803$ https://indico.ific.uv.es/event/6803/',
-    '^https[:]//ipython\.readthedocs\.io/en/stable$ https://ipython.readthedocs.io/en/stable/',
-    '^https[:]//ipywidgets\.readthedocs\.io/$ https://ipywidgets.readthedocs.io/en/stable/',
-    '^https[:]//ipywidgets\.readthedocs\.io/en/stable$ https://ipywidgets.readthedocs.io/en/stable/',
-    '^https[:]//jax\.readthedocs\.io/en/latest/errors\.html#jax\.errors\.ConcretizationTypeError$ https://docs.jax.dev/en/latest/errors.html',
-    '^https[:]//jax\.readthedocs\.io/en/latest/errors\.html#jax\.errors\.TracerArrayConversionError$ https://docs.jax.dev/en/latest/errors.html',
-    '^https[:]//jax\.rtfd\.io/$ https://docs.jax.dev/en/latest/',
-    '^https[:]//matplotlib\.org/stable$ https://matplotlib.org/stable/',
-    '^https[:]//mpl-interactions\.readthedocs\.io/$ https://mpl-interactions.readthedocs.io/en/stable/',
-    '^https[:]//mpl-interactions\.readthedocs\.io/en/stable$ https://mpl-interactions.readthedocs.io/en/stable/',
-    '^https[:]//mpl-interactions\.rtfd\.io/$ https://mpl-interactions.readthedocs.io/en/stable/',
-    '^https[:]//myst-nb\.readthedocs\.io/$ https://myst-nb.readthedocs.io/en/latest/',
-    '^https[:]//numba\.readthedocs\.io/en/stable$ https://numba.readthedocs.io/en/stable/',
-    '^https[:]//numpy\.org/doc/stable$ https://numpy.org/doc/stable/',
-    '^https[:]//pdgapi\.lbl\.gov/doc$ https://pdgapi.lbl.gov/doc/',
-    '^https[:]//phasespace\.readthedocs\.io/$ https://phasespace.readthedocs.io/en/stable/',
-    '^https[:]//pixi\.sh/$ https://pixi.prefix.dev/',
-    '^https[:]//pixi\.sh/install\.sh$ https://pixi.prefix.dev/install.sh',
-    '^https[:]//pixi\.sh/latest/workspace/advanced_tasks$ https://pixi.prefix.dev/latest/workspace/advanced_tasks/',
-    '^https[:]//pkgdocs\.julialang\.org/v1/environments$ https://pkgdocs.julialang.org/v1/environments/',
-    '^https[:]//plotly\.com/python-api-reference$ https://plotly.com/python-api-reference/',
-    '^https[:]//plotly\.com/python/3d-isosurface-plots$ https://plotly.com/python/3d-isosurface-plots/',
-    '^https[:]//plotly\.com/python$ https://plotly.com/python/',
-    '^https[:]//qrules\.readthedocs\.io/0\.9\.x$ https://qrules.readthedocs.io/0.9.x/',
-    '^https[:]//qrules\.readthedocs\.io/en/0\.9\.6/api/qrules\.transition\.html#qrules\.transition\.ReactionInfo$ https://qrules.readthedocs.io/0.9.6/api/qrules.transition.html#qrules.transition.ReactionInfo',
-    '^https[:]//qrules\.readthedocs\.io/stable$ https://qrules.readthedocs.io/stable/',
     '^https[:]//repo\.prefix\.dev/julia-forge$ https://prefix.dev/channels/julia-forge',  # The channel endpoint serves package metadata, not a web page
-    '^https[:]//results\.pre-commit\.ci/latest/github/ComPWA/report/main$ https://results.pre-commit.ci/repo/github/865968745',
-    '^https[:]//scikit-hep\.org/hepstats$ https://scikit-hep.org/hepstats/',
-    '^https[:]//scikit-hep\.org/iminuit$ https://scikit-hep.org/iminuit/',
-    '^https[:]//tensorwaves\.readthedocs\.io/en/0\.2\.7/api/tensorwaves\.model\.html#tensorwaves\.model\.SympyModel$ https://tensorwaves.readthedocs.io/0.2.7/api/tensorwaves.model.html#tensorwaves.model.SympyModel',
-    '^https[:]//tensorwaves\.readthedocs\.io/en/0\.4\.5/amplitude-analysis\.html$ https://tensorwaves.readthedocs.io/0.4.5/amplitude-analysis.html',
-    '^https[:]//tensorwaves\.readthedocs\.io/en/0\.4\.x/api/tensorwaves\.interface\.html#tensorwaves\.interface\.DataSample$ https://tensorwaves.readthedocs.io/0.4.x/api/tensorwaves.interface.html#tensorwaves.interface.DataSample',
-    '^https[:]//tensorwaves\.readthedocs\.io/en/0\.4\.x/api/tensorwaves\.interface\.html#tensorwaves\.interface\.ParametrizedFunction$ https://tensorwaves.readthedocs.io/0.4.x/api/tensorwaves.interface.html#tensorwaves.interface.ParametrizedFunction',
-    '^https[:]//tensorwaves\.readthedocs\.io/en/stable/api/tensorwaves\.data\.html$ https://tensorwaves.readthedocs.io/stable/api/tensorwaves.data.html',
-    '^https[:]//tensorwaves\.readthedocs\.io/stable/amplitude-analysis/$ https://tensorwaves.readthedocs.io/stable/amplitude-analysis.html',
-    '^https[:]//tensorwaves\.readthedocs\.io/stable$ https://tensorwaves.readthedocs.io/stable/',
-    '^https[:]//tensorwaves\.rtfd\.io/$ https://tensorwaves.readthedocs.io/stable/',
-    '^https[:]//tensorwaves\.rtfd\.io/en/0\.4\.x$ https://tensorwaves.readthedocs.io/0.4.x/',
-    '^https[:]//vector\.readthedocs\.io/$ https://vector.readthedocs.io/en/latest/',
-    '^https[:]//www\.attrs\.org/en/stable$ https://www.attrs.org/en/stable/',
-    '^https[:]//www\.datatables\.net/examples/resources/details_close\.png$ https://datatables.net/examples/resources/details_close.png',
-    '^https[:]//www\.datatables\.net/examples/resources/details_open\.png$ https://datatables.net/examples/resources/details_open.png',
     '^https[:]//www\.geogebra\.org/material/iframe/id/dgjn83pb/stb/false/sdz/true/sri/true/$ https://www.geogebra.org/classic/dgjn83pb',  # The legacy iframe endpoint was retired; check the material in Classic
     '^https[:]//www\.geogebra\.org/material/iframe/id/tv5kr8pp/stb/false/sdz/true/sri/true/$ https://www.geogebra.org/classic/tv5kr8pp',  # The legacy iframe endpoint was retired; check the material in Classic
-    '^https[:]//zfit-interface\.readthedocs\.io/$ https://zfit-interface.readthedocs.io/en/latest/',
-    '^https[:]//zfit\.readthedocs\.io/en/latest$ https://zfit.readthedocs.io/en/latest/',
-    '^https[:]//zfit\.rtfd\.io/$ https://zfit.readthedocs.io/en/stable/',
     "^(.+)/n$ $1",
 ]
-retry_wait_time = 5
-timeout = 30
 
 [tool.pytest]
 addopts = [
