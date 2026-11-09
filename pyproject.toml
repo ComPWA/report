@@ -21,10 +21,11 @@ Source = "https://github.com/ComPWA/report"
 dev = [
     "ruff",
     "sphinx-autobuild",
+    "ty",
     { include-group = "doc" },
     { include-group = "jupyter" },
     { include-group = "style" },
-    { include-group = "test" }
+    { include-group = "test" },
 ]
 doc = [
     "myst-nb",
@@ -58,7 +59,6 @@ notebooks = ["pyproject-local-kernel"]
 style = [
     "nbformat",
     "sphinx-api-relink",
-    "ty",
 ]
 test = [
     "nbmake",
@@ -86,6 +86,10 @@ no-pypi = true
 [tool.compwa.policy.python]
 imports-on-top = true
 type-checker = ["ty"]
+
+[tool.docstrfmt]
+docstring-trailing-line = false
+format-python-code-blocks = false
 
 [tool.isort]
 profile = "black"
@@ -265,7 +269,7 @@ key-empty = "off"
 
 [[tool.tombi.schemas]]
 root = "tool.compwa.policy"
-path = "https://raw.githubusercontent.com/ComPWA/policy/0.10.3/compwa-policy.schema.json"
+path = "https://raw.githubusercontent.com/ComPWA/policy/0.10.4/compwa-policy.schema.json"
 include = ["pyproject.toml"]
 
 [[tool.ty.overrides]]
