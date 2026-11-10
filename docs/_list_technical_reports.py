@@ -74,7 +74,7 @@ def _get_card_info(path: Path) -> dict[str, str]:
             continue
         if not line2.startswith(":::{card} "):
             continue
-        if not line3.startswith("TR-"):
+        if not line3.startswith(":header: TR-"):
             continue
         return _extract_card_info(cell)
     repo_dir = Path(__file__).parent.parent
@@ -90,15 +90,22 @@ def _open_notebook(path: Path) -> NotebookNode:
 
 
 def _extract_card_info(cell: NotebookNode) -> dict[str, str]:
-    src = cell["source"]
-    _, line2, line3, *rest = src.splitlines()
+    lines = cell["source"].splitlines()
+    card_start = next(i for i, line in enumerate(lines) if line.startswith(":::{card}"))
+    card_lines = lines[card_start + 1 :]
+    options = {}
+    for line in card_lines:
+        if not line.startswith(":") or line.startswith(":::"):
+            break
+        key, _, value = line[1:].partition(":")
+        options[key] = value.strip()
     info = {
-        "title": line2.split(":::{card} ")[1],
-        "tr": line3.split("TR-")[1],
+        "title": lines[card_start].split(":::{card} ")[1],
+        "tr": options["header"].split("TR-")[1],
         "tags": cell["metadata"].get("tags", []),
     }
-    body = extract_body("\n".join(rest))
-    footer = _extract_footer(src)
+    body = extract_body("\n".join(card_lines[len(options) :]))
+    footer = options.get("footer")
     if body:
         info["details"] = body
     if footer is not None and "https://github.com" in footer:
@@ -106,17 +113,9 @@ def _extract_card_info(cell: NotebookNode) -> dict[str, str]:
     return info
 
 
-def extract_body(rest: str) -> str | None:
-    body = rest.split(":::", maxsplit=1)[0].split("+++", maxsplit=1)[0].strip()
-    if "^^^" in body:
-        body = body.split("^^^")[1].strip()
+def extract_body(rest: str) -> str:
+    body = rest.split(":::", maxsplit=1)[0].strip()
     return body.replace("\n", "<br>")
-
-
-def _extract_footer(src: str) -> str | None:
-    if "+++" not in src:
-        return None
-    return src.split("+++")[1].split(":::", maxsplit=1)[0].strip()
 
 
 if __name__ == "__main__":
