@@ -279,11 +279,11 @@ include = ["**/*.ipynb"]
 rules.import-not-found = "ignore"
 rules.invalid-argument-type = "ignore"
 rules.invalid-assignment = "ignore"
+rules.missing-attribute = "ignore"
 rules.not-iterable = "ignore"
 rules.not-subscriptable = "ignore"
 rules.possibly-missing-attribute = "ignore"
 rules.possibly-unresolved-reference = "ignore"
-rules.missing-attribute = "ignore"
 rules.unresolved-reference = "ignore"
 
 [[tool.ty.overrides]]
