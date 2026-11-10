@@ -79,6 +79,7 @@ repo-name = "report"
 repo-title = "ComPWA Technical Reports"
 
 [tool.compwa.policy.github]
+dependabot-assignees = ["redeboer"]
 github-pages = true
 no-cd = true
 no-pypi = true
