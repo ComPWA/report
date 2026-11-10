@@ -101,7 +101,6 @@ exclude = [
     '^https[:]//journals\.aps\.org/prd/abstract/10\.1103/PhysRevD\.101\.034033$',  # APS rejects automated requests from GitHub Actions
     '^https[:]//link\.aps\.org/doi/10\.1103/PhysRevD\.5\.624$',  # APS rejects automated requests from GitHub Actions
     '^https[:]//rosettacode\.org/wiki/Mandelbrot_set#Julia$',  # Rosetta Code rejects automated requests from GitHub Actions
-    # `[:]` stops lychee from extracting these patterns as links from this file
     '^http[:]//doi\.wiley\.com/10\.1002/andp\.19955070504$',  # Rejects automated requests with 403
     '^http[:]//www\.curtismeyer\.com/talks/PWA_Munich_KMatrix\.pdf$',  # The lecture website does not respond to automated requests
     '^https[:]//doi\.org/10\.1002/andp\.19955070504$',  # 403 for onlinelibrary.wiley.com
