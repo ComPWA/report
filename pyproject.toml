@@ -102,7 +102,6 @@ exclude = [
     '^https[:]//link\.aps\.org/doi/10\.1103/PhysRevD\.5\.624$',  # APS rejects automated requests from GitHub Actions
     '^https[:]//rosettacode\.org/wiki/Mandelbrot_set#Julia$',  # Rosetta Code rejects automated requests from GitHub Actions
     '^http[:]//doi\.wiley\.com/10\.1002/andp\.19955070504$',  # Rejects automated requests with 403
-    '^http[:]//www\.curtismeyer\.com/talks/PWA_Munich_KMatrix\.pdf$',  # The lecture website does not respond to automated requests
     '^https[:]//doi\.org/10\.1002/andp\.19955070504$',  # 403 for onlinelibrary.wiley.com
     '^https[:]//doi\.org/10\.1007/978-1-4612-9959-2$',  # Publisher redirects automated requests through a cookie challenge
     '^https[:]//doi\.org/10\.1007/JHEP07\(2023\)228$',  # Publisher redirects automated requests through a cookie challenge
