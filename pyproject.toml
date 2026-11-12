@@ -85,12 +85,9 @@ no-cd = true
 no-pypi = true
 
 [tool.compwa.policy.python]
+docstrfmt = false
 imports-on-top = true
 type-checker = ["ty"]
-
-[tool.docstrfmt]
-docstring-trailing-line = false
-format-python-code-blocks = false
 
 [tool.isort]
 profile = "black"
