@@ -568,6 +568,7 @@ packages:
   sha256: 3eadfa497feb83b48e115383468d756b0637bdd3db7c93d8880c3a68e5f63c68
   md5: bd55e24a51101bcdc51e2c7c8850b333
   license: GPL-2.0-or-later
+  license_family: GPL
   run_exports: {}
   size: 15246
   timestamp: 1794120683401
@@ -1914,6 +1915,7 @@ packages:
   sha256: bfddf31472e0d69242f872e99d71418111488bd6f4f8bf88d7096a67bf6cab38
   md5: 43dd1134a9fdff3e3265b2caca745077
   license: GPL-2.0-or-later
+  license_family: GPL
   run_exports: {}
   size: 14711
   timestamp: 1794120711579
@@ -2574,6 +2576,7 @@ packages:
   sha256: 0a84cd6899057d9947ed3e26a659744ba8cb1905495379442867e848b15f1a28
   md5: c62e3c5262c80792f8767b26f5542ca9
   license: GPL-2.0-or-later
+  license_family: GPL
   run_exports: {}
   size: 14694
   timestamp: 1794120721285
