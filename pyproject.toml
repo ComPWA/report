@@ -21,10 +21,11 @@ Source = "https://github.com/ComPWA/report"
 dev = [
     "ruff",
     "sphinx-autobuild",
+    "ty",
     { include-group = "doc" },
     { include-group = "jupyter" },
     { include-group = "style" },
-    { include-group = "test" }
+    { include-group = "test" },
 ]
 doc = [
     "myst-nb",
@@ -40,7 +41,7 @@ doc = [
     "sphinx-pybtex-etal-style",
     "sphinx-thebe",
     "sphinx-togglebutton",
-    "sphinxcontrib-bibtex >=2",
+    "sphinxcontrib-bibtex>=2",
     { include-group = "notebooks" }
 ]
 jupyter = [
@@ -58,7 +59,6 @@ notebooks = ["pyproject-local-kernel"]
 style = [
     "nbformat",
     "sphinx-api-relink",
-    "ty",
 ]
 test = [
     "nbmake",
@@ -79,16 +79,56 @@ repo-name = "report"
 repo-title = "ComPWA Technical Reports"
 
 [tool.compwa.policy.github]
+dependabot-assignees = ["redeboer"]
 github-pages = true
 no-cd = true
 no-pypi = true
 
 [tool.compwa.policy.python]
+docstrfmt = false
 imports-on-top = true
 type-checker = ["ty"]
 
 [tool.isort]
 profile = "black"
+
+[tool.lychee]
+cache = true
+cache_exclude_status = "400.."
+# [:] keeps Lychee from extracting regex patterns as URLs.
+exclude = [
+    '^https[:]//doi\.org/10\.7566/JPSCP\.26\.022002$',  # The publisher rejects automated requests from GitHub Actions
+    '^https[:]//journals\.aps\.org/prd/abstract/10\.1103/PhysRevD\.101\.034033$',  # APS rejects automated requests from GitHub Actions
+    '^https[:]//link\.aps\.org/doi/10\.1103/PhysRevD\.5\.624$',  # APS rejects automated requests from GitHub Actions
+    '^https[:]//rosettacode\.org/wiki/Mandelbrot_set#Julia$',  # Rosetta Code rejects automated requests from GitHub Actions
+    '^http[:]//doi\.wiley\.com/10\.1002/andp\.19955070504$',  # Rejects automated requests with 403
+    '^https[:]//doi\.org/10\.1002/andp\.19955070504$',  # 403 for onlinelibrary.wiley.com
+    '^https[:]//doi\.org/10\.1007/978-1-4612-9959-2$',  # Publisher redirects automated requests through a cookie challenge
+    '^https[:]//doi\.org/10\.1007/JHEP07\(2023\)228$',  # Publisher redirects automated requests through a cookie challenge
+    '^https[:]//downloads\.hindawi\.com/journals/ahep/2020/6674595\.pdf#page=\d+$',  # 403
+    '^https[:]//github\.com/ComPWA/RUB-EP1-AG/issues/93$',  # private
+    '^https[:]//iopscience\.iop\.org/article/10\.1088/1674-1137/abf139$',  # Redirects Lychee requests to a browser challenge
+    '^https[:]//stackoverflow\.com/a/(?:42866568|5966088)$',  # Redirect target rejects automated requests with 403
+    '^https[:]//www\.hindawi\.com/journals/ahep/2020/6674595/$',  # Rejects automated requests with 403
+    "%7B[^/]*%7D",  # URL templates are completed at build or runtime
+]
+extensions = ["bib", "html", "ipynb", "json", "md", "py", "toml", "yaml", "yml"]
+hidden = true  # Include the workflows under .github/
+include_fragments = "anchor-only"
+include_verbatim = true
+max_cache_age = "7d"
+remap = [
+    # Keep the original error messages in the frozen notebook and check the corresponding JAX release.
+    '^https[:]//jax\.readthedocs\.io/en/latest/errors\.html#jax\.errors\.ConcretizationTypeError$ https://github.com/jax-ml/jax/blob/jax-v0.4.30/jax/_src/errors.py#L47',
+    '^https[:]//jax\.readthedocs\.io/en/latest/errors\.html#jax\.errors\.TracerArrayConversionError$ https://github.com/jax-ml/jax/blob/jax-v0.4.30/jax/_src/errors.py#L230',
+    '^git\+https[:]//github\.com/ComPWA/sympy(?:@.*)?$ https://github.com/sympy/sympy',
+    '^git\+(https[:]//[^@]+)(@.*)?$ $1',
+    '^https[:]//github\.com/ComPWA/compwa\.github\.io/pull/129#issuecomment-1096599896\\n$ https://github.com/ComPWA/compwa.github.io/pull/129',  # GitHub renders comment anchors dynamically
+    '^https[:]//repo\.prefix\.dev/julia-forge$ https://prefix.dev/channels/julia-forge',  # The channel endpoint serves package metadata, not a web page
+    '^https[:]//www\.geogebra\.org/material/iframe/id/dgjn83pb/stb/false/sdz/true/sri/true/$ https://www.geogebra.org/classic/dgjn83pb',  # The legacy iframe endpoint was retired; check the material in Classic
+    '^https[:]//www\.geogebra\.org/material/iframe/id/tv5kr8pp/stb/false/sdz/true/sri/true/$ https://www.geogebra.org/classic/tv5kr8pp',  # The legacy iframe endpoint was retired; check the material in Classic
+    "^(.+)/n$ $1",
+]
 
 [tool.pytest]
 addopts = [
@@ -171,6 +211,9 @@ ignorelist = ["display"]
 [tool.ruff.lint.flake8-comprehensions]
 allow-dict-calls-with-keyword-arguments = true
 
+[tool.ruff.lint.flake8-tidy-imports.banned-api]
+"__future__.annotations".msg = "Notebooks should not use postponed evaluation of annotations."
+
 [tool.ruff.lint.isort]
 split-on-trailing-comma = false
 
@@ -229,24 +272,24 @@ key-empty = "off"
 
 [[tool.tombi.schemas]]
 root = "tool.compwa.policy"
-path = "https://raw.githubusercontent.com/ComPWA/policy/0.10.2/compwa-policy.schema.json"
+path = "https://raw.githubusercontent.com/ComPWA/policy/0.10.7/compwa-policy.schema.json"
 include = ["pyproject.toml"]
 
 [[tool.ty.overrides]]
 include = ["**/*.ipynb"]
+rules.import-not-found = "ignore"
 rules.invalid-argument-type = "ignore"
 rules.invalid-assignment = "ignore"
+rules.missing-attribute = "ignore"
 rules.not-iterable = "ignore"
 rules.not-subscriptable = "ignore"
 rules.possibly-missing-attribute = "ignore"
 rules.possibly-unresolved-reference = "ignore"
-rules.unresolved-attribute = "ignore"
-rules.unresolved-import = "ignore"
 rules.unresolved-reference = "ignore"
 
 [[tool.ty.overrides]]
 include = ["docs/_static/exported_intensity_model.py"]
-rules.unresolved-import = "ignore"
+rules.import-not-found = "ignore"
 rules.unresolved-reference = "ignore"
 
 [tool.ty.rules]

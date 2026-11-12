@@ -46,8 +46,10 @@ pyvenv*/
 .agents/
 .claude/
 .codex/
+.gemini/
 AGENTS.md
 CLAUDE.md
+GEMINI.md
 
 # Exceptions
 !.cspell.json
@@ -56,5 +58,5 @@ CLAUDE.md
 !.pre-commit-config.yaml
 !.readthedocs.yml
 !.vscode/*.json
-!codecov.yml
 .jupyter_ystore.db
+.lycheecache
