@@ -1,14 +1,9 @@
-from __future__ import annotations
-
 import re
 from pathlib import Path
 from textwrap import dedent
-from typing import TYPE_CHECKING
 
 import nbformat
-
-if TYPE_CHECKING:
-    from nbformat import NotebookNode
+from nbformat import NotebookNode
 
 
 def main() -> int:
