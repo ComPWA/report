@@ -272,11 +272,6 @@ line-width = 88
 key-empty = "off"
 
 [[tool.tombi.schemas]]
-root = "tool.ruff"
-path = "https://raw.githubusercontent.com/astral-sh/ruff/0.17.4/ruff.schema.json"
-include = ["**/pyproject.toml"]
-
-[[tool.tombi.schemas]]
 root = "tool.compwa.policy"
 path = "https://raw.githubusercontent.com/ComPWA/policy/0.10.8/compwa-policy.schema.json"
 include = ["pyproject.toml"]
