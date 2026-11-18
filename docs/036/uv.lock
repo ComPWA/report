@@ -777,7 +777,7 @@ requires-dist = [
     { name = "pandas" },
     { name = "phasespace", specifier = "~=1.10.4" },
     { name = "scipy" },
-    { name = "tensorwaves", extras = ["phsp"], git = "https://github.com/ComPWA/tensorwaves?rev=20851d7588666e3e495c4284ab9f4c84bb93dbaa" },
+    { name = "tensorwaves", extras = ["phsp"], git = "https://github.com/ComPWA/tensorwaves?rev=d87354f8e72f2b4cf61a3edd94fa8d257158d032" },
 ]
 
 [[package]]
@@ -862,8 +862,8 @@ wheels = [
 
 [[package]]
 name = "tensorwaves"
-version = "0.4.18.dev8+g20851d758"
-source = { git = "https://github.com/ComPWA/tensorwaves?rev=20851d7588666e3e495c4284ab9f4c84bb93dbaa#20851d7588666e3e495c4284ab9f4c84bb93dbaa" }
+version = "0.4.18.dev6+gd87354f8e"
+source = { git = "https://github.com/ComPWA/tensorwaves?rev=d87354f8e72f2b4cf61a3edd94fa8d257158d032#d87354f8e72f2b4cf61a3edd94fa8d257158d032" }
 dependencies = [
     { name = "attrs" },
     { name = "iminuit" },

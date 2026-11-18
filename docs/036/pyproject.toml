@@ -9,7 +9,7 @@ dependencies = [
     "phasespace~=1.10.4",  # tensorwaves is not yet compatible with phasespace 2
 
     "scipy",
-    "tensorwaves[phsp] @ git+https://github.com/ComPWA/tensorwaves@20851d7588666e3e495c4284ab9f4c84bb93dbaa",
+    "tensorwaves[phsp] @ git+https://github.com/ComPWA/tensorwaves@d87354f8e72f2b4cf61a3edd94fa8d257158d032",
 ]
 
 [tool.pyproject-local-kernel]
