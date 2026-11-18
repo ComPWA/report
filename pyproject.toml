@@ -289,10 +289,6 @@ rules.possibly-unresolved-reference = "ignore"
 rules.unresolved-reference = "ignore"
 
 [[tool.ty.overrides]]
-include = ["docs/036/index.ipynb"]
-rules.not-callable = "ignore"
-
-[[tool.ty.overrides]]
 include = ["docs/_static/exported_intensity_model.py"]
 rules.import-not-found = "ignore"
 rules.unresolved-reference = "ignore"

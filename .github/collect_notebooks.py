@@ -5,7 +5,7 @@
 
 import subprocess  # ruff: ignore[suspicious-subprocess-import]
 import sys
-import tomllib  # ty:ignore[import-not-found]
+import tomllib
 from pathlib import Path
 
 
