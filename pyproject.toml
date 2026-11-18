@@ -108,6 +108,7 @@ exclude = [
     '^https[:]//doi\.org/10\.1007/JHEP07\(2023\)228$',  # Publisher redirects automated requests through a cookie challenge
     '^https[:]//downloads\.hindawi\.com/journals/ahep/2020/6674595\.pdf#page=\d+$',  # 403
     '^https[:]//github\.com/ComPWA/RUB-EP1-AG/issues/93$',  # private
+    '^https[:]//github\.com/user-attachments/assets/(?:239c3206-475e-49be-a1af-4d72d6cfed70|fdf044b6-57c1-461d-905b-627ea7ebc92f|4ad9ffaf-6bb9-4f6c-a747-3ea6d87f011e|b22b6023-e5ae-4f2f-8374-6b9d68948e73|1e3b893c-e05c-49c1-bfef-0b54e0a17aa5|ce78ba2a-9928-4346-a912-d54e04567a27|2712f3bf-8c3d-43f1-beea-feb236303d20|10a5d214-ea79-464a-90ff-405ca16818ac|846bf35b-896e-4f73-97e1-984eaaeb8f7f)$',
     '^https[:]//iopscience\.iop\.org/article/10\.1088/1674-1137/abf139$',  # Redirects Lychee requests to a browser challenge
     '^https[:]//stackoverflow\.com/a/(?:42866568|5966088)$',  # Redirect target rejects automated requests with 403
     '^https[:]//www\.hindawi\.com/journals/ahep/2020/6674595/$',  # Rejects automated requests with 403
