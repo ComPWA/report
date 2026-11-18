@@ -8,6 +8,7 @@ dependencies = [
     "ipykernel",
     "matplotlib",
     "numpy",
+    "phasespace<2.0",
     "qrules",
     "tensorwaves[jax,phsp]",
 ]

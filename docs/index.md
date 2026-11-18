@@ -52,9 +52,12 @@ table.on('click', 'td.details-control', function (e) {
 </script>
 
 ```{toctree}
+references
+```
+
+```{toctree}
 :glob:
 :hidden:
-references
 ???/index
 ```
 

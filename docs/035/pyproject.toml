@@ -5,6 +5,7 @@ requires-python = "~=3.13.0"
 dependencies = [
     "ampform-dpd~=0.2.3",
     "ampform[viz]",
+    "phasespace<2.0",
     "tensorwaves[jax,phsp]",
 ]
 

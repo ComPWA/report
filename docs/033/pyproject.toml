@@ -7,7 +7,7 @@ dependencies = [
     "ipywidgets",
     "matplotlib",
     "pandas",
-    "phasespace",
+    "phasespace<2.0",
     "scipy~=1.15.0",
     "tqdm",
     "vector",
@@ -23,7 +23,7 @@ preview = true
 [tool.ruff.lint]
 ignore = [
     "ANN00",
-    "missing-return-type-undocumented-public-function",
+    "missing-return-type-public-function",
     "unused-function-argument",
     "missing-trailing-comma",
     "missing-copyright-notice",

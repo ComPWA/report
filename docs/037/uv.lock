@@ -1406,6 +1406,7 @@ dependencies = [
     { name = "ipykernel" },
     { name = "matplotlib" },
     { name = "numpy" },
+    { name = "phasespace" },
     { name = "qrules" },
     { name = "tensorwaves", extra = ["jax", "phsp"] },
 ]
@@ -1417,6 +1418,7 @@ requires-dist = [
     { name = "ipykernel" },
     { name = "matplotlib" },
     { name = "numpy" },
+    { name = "phasespace", specifier = "<2.0" },
     { name = "qrules" },
     { name = "tensorwaves", extras = ["jax", "phsp"] },
 ]
