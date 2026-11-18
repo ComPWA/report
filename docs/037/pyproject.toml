@@ -1,0 +1,41 @@
+[project]
+name = "technical-report"
+version = "0.1.0"
+requires-python = "~=3.13.0"
+dependencies = [
+    "jinja2",
+    "matplotlib",
+    "pandas",
+    "phasespace~=2.0",
+    "tensorwaves[jax,phsp,tf] @ git+https://github.com/ComPWA/tensorwaves@623dc675759330509814f819fe1e18221b06bea9",
+]
+
+[tool.pyproject-local-kernel]
+# Override UV_PYTHON, because TensorFlow provides no wheels for Python 3.14 yet
+python-cmd = ["uv", "run", "--python=3.13", "--with=ipykernel", "python"]
+
+[tool.ruff]
+preview = true
+
+[tool.ruff.lint]
+ignore = [
+    "useless-expression",
+    "missing-trailing-comma",
+    "missing-copyright-notice",
+    "D",
+    "too-many-blank-lines",
+    "line-too-long",
+    "import-private-name",
+    "assert",
+    "print",
+    "TC00",
+]
+select = ["ALL"]
+
+[tool.ruff.lint.flake8-builtins]
+ignorelist = ["display"]
+
+[tool.ruff.lint.flake8-comprehensions]
+allow-dict-calls-with-keyword-arguments = true
+
+[tool.uv.workspace]
