@@ -52,6 +52,8 @@ def get_nb_exclusion_patterns() -> list[str]:
             "033/*",
             "034/*",
             "035/*",
+            "036/*",
+            "037/*",
         }
         exclusions.update(frozen_notebooks)
     return sorted(exclusions)
