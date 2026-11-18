@@ -5,6 +5,7 @@ requires-python = "~=3.13.0"
 dependencies = [
     "ampform[viz]~=0.15.0",
     "matplotlib",
+    "phasespace<2.0",
     "tensorwaves[jax,pwa]",
 ]
 
@@ -18,7 +19,7 @@ preview = true
 [tool.ruff.lint]
 ignore = [
     "ANN00",
-    "missing-return-type-undocumented-public-function",
+    "missing-return-type-public-function",
     "missing-trailing-comma",
     "missing-copyright-notice",
     "D",

@@ -16,7 +16,7 @@ preview = true
 [tool.ruff.lint]
 ignore = [
     "missing-type-function-argument",
-    "missing-return-type-undocumented-public-function",
+    "missing-return-type-public-function",
     "missing-return-type-private-function",
     "missing-trailing-comma",
     "missing-copyright-notice",
