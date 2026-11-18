@@ -101,15 +101,15 @@ sdist = { url = "https://files.pythonhosted.org/packages/65/6e/09db70a523a96d25e
 
 [[package]]
 name = "particle"
-version = "1.0.1"
+version = "1.1.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "attrs" },
     { name = "hepunits" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/c0/cf/c22d976f32b899e81da7e4e2a47b7d1c1a8f5a6ab38bc6e01d3f2b074714/particle-1.0.1.tar.gz", hash = "sha256:3f2ec4dbb8953c90ba83b891d6534cd82dc1aece4111b79998ff284ce377a922", size = 285779, upload-time = "2026-09-10T14:59:26.818Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/9f/24/1f1a9ce2a72767cf63a8afd0d0d4d1e182da49bd3cea582495c980c6fb80/particle-1.1.1.tar.gz", hash = "sha256:d7145621969dbb1190b32798357c2695a3b4b5a28380b290ad9efd59530da92b", size = 283354, upload-time = "2026-11-17T10:04:05.424Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/43/3d/c3a313039860766c56ec9d5d5e7d02e305c54d49960b4db69e3260253974/particle-1.0.1-py3-none-any.whl", hash = "sha256:9c63b270bd4d1e1ab0f7d7120d548b34ffd12ab7fcfed92dcd646ac4bfd5711c", size = 245606, upload-time = "2026-09-10T14:59:25.116Z" },
+    { url = "https://files.pythonhosted.org/packages/38/ff/3de7cd02584dc922502681da3d71046e48ac6d236beb2033ddcb2dd42c25/particle-1.1.1-py3-none-any.whl", hash = "sha256:b0e94f80328b8ff179ea1b847527f8cb896efb8261d07b92c9b5604c80373329", size = 232923, upload-time = "2026-11-17T10:04:03.454Z" },
 ]
 
 [[package]]

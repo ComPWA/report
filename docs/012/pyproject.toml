@@ -4,6 +4,7 @@ version = "0.1.0"
 requires-python = "~=3.13.0"
 dependencies = [
     "ampform~=0.12.6",
+    "phasespace<2.0",
     "tensorwaves[jax,pwa]~=0.4.8",
 ]
 

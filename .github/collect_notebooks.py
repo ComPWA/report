@@ -3,11 +3,9 @@
 # requires-python = ">=3.11"
 # ///
 
-from __future__ import annotations
-
 import subprocess  # ruff: ignore[suspicious-subprocess-import]
 import sys
-import tomllib  # ty:ignore[unresolved-import]
+import tomllib  # ty:ignore[import-not-found]
 from pathlib import Path
 
 

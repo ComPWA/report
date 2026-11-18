@@ -4,8 +4,6 @@ This file only contains a selection of the most common options. For a full list 
 documentation: https://www.sphinx-doc.org/en/master/usage/configuration.html
 """
 
-from __future__ import annotations
-
 import os
 import shutil
 import subprocess  # ruff: ignore[suspicious-subprocess-import]
@@ -105,10 +103,9 @@ exclude_patterns = [
     "**/.ipynb_checkpoints",
     "**/.venv",
     "**/.virtual_documents",
-    "**/AGENTS.md",
-    "**/CLAUDE.md",
-    "AGENTS.md",
-    "CLAUDE.md",
+    "**AGENTS.md",
+    "**CLAUDE.md",
+    "**GEMINI.md",
 ]
 extensions = [
     "myst_nb",
@@ -124,7 +121,6 @@ extensions = [
     "sphinx_design",
     "sphinx_hep_pdgref",
     "sphinx_pybtex_etal_style",
-    "sphinx_remove_toctrees",
     "sphinx_thebe",
     "sphinx_togglebutton",
     "sphinxcontrib.bibtex",
@@ -145,6 +141,14 @@ html_logo = (
     "https://raw.githubusercontent.com/ComPWA/ComPWA/04e5199/doc/images/logo.svg"
 )
 html_show_copyright = False
+html_sidebars = {
+    "**": [
+        "navbar-logo.html",
+        "icon-links.html",
+        "search-button-field.html",
+        "report-sidebar.html",
+    ],
+}
 html_static_path = ["_static"]
 html_theme = "sphinx_book_theme"
 html_theme_options = {
@@ -218,32 +222,6 @@ intersphinx_mapping = {
     "torch": ("https://docs.pytorch.org/docs/stable", None),
     "zfit": ("https://zfit.readthedocs.io/en/latest", None),
 }
-linkcheck_anchors = False
-linkcheck_ignore = [
-    "http://127.0.0.1:8000",
-    "https://atom.io",  # often instable
-    "https://doi.org/10.1002/andp.19955070504",  # 403 for onlinelibrary.wiley.com
-    "https://doi.org/10.1103",  # 403 for journals.aps.org
-    "https://doi.org/10.1155/2020/6674595",  # 403 hindawi.com
-    "https://doi.org/10.5281/zenodo",  # 403 for zenodo.org
-    "https://doi.org/10.7566/JPSCP.26.022002",  # 403 for journals.jps.jp
-    "https://downloads.hindawi.com",  # 403
-    "https://github.com/organizations/ComPWA/settings/repository-defaults",  # private
-    "https://github.dev",
-    "https://ieeexplore.ieee.org/document/6312940",  # 401
-    "https://indico.ific.uv.es/event/6803",  # SSL error
-    "https://journals.aps.org",
-    "https://leetcode.com",
-    "https://mybinder.org",  # often instable
-    "https://rosettacode.org",
-    "https://stackoverflow.com",
-    "https://via.placeholder.com",  # irregular timeout
-    "https://www.andiamo.co.uk/resources/iso-language-codes",  # 443, but works
-    "https://www.bookfinder.com",
-    "https://zenodo.org",  # 403
-    r"https://github.com/ComPWA/RUB-EP1-AG/.*",  # private
-    r"https://github.com/orgs/ComPWA/projects/\d+",  # private
-]
 mermaid_height = "auto"
 mermaid_init_config = {
     "flowchart": {
@@ -254,7 +232,9 @@ mermaid_init_config = {
     "startOnLoad": False,
     "themeVariables": {"fontSize": "12px"},
 }
+myst_colon_fence_exact_match = True
 myst_enable_extensions = [
+    "alert",
     "amsmath",
     "colon_fence",
     "dollarmath",
@@ -288,7 +268,6 @@ nb_render_markdown_format = "myst"
 nitpicky = True
 primary_domain = "py"
 project = REPO_TITLE
-remove_from_toctrees = ["???/index.ipynb"]
 source_suffix = {
     ".ipynb": "myst-nb",
     ".md": "myst-nb",
@@ -298,6 +277,7 @@ suppress_warnings = [
     "myst.domains",
     "mystnb.unknown_mime_type",
 ]
+templates_path = ["_templates"]
 thebe_config = {
     "repository_url": html_theme_options["repository_url"],
     "repository_branch": html_theme_options["repository_branch"],

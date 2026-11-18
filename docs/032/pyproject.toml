@@ -6,6 +6,7 @@ dependencies = [
     "ampform[viz]~=0.15.0",
     "ipywidgets",
     "matplotlib",
+    "phasespace<2.0",
     "tensorwaves[jax,pwa]",
 ]
 
