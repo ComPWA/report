@@ -659,14 +659,16 @@ wheels = [
 
 [[package]]
 name = "phasespace"
-version = "2.0.0"
+version = "1.11.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "numpy" },
+    { name = "tensorflow" },
+    { name = "tensorflow-probability" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/ae/55/826c688d59dbf33341e4ad2704d9811d7fe2062de693746bebb067264660/phasespace-2.0.0.tar.gz", hash = "sha256:f07e9bec3ad5036d86c52bf62f5c7ac3dd5e76a71113f9c015fd14712eac3436", size = 60565, upload-time = "2026-11-17T19:51:09.023Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/05/9b/8c9f18eb81cdf83929625086b382c5448e28f54cf00b5d2e9493820fa145/phasespace-1.11.0.tar.gz", hash = "sha256:59d86f00ab9bc27a5f0bd6892341715debe0b2cac048ec085c98790b374690da", size = 59635, upload-time = "2026-11-16T09:46:45.379Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/b4/49/644fc9fc98513577f9f89d722c09d3677ee08755a25b016ee58d48683a2c/phasespace-2.0.0-py3-none-any.whl", hash = "sha256:be9dee4dbda99f34310d2fff3263783679a550f27a043764dc9fafcff7704aa8", size = 29352, upload-time = "2026-11-17T19:51:07.696Z" },
+    { url = "https://files.pythonhosted.org/packages/e1/2e/4670b66677f0eff6f716825d1a20a2782d8962076e64a5e2fc1340a49972/phasespace-1.11.0-py3-none-any.whl", hash = "sha256:3f826cc80a1da979fdd05f3bcdb1ac575f342b199488434e76837c1dccf8c7ae", size = 29303, upload-time = "2026-11-16T09:46:44.124Z" },
 ]
 
 [package.optional-dependencies]
@@ -916,6 +918,7 @@ source = { virtual = "." }
 dependencies = [
     { name = "ampform", extra = ["viz"] },
     { name = "matplotlib" },
+    { name = "phasespace" },
     { name = "scipy" },
     { name = "tensorwaves", extra = ["jax", "pwa"] },
 ]
@@ -924,6 +927,7 @@ dependencies = [
 requires-dist = [
     { name = "ampform", extras = ["viz"], specifier = "~=0.15.0" },
     { name = "matplotlib" },
+    { name = "phasespace", specifier = "<2.0" },
     { name = "scipy" },
     { name = "tensorwaves", extras = ["jax", "pwa"] },
 ]

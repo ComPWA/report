@@ -5,6 +5,7 @@ requires-python = "~=3.13.0"
 dependencies = [
     "ampform[viz]~=0.15.0",
     "matplotlib",
+    "phasespace<2.0",
     "tensorwaves[jax,pwa]",
 ]
 
