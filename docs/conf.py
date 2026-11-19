@@ -126,9 +126,11 @@ extensions = [
     "sphinx_thebe",
     "sphinx_togglebutton",
     "sphinxcontrib.bibtex",
+    "sphinxcontrib.mermaid",
 ]
 graphviz_output_format = "svg"
 html_css_files = [
+    "mermaid.css",
     "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css",
 ]
 html_favicon = "_static/favicon.ico"
@@ -222,6 +224,16 @@ intersphinx_mapping = {
     "torch": ("https://docs.pytorch.org/docs/stable", None),
     "zfit": ("https://zfit.readthedocs.io/en/latest", None),
 }
+mermaid_height = "auto"
+mermaid_init_config = {
+    "flowchart": {
+        "nodeSpacing": 30,
+        "rankSpacing": 40,
+        "useMaxWidth": False,
+    },
+    "startOnLoad": False,
+    "themeVariables": {"fontSize": "12px"},
+}
 myst_colon_fence_exact_match = True
 myst_enable_extensions = [
     "alert",
@@ -231,6 +243,7 @@ myst_enable_extensions = [
     "smartquotes",
     "substitution",
 ]
+myst_fence_as_directive = ["mermaid"]
 myst_heading_anchors = 4
 myst_substitutions = {
     "branch": BRANCH,
